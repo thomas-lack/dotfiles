@@ -1,0 +1,58 @@
+execute pathogen#infect()
+
+" Vim UI settings
+set showmode		" display current mode
+set number			" show line numbers
+set background=dark
+" colorscheme solarized
+
+" loose vi compatibility
+set nocompatible
+
+" turn on syntax highlighting
+syntax on
+
+" show an EOL ruler ruler
+set ruler
+set showcmd			" show partial commands in status line
+					" and selected characters/lines in visual mode
+
+" do not break words on linebreak and indent automatically if linebreaking in
+" tags
+set breakindent
+set wrap linebreak nolist
+
+" make vim try to detect file types and load plugins for them
+filetype on
+filetype plugin on
+filetype indent on
+
+" reload files changed outside vim
+set autoread
+
+" encoding is utf-8
+set encoding=utf-8
+set fileencoding=utf-8
+
+" set unix line endings
+set fileformat=unix
+" when reading files try unix line endings then dos, use unix for new buffers
+set fileformats=unix,dos
+
+" screen will not be redrawn while running macros, registers or other
+" non-typed comments
+set lazyredraw
+
+" indentation settings
+set tabstop=4
+set shiftwidth=4
+set autoindent
+
+" search settings
+set hlsearch			" highlight search terms
+set ignorecase			" case insensitive
+
+" scrolling
+set scrolljump=5		" lines to scroll when cursor leaves the screen
+set scrolloff=3			" minimum lines to keep above and below cursor
+

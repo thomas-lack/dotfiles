@@ -1,0 +1,80 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# set number of terminal colors
+export TERM="xterm-256color"
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/lack/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
+# set java home environment
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=$JAVA_HOME/bin:$PATH
+
+# add own bin folder
+export PATH=$PATH:/Users/lack/bin
+
+# You may need to manually set your language environment
+export LANG=en_GB.UTF-8
+
+# load and configure zsh packet manager antigen
+source /usr/local/share/antigen/antigen.zsh
+antigen bundle git
+antigen bundle osx
+antigen bundle npm
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen theme avit
+antigen apply
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="yyyy-mm-dd"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+
+# ls alias for color-mode
+alias ls="ls -hG"
+alias ll="ls -lhaG"
+
+# up 'n' folders
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias v4='cd ~/var/importexport/import/import_csv_generic/Tools/create_stub/v4'
+alias cmms='cd ~/var/CMMS/cmms-frontend'
+alias workspace='cd ~/var/workspace/cmms/cmms-frontend'
+
+# grep with color
+alias grep='grep --color=auto'
+
+# webpack (dev server) with output
+alias webpack-dev-server='./node_modules/.bin/webpack-dev-server --progress --colors'
+alias webpack='./node_modules/.bin/webpack --progress --colors --display-error-details'
+
+# lock computer
+alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+
+# refresh shell
+alias reload='source ~/.bash_profile'
+
+# show webserver log
+alias weblog='tail -F /opt/local/var/log/lighttpd/error.log'
+
+# show webserver cgi errors
+alias cgilog='tail -F /opt/local/var/log/lighttpd/breakage.log'
+
+# convert a given markdown file to mediawiki
+alias md2wiki='pandoc readme.md -f markdown -t mediawiki -s -o readme.wiki'
+
+# test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# start tmux session
+if [ -z $TMUX ]; then; tmux; fi
