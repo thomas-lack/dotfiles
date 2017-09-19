@@ -74,6 +74,9 @@ alias cgilog='tail -F /opt/local/var/log/lighttpd/breakage.log'
 # convert a given markdown file to mediawiki
 alias md2wiki='pandoc readme.md -f markdown -t mediawiki -s -o readme.wiki'
 
+# start cmms backend with needed db containers
+alias backend='cmms && docker start mongodb && docker start postgres-cmms && npm run backend'
+
 # test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # start tmux session
