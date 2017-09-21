@@ -1,0 +1,36 @@
+// Platzieren Sie Ihre Einstellungen in dieser Datei, um die Standardeinstellungen zu überschreiben.
+{
+    "files.trimTrailingWhitespace": true,
+    "editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 12,
+    "editor.fontWeight": "600",
+    "workbench.fontAliasing": "antialiased",
+    "editor.cursorStyle": "block",
+    "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": true,
+    "editor.rulers": [
+        100
+    ],
+    "editor.renderWhitespace": "none",
+    "editor.smoothScrolling": true,
+    "tslint.autoFixOnSave": true,
+    "diffEditor.renderSideBySide": true,
+    "extensions.autoUpdate": true,
+    "explorer.openEditors.visible": 0,
+    "workbench.activityBar.visible": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
+    "terminal.integrated.fontSize": 12,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/target": true,
+        "**/coverage": true
+    },
+    "path-intellisense.autoSlashAfterDirectory": true,
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "workbench.colorTheme": "Tomorrow Night Bright"
+}
