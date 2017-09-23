@@ -13,6 +13,7 @@
     ],
     "editor.renderWhitespace": "none",
     "editor.smoothScrolling": true,
+    "editor.lineNumbers": "relative",
     "tslint.autoFixOnSave": true,
     "diffEditor.renderSideBySide": true,
     "extensions.autoUpdate": true,
