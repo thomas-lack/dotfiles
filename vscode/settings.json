@@ -14,6 +14,7 @@
     "editor.renderWhitespace": "none",
     "editor.smoothScrolling": true,
     "editor.lineNumbers": "relative",
+    "html.autoClosingTags": false,
     "tslint.autoFixOnSave": true,
     "diffEditor.renderSideBySide": true,
     "extensions.autoUpdate": true,
@@ -33,5 +34,20 @@
     "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/",
     "java.errors.incompleteClasspath.severity": "ignore",
     "vim.disableAnnoyingNeovimMessage": true,
-    "workbench.colorTheme": "Tomorrow Night Bright"
+    "vim.useSystemClipboard": true,
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors" : {
+        "normal": "#005f5f",
+        "insert": "#5f0000",
+        "visual": "#5f00af",
+        "visualline": "#005f87",
+        "visualblock": "#86592d",
+        "replace": "#000000"
+    },
+    "workbench.colorTheme": "Tomorrow Night Bright",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    }
 }
