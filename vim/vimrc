@@ -4,7 +4,8 @@ execute pathogen#infect()
 set showmode				" display current mode
 set number relativenumber	" show hybrid relative line numbers
 set background=dark
-" colorscheme solarized
+colorscheme molokai
+set t_Co=256
 
 " loose vi compatibility
 set nocompatible
