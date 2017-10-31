@@ -1,8 +1,8 @@
 execute pathogen#infect()
 
 " Vim UI settings
-set showmode		" display current mode
-set number			" show line numbers
+set showmode				" display current mode
+set number relativenumber	" show hybrid relative line numbers
 set background=dark
 " colorscheme solarized
 
