@@ -1,0 +1,21 @@
+! This file needs the environment setting XENVIRONMENT to be set
+! Best place is /etc/profile.d to assure that it is set before i3
+! is loaded.
+
+! xterm*faceName: xos4 Terminess Powerline:size=8:antialias=false
+! xterm*faceName: Meslo LG S DZ Regular for Powerline:size=10:antialias=true
+xterm*faceName: Source Code Pro Medium for Powerline:size=10:minspace=true
+! xterm*font: 5x8
+xterm*utf: on
+xterm*utf-8: on
+xterm*termName: xterm-256color
+!XTerm.scaleHeight: 0.6
+
+! Load theme
+#include "/home/thomas/.Xresources.Nine"
+
+! Style rofi (window switcher / application launcher)
+rofi.width: 20
+rofi.lines: 5
+rofi.columns: 1
+rofi.font: xos4 Terminess Powerline 10

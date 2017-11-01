@@ -3,9 +3,10 @@ execute pathogen#infect()
 " Vim UI settings
 set showmode				" display current mode
 set number relativenumber	" show hybrid relative line numbers
+set t_Co=256				" set 256 colors
 set background=dark
 colorscheme molokai
-set t_Co=256
+let g:airline_theme='qwq'
 
 " loose vi compatibility
 set nocompatible
@@ -13,7 +14,7 @@ set nocompatible
 " turn on syntax highlighting
 syntax on
 
-" show an EOL ruler ruler
+" show an EOL ruler 
 set ruler
 set showcmd			" show partial commands in status line
 					" and selected characters/lines in visual mode
@@ -50,8 +51,10 @@ set shiftwidth=4
 set autoindent
 
 " search settings
-set hlsearch			" highlight search terms
-set ignorecase			" case insensitive
+set hlsearch							" highlight search terms
+set ignorecase							" case insensitive
+nnoremap <CR> :noh<CR><CR>:<backspace>	" press enter to get rid of search
+										" results
 
 " scrolling
 set scrolljump=5		" lines to scroll when cursor leaves the screen
