@@ -17,5 +17,25 @@ xterm*color12:		rgb:41/86/be
 xterm*color13:		rgb:cf/9e/be
 xterm*color14:		rgb:71/be/be
 xterm*color15:		rgb:ff/ff/ff
-
 xterm*cursorColor: #d6d6d6
+
+
+URxvt*background:	#1a1a1a
+URxvt*foreground:	#d6d6d6
+URxvt*color0:		#000000
+URxvt*color1:		#9e1828
+URxvt*color2:		#008800
+URxvt*color3:		#968a38
+URxvt*color4:		#414171
+URxvt*color5:		#963c59
+URxvt*color6:		#418179
+URxvt*color7:		#bebebe
+URxvt*color8:		#666666
+URxvt*color9:		#cf6171
+URxvt*color10:		#7cbc8c
+URxvt*color11:		#fff796
+URxvt*color12:		#4186be
+URxvt*color13:		#cf9ebe
+URxvt*color14:		#71bebe
+URxvt*color15:		#ffffff
+

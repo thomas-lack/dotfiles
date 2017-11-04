@@ -2,19 +2,36 @@
 ! Best place is /etc/profile.d to assure that it is set before i3
 ! is loaded.
 
+
+! xterm section
+xterm*faceName: Source Code Pro Medium for Powerline:size=10:minspace=true
 ! xterm*faceName: xos4 Terminess Powerline:size=8:antialias=false
 ! xterm*faceName: Meslo LG S DZ Regular for Powerline:size=10:antialias=true
-xterm*faceName: Source Code Pro Medium for Powerline:size=10:minspace=true
 ! xterm*font: 5x8
 xterm*utf: on
 xterm*utf-8: on
 xterm*termName: xterm-256color
-!XTerm.scaleHeight: 0.6
+
+
+! urxvt section
+URxvt*font: xft:Source Code Pro for Powerline:pixelsize=13
+! URxvt*font: xft: Bitstream Vera Sans Mono:pixelsize=13
+! URxvt*font: xft:ProFont For Powerline:pixelsize=12
+! URxvt*font: xft:Fira Mono for Powerline:pixelsize=13
+! URxvt*font: xft:Hack:pixelsize=13
+! URxvt*font: xft:Space Mono for Powerline:pixelsize=13
+URxvt*letterSpace: 0
+URxvt*scrollBar: false
+URxvt*inheritPixmap: true
+URxvt*transparent: true
+URxvt*shading: 40
+
 
 ! Load theme
 #include "/home/thomas/.Xresources.Nine"
 
-! Style rofi (window switcher / application launcher)
+
+! rofi section (window switcher / application launcher)
 rofi.width: 20
 rofi.lines: 5
 rofi.columns: 1

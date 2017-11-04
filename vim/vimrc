@@ -6,7 +6,33 @@ set number relativenumber	" show hybrid relative line numbers
 set t_Co=256				" set 256 colors
 set background=dark
 colorscheme molokai
+
+" Airline settings
 let g:airline_theme='qwq'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+" Airline symbols
+let g:airline_symbols.space = "\ua0"
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " loose vi compatibility
 set nocompatible
@@ -46,8 +72,8 @@ set fileformats=unix,dos
 set lazyredraw
 
 " indentation settings
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set autoindent
 
 " search settings
@@ -62,3 +88,34 @@ set scrolloff=3			" minimum lines to keep above and below cursor
 
 " set number format always to decimal
 set nrformats=alpha
+
+" Buffers
+set hidden				" allow changing buffers with unsaved changes
+" show buffer list by pressing F5, select number to change buffer
+:nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" disable error sounds
+set noerrorbells
+
+" NERDtree
+" automatically close vim if only NERDtree is opened
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <F2> :NERDTreeToggle<CR> 
+
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+
+" vim-jsdoc
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_input_description = 1
+let g:jsdoc_underscore_private = 1
+let g:jsdoc_enable_es6 = 1
+
+" sytastic syntax checker settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
