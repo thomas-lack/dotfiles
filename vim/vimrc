@@ -5,10 +5,10 @@ set showmode				" display current mode
 set number relativenumber	" show hybrid relative line numbers
 set t_Co=256				" set 256 colors
 set background=dark
-colorscheme molokai
+colorscheme carvedwood
 
 " Airline settings
-let g:airline_theme='qwq'
+let g:airline_theme='wombat'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
@@ -92,13 +92,13 @@ set nrformats=alpha
 " Buffers
 set hidden				" allow changing buffers with unsaved changes
 " show buffer list by pressing F5, select number to change buffer
-:nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <F3> :buffers<CR>:buffer<Space>
 
 " disable error sounds
 set noerrorbells
 
-" NERDtree
-" automatically close vim if only NERDtree is opened
+" NERDTree
+" automatically close vim if only NERDTree is opened
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <F2> :NERDTreeToggle<CR> 
 
@@ -111,6 +111,9 @@ let g:jsdoc_input_description = 1
 let g:jsdoc_underscore_private = 1
 let g:jsdoc_enable_es6 = 1
 
+" tsuquyomi (typescript ide)
+let g:tsuquyomi_disable_quickfix = 1	" let syntastic do error rendering
+
 " sytastic syntax checker settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -119,3 +122,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_javascript_checkers = [ 'eslint', 'jshint' ]
+let g:syntastic_typescript_checkers = [ 'tsuquyomi' ]

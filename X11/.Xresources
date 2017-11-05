@@ -14,7 +14,7 @@ xterm*termName: xterm-256color
 
 
 ! urxvt section
-URxvt*font: xft:Source Code Pro for Powerline:pixelsize=13
+URxvt*font: xft:Source Code Pro Medium:pixelsize=13
 ! URxvt*font: xft: Bitstream Vera Sans Mono:pixelsize=13
 ! URxvt*font: xft:ProFont For Powerline:pixelsize=12
 ! URxvt*font: xft:Fira Mono for Powerline:pixelsize=13
@@ -24,7 +24,7 @@ URxvt*letterSpace: 0
 URxvt*scrollBar: false
 URxvt*inheritPixmap: true
 URxvt*transparent: true
-URxvt*shading: 40
+URxvt*shading: 20
 
 
 ! Load theme
