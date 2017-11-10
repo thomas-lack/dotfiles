@@ -17,7 +17,7 @@
     "editor.lineNumbers": "relative",
     "html.autoClosingTags": false,
     "tslint.autoFixOnSave": true,
-    "diffEditor.renderSideBySide": true,
+    "diffEditor.renderSideBySide": false,
     "extensions.autoUpdate": true,
     "explorer.openEditors.visible": 0,
     "workbench.activityBar.visible": true,
@@ -50,5 +50,6 @@
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f"
-    }
+    },
+    "window.nativeTabs": true
 }
