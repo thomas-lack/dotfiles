@@ -1,8 +1,14 @@
 execute pathogen#infect()
 
 " Vim backup settings
-set backupdir=$TMPDIR//
-set directory=$TMPDIR//
+if has("mac")
+  set backupdir=$TMPDIR//
+  set directory=$TMPDIR//
+endif
+if has("unix")
+  set backupdir=$HOME/.vim/swapfiles//
+  set directory=$HOME/.vim/swapfiles//
+endif
 
 " Vim UI settings
 set showmode				" display current mode
@@ -12,8 +18,10 @@ set background=dark
 colorscheme carvedwood
 
 " Vim GUI settings
-set gfn=FuraCode\ Nerd\ Font\ Mono:h13
-set anti
+if has("gui_macvim")
+  set guifont=FuraCode\ Nerd\ Font\ Mono:h13
+  set anti
+endif
 
 " Airline settings
 let g:airline_theme='wombat'
