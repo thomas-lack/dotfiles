@@ -1,11 +1,19 @@
 execute pathogen#infect()
 
+" Vim backup settings
+set backupdir=$TMPDIR//
+set directory=$TMPDIR//
+
 " Vim UI settings
 set showmode				" display current mode
 set number relativenumber	" show hybrid relative line numbers
 set t_Co=256				" set 256 colors
 set background=dark
 colorscheme carvedwood
+
+" Vim GUI settings
+set gfn=FuraCode\ Nerd\ Font\ Mono:h13
+set anti
 
 " Airline settings
 let g:airline_theme='wombat'
@@ -74,8 +82,10 @@ set fileformats=unix,dos
 set lazyredraw
 
 " indentation settings
-set tabstop=2
-set shiftwidth=2
+set tabstop=2				" the width of tabs is set to 2
+set shiftwidth=2		" indents will have a width of 2
+set softtabstop=2		" sets the # of columns for tabs
+set expandtab				" expand tabs to spaces
 set autoindent
 
 " search settings
@@ -85,8 +95,10 @@ nnoremap <CR> :noh<CR><CR>:<backspace>	" press enter to get rid of search
 										" results
 
 " scrolling
-set scrolljump=5		" lines to scroll when cursor leaves the screen
+set scrolljump=8		" lines to scroll when cursor leaves the screen
 set scrolloff=3			" minimum lines to keep above and below cursor
+set nocursorline
+set nocursorcolumn
 
 " set number format always to decimal
 set nrformats=alpha
@@ -103,6 +115,7 @@ set noerrorbells
 " automatically close vim if only NERDTree is opened
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <F2> :NERDTreeToggle<CR> 
+let g:NERDTreeWinSize=45
 
 " rainbow parentheses
 " let g:rbpt_loadcmd_toggle = 0
@@ -130,8 +143,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_javascript_checkers = [ 'eslint', 'jshint' ]
-let g:syntastic_typescript_checkers = [ 'tsuquyomi' ]
-let g:syntastic_typescript_tsc_fname = ''
+let g:syntastic_typescript_checkers = [ 'tslint', 'tsuquyomi' ]
 
 " ctrl-p file buffer settings
 let g:ctrlp_max_files = 0
