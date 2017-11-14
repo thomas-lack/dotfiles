@@ -1,7 +1,7 @@
 // Platzieren Sie Ihre Einstellungen in dieser Datei, um die Standardeinstellungen zu überschreiben.
 {
     "files.trimTrailingWhitespace": true,
-    "editor.fontFamily": "Fira Code, Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "FuraCode Nerd Font Mono, Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 12,
     "editor.fontWeight": "600",
     "editor.fontLigatures": true,
