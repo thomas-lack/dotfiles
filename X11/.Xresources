@@ -4,7 +4,8 @@
 
 
 ! xterm section
-xterm*faceName: Source Code Pro Medium for Powerline:size=10:minspace=true
+xterm*faceName: xft:SauceCodePro Nerd Font Mono:size=9
+! xterm*faceName: xft:TerminessTTF Nerd Font Mono:size=11:style=Medium
 ! xterm*faceName: xos4 Terminess Powerline:size=8:antialias=false
 ! xterm*faceName: Meslo LG S DZ Regular for Powerline:size=10:antialias=true
 ! xterm*font: 5x8
@@ -28,7 +29,7 @@ URxvt*shading: 20
 
 
 ! Load theme
-#include "/home/thomas/.Xresources.Nine"
+#include "/Users/lack/.Xresources.Nine"
 
 
 ! rofi section (window switcher / application launcher)

@@ -51,6 +51,9 @@ set nocompatible
 " turn on syntax highlighting
 syntax on
 
+" turn on mouse support
+set mouse=a
+
 " ruler settings
 set ruler
 set showcmd			" show partial commands in status line
@@ -108,8 +111,11 @@ set nrformats=alpha
 
 " Buffers
 set hidden				" allow changing buffers with unsaved changes
-" show buffer list by pressing F5, select number to change buffer
+" show buffer list by pressing F3, select number to change buffer
 nnoremap <F3> :buffers<CR>:buffer<Space>
+" navigate buffers with gt and gT
+nnoremap gt :bnext<CR>
+nnoremap gT :bprevious<CR>
 
 " disable error sounds
 set noerrorbells
