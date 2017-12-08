@@ -15,16 +15,17 @@ set showmode				" display current mode
 set number relativenumber	" show hybrid relative line numbers
 set t_Co=256				" set 256 colors
 set background=dark
-colorscheme carvedwood
+colorscheme badwolf
 
 " Vim GUI settings
-if has("gui_macvim")
-  set guifont=FuraCode\ Nerd\ Font\ Mono:h13
+if has("gui_running")
+  set macligatures
+  set guifont=FuraCode\ Nerd\ Font\ Mono:h12
   set anti
 endif
 
 " Airline settings
-let g:airline_theme='wombat'
+let g:airline_theme='badwolf'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
@@ -55,6 +56,9 @@ set nocompatible
 
 " turn on syntax highlighting
 syntax on
+
+" turn on mouse support
+set mouse=a
 
 " ruler settings
 set ruler
@@ -113,8 +117,11 @@ set nrformats=alpha
 
 " Buffers
 set hidden				" allow changing buffers with unsaved changes
-" show buffer list by pressing F5, select number to change buffer
+" show buffer list by pressing F3, select number to change buffer
 nnoremap <F3> :buffers<CR>:buffer<Space>
+" navigate buffers with gt and gT
+nnoremap gt :bnext<CR>
+nnoremap gT :bprevious<CR>
 
 " disable error sounds
 set noerrorbells
@@ -151,7 +158,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 let g:syntastic_javascript_checkers = [ 'eslint', 'jshint' ]
-let g:syntastic_typescript_checkers = [ 'tslint', 'tsuquyomi' ]
+if has("gui_running")
+  let g:syntastic_typescript_checkers = [ 'tslint' ]
+else
+  let g:syntastic_typescript_checkers = [ 'tslint', 'tsuquyomi' ]
+endif
 
 " ctrl-p file buffer settings
 let g:ctrlp_max_files = 0

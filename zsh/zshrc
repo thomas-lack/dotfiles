@@ -51,6 +51,7 @@ alias .....='cd ../../../..'
 alias v4='cd ~/var/importexport/import/import_csv_generic/Tools/create_stub/v4'
 alias cmms='cd ~/var/CMMS/cmms-frontend'
 alias workspace='cd ~/var/workspace/cmms/cmms-frontend'
+alias cdb='cd ~/var/skygate_cdb'
 
 # grep with color
 alias grep='grep --color=auto'
