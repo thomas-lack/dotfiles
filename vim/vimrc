@@ -15,7 +15,7 @@ set showmode				" display current mode
 set number relativenumber	" show hybrid relative line numbers
 set t_Co=256				" set 256 colors
 set background=dark
-colorscheme badwolf
+colorscheme darkocean
 
 " Vim GUI settings
 if has("gui_running")
@@ -56,6 +56,9 @@ set nocompatible
 
 " turn on syntax highlighting
 syntax on
+
+" set clipboard as default register
+set clipboard=unnamed
 
 " turn on mouse support
 set mouse=a
