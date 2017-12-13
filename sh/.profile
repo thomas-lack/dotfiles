@@ -1,9 +1,15 @@
-# set java home environment
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-export PATH=$JAVA_HOME/bin:$PATH
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# add additional path informations
-export PATH="$PATH:/Users/lack/bin:$HOME/.cargo/bin:/usr/local/bin:$HOME/bin:$HOME/.local/bin"
+PS1='[\u@\h \W]\$ '
+
+# SSH section
+eval $(keychain --eval --quiet --agents ssh id_rsa) 
+
+# set environment variables
+export XENVIRONMENT="${HOME}/.Xresources"
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH="$PATH:$JAVA_HOME:/Users/lack/bin:$HOME/.cargo/bin:/usr/local/bin:$HOME/bin:$HOME/.local/bin"
 
 # include alias definitions from .aliasrc
 if [[ -r ~/.aliasrc ]]; then
