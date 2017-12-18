@@ -58,7 +58,7 @@ set nocompatible
 syntax on
 
 " set clipboard as default register
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " turn on mouse support
 set mouse=a
@@ -150,13 +150,14 @@ let g:jsdoc_enable_es6 = 1
 
 " tsuquyomi (typescript ide)
 let g:tsuquyomi_disable_quickfix = 1	" let syntastic do error rendering
+nnoremap gd :TsuDefinition<CR>        " goto definition in typescript
 
 " sytastic syntax checker settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
@@ -164,7 +165,7 @@ let g:syntastic_javascript_checkers = [ 'eslint', 'jshint' ]
 if has("gui_running")
   let g:syntastic_typescript_checkers = [ 'tslint' ]
 else
-  let g:syntastic_typescript_checkers = [ 'tslint', 'tsuquyomi' ]
+  let g:syntastic_typescript_checkers = [ 'tsuquyomi' ]
 endif
 
 " ctrl-p file buffer settings
