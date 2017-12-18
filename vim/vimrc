@@ -123,8 +123,13 @@ set hidden				" allow changing buffers with unsaved changes
 " show buffer list by pressing F3, select number to change buffer
 nnoremap <F3> :buffers<CR>:buffer<Space>
 " navigate buffers with gt and gT
-nnoremap gt :bnext<CR>
-nnoremap gT :bprevious<CR>
+
+" Split window navigation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap , <C-w><C-w>
 
 " disable error sounds
 set noerrorbells
