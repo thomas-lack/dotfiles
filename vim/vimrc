@@ -58,7 +58,7 @@ set nocompatible
 syntax on
 
 " set clipboard as default register
-"set clipboard=unnamed
+set clipboard=unnamed
 
 " turn on mouse support
 set mouse=a
