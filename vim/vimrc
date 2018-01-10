@@ -58,7 +58,7 @@ set nocompatible
 syntax on
 
 " set clipboard as default register
-"set clipboard=unnamed
+set clipboard=unnamed
 
 " turn on mouse support
 set mouse=a
@@ -156,6 +156,7 @@ let g:jsdoc_enable_es6 = 1
 " tsuquyomi (typescript ide)
 let g:tsuquyomi_disable_quickfix = 1	" let syntastic do error rendering
 nnoremap gd :TsuDefinition<CR>        " goto definition in typescript
+nnoremap gb :brewind<CR>              " goto last opened buffer      
 
 " sytastic syntax checker settings
 set statusline+=%#warningmsg#
