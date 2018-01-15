@@ -25,6 +25,7 @@ PLUGINLIST=(
     https://github.com/scrooloose/nerdcommenter.git
     https://github.com/vim-IDE/MatchTagAlways
     https://github.com/Townk/vim-autoclose
+    https://github.com/luochen1990/rainbow
   )
   
 # create necessaryt clone https://github.com/scrooloose/nerdcommenter.git vim folders if not available

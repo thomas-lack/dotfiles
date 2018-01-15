@@ -147,8 +147,7 @@ map <F2> :NERDTreeToggle<CR>
 let g:NERDTreeWinSize=45
 
 " rainbow parentheses
-" let g:rbpt_loadcmd_toggle = 0
-" let g:rbpt_max = 16
+let g:rainbow_active = 1
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
