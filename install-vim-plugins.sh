@@ -21,10 +21,11 @@ PLUGINLIST=(
     https://github.com/pangloss/vim-javascript
     https://github.com/heavenshell/vim-jsdoc
     https://github.com/tpope/vim-surround
-    https://github.com/Valloric/YouCompleteMe
+    https://github.com/Valloric/YouComplete
+    https://github.com/scrooloose/nerdcommenter.git
   )
   
-# create necessary vim folders if not available
+# create necessaryt clone https://github.com/scrooloose/nerdcommenter.git vim folders if not available
 mkdir -p ~/.vim/autoload
 mkdir -p ~/.vim/bundle
 

@@ -51,6 +51,9 @@ let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" define <leader> key
+let mapleader = "\\"
+
 " loose vi compatibility
 set nocompatible
 
@@ -79,6 +82,9 @@ set wrap linebreak nolist
 filetype on
 filetype plugin on
 filetype indent on
+
+" show the current command in the lower right corner
+set showcmd
 
 " reload files changed outside vim
 set autoread
