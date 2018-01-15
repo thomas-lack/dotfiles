@@ -21,8 +21,10 @@ PLUGINLIST=(
     https://github.com/pangloss/vim-javascript
     https://github.com/heavenshell/vim-jsdoc
     https://github.com/tpope/vim-surround
-    https://github.com/Valloric/YouComplete
+    https://github.com/Valloric/YouCompleteMe
     https://github.com/scrooloose/nerdcommenter.git
+    https://github.com/vim-IDE/MatchTagAlways
+    https://github.com/Townk/vim-autoclose
   )
   
 # create necessaryt clone https://github.com/scrooloose/nerdcommenter.git vim folders if not available
