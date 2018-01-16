@@ -15,7 +15,7 @@ set showmode				" display current mode
 set number relativenumber	" show hybrid relative line numbers
 set t_Co=256				" set 256 colors
 set background=dark
-colorscheme darkocean
+colorscheme lack
 
 " Vim GUI settings
 if has("gui_running")
@@ -148,6 +148,13 @@ let g:NERDTreeWinSize=45
 
 " rainbow parentheses
 let g:rainbow_active = 1
+
+" closetag
+let g:closetag_filenames = '*.html, *.xhtml, *.jsx, *.xml'
+let g:closetag_xhtml_filenames = '*.xhtml, *.jsx, *.xmlcs'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1

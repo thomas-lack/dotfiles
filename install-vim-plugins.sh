@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 PLUGINLIST=(
     https://github.com/alvan/vim-closetag
     https://github.com/ctrlpvim/ctrlp.vim
@@ -42,3 +44,6 @@ do
   git clone $i
 done
 
+# link personal color scheme into colorscheme folder
+ln -sf  $DOTFILES/vim/colors/lack.vim ~/.vim/bundle/vim-colorschemes/colors/lack.vim 
+ln -sf  $DOTFILES/vim/colors/lack-solid.vim ~/.vim/bundle/vim-colorschemes/colors/lack-solid.vim 
