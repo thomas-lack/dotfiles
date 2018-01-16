@@ -54,6 +54,9 @@ let g:airline_symbols.whitespace = 'Ξ'
 " define <leader> key
 let mapleader = "\\"
 
+" reduce timeout length for a snappier ESC key
+set timeoutlen=100 ttimeoutlen=0
+
 " loose vi compatibility
 set nocompatible
 

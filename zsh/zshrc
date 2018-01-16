@@ -27,6 +27,9 @@ antigen apply
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
 
+# 10ms for key sequences
+KEYTIMEOUT=1
+
 # include alias definitions from .aliasrc
 if [[ -r ~/.aliasrc ]]; then
    . ~/.aliasrc   
