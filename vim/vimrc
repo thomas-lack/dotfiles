@@ -131,7 +131,9 @@ set nrformats=alpha
 set hidden				" allow changing buffers with unsaved changes
 " show buffer list by pressing F3, select number to change buffer
 nnoremap <F3> :buffers<CR>:buffer<Space>
-" navigate buffers with gt and gT
+" create split buffers with \v and \h
+nnoremap <leader>v <C-w>v
+nnoremap <leader>h <C-w>s
 
 " Split window navigation
 nmap <C-h> <C-w>h
@@ -196,3 +198,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|target'
 
 " bufkill settings
 map <C-c> :BD<cr>				" map Ctrl-c to close the current buffer
+
+" vim-javacomplete2 settings
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
