@@ -9,7 +9,7 @@ case "$(uname -s)" in
   Darwin)
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     export PATH="$PATH:$JAVA_HOME"
-    export PATH="/usr/local/sbin:/usr/local/bin:$PATH:/Users/lack/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin"
+    export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/Users/lack/bin:$PATH"
     ;;
 
   Linux)

@@ -115,14 +115,21 @@ set autoindent
 " search settings
 set hlsearch							" highlight search terms
 set ignorecase							" case insensitive
-nnoremap <CR> :noh<CR><CR>:<backspace>	" press enter to get rid of search
-										" results
+nnoremap <CR> :noh<CR><CR>:<backspace>	" press enter to get rid of search results
 
 " scrolling
 set scrolljump=8		" lines to scroll when cursor leaves the screen
 set scrolloff=3			" minimum lines to keep above and below cursor
 set nocursorline
 set nocursorcolumn
+
+" folding in xml files
+"augroup XML
+  "autocmd!
+  "autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
+"augroup END
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
 
 " set number format always to decimal
 set nrformats=alpha
