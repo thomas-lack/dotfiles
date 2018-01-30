@@ -124,12 +124,9 @@ set nocursorline
 set nocursorcolumn
 
 " folding in xml files
-"augroup XML
-  "autocmd!
-  "autocmd FileType xml setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
-"augroup END
-let g:xml_syntax_folding=1
-au FileType xml setlocal foldmethod=syntax
+set foldmethod=syntax
+set foldlevel=4
+set foldlevelstart=20
 
 " set number format always to decimal
 set nrformats=alpha
