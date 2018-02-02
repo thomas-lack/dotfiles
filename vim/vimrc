@@ -120,7 +120,9 @@ nnoremap <CR> :noh<CR><CR>:<backspace>	" press enter to get rid of search result
 " scrolling
 set scrolljump=8		" lines to scroll when cursor leaves the screen
 set scrolloff=3			" minimum lines to keep above and below cursor
-set nocursorline
+
+" show current cursor position
+set cursorline
 set nocursorcolumn
 
 " folding in xml files
