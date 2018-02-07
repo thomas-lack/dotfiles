@@ -29,7 +29,7 @@ URxvt*shading: 20
 
 
 ! Load theme
-#include "/Users/lack/.Xresources.Nine"
+#include ".Xresources.Nine"
 
 
 ! rofi section (window switcher / application launcher)

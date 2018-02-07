@@ -1,6 +1,6 @@
 # ls alias for color-mode
-alias ls="ls -hG"
-alias ll="ls -lhaG"
+alias ls="ls -hG --color=auto"
+alias ll="ls -lhaG --color=auto"
 
 # up 'n' folders
 alias ..='cd ..'
