@@ -4,3 +4,6 @@
 
 # Redo last feh desktop background command
 ~/.fehbg &
+
+# Adjusting typematic delay and rate
+xset r rate 200 30
