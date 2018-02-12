@@ -89,9 +89,6 @@ filetype indent on
 " show the current command in the lower right corner
 set showcmd
 
-" reload files changed outside vim
-set autoread
-
 " encoding is utf-8
 set encoding=utf-8
 set fileencoding=utf-8
@@ -121,8 +118,8 @@ nnoremap <CR> :noh<CR><CR>:<backspace>	" press enter to get rid of search result
 set scrolljump=8		" lines to scroll when cursor leaves the screen
 set scrolloff=3			" minimum lines to keep above and below cursor
 
-" show current cursor position
-set cursorline
+" do not show current cursor position because of speed issues
+set nocursorline
 set nocursorcolumn
 
 " folding in xml files
@@ -140,6 +137,10 @@ nnoremap <F3> :buffers<CR>:buffer<Space>
 " create split buffers with \v and \h
 nnoremap <leader>v <C-w>v
 nnoremap <leader>h <C-w>s
+" reload buffers if changed outside of vim, do so at least if focussing on a
+" buffer
+set autoread
+autocmd FocusGained * checktime
 
 " Split window navigation
 nmap <C-h> <C-w>h
