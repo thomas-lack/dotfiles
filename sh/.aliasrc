@@ -1,6 +1,21 @@
-# ls alias for color-mode
-alias ls="ls -hG --color=auto"
-alias ll="ls -lhaG --color=auto"
+os="$(uname -s)"
+case "${os}" in
+  Linux*)
+    # ls alias for color-mode
+    alias ls="ls -h --color=auto"
+    alias ll="ls -lha --color=auto"
+    ;;
+  Darwin*)
+    # ls alias for color-mode
+    alias ls="ls -hG"
+    alias ll="ls -lhaG"
+
+    # lock computer
+    alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+    ;;
+  *)
+    ;;
+esac
 
 # up 'n' folders
 alias ..='cd ..'
@@ -23,9 +38,6 @@ alias green='green -width=785 -fit=width'
 # webpack (dev server) with output
 alias webpack-dev-server='./node_modules/.bin/webpack-dev-server --progress --colors'
 alias webpack='./node_modules/.bin/webpack --progress --colors --display-error-details'
-
-# lock computer
-alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
 # refresh shell
 alias reload='source ~/.bash_profile'
