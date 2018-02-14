@@ -4,6 +4,7 @@ export DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 PLUGINLIST=(
     https://github.com/alvan/vim-closetag
+    https://github.com/Raimondi/delimitMate
     https://github.com/ctrlpvim/ctrlp.vim
     https://github.com/editorconfig/editorconfig-vim
     https://github.com/morhetz/gruvbox
@@ -26,7 +27,6 @@ PLUGINLIST=(
     https://github.com/Valloric/YouCompleteMe
     https://github.com/scrooloose/nerdcommenter.git
     https://github.com/vim-IDE/MatchTagAlways
-    https://github.com/Townk/vim-autoclose
     https://github.com/luochen1990/rainbow
     https://github.com/artur-shaik/vim-javacomplete2.git
   )

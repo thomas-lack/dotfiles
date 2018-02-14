@@ -56,6 +56,8 @@ let mapleader = "\\"
 
 " reduce timeout length for a snappier ESC key
 set timeoutlen=100 ttimeoutlen=0
+set notimeout
+set ttimeout
 
 " loose vi compatibility
 set nocompatible
@@ -148,6 +150,7 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap , <C-w><C-w>
+nmap <Tab> <C-w><C-w>
 
 " disable error sounds
 set noerrorbells
