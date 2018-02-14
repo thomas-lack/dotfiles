@@ -1,0 +1,50 @@
+# include personal path extensions and aliases
+source ~/.profile
+
+# 10ms for key sequences
+KEYTIMEOUT=1
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory autocd nomatch notify
+unsetopt beep extendedglob
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/lack/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# History search with arrow keys and vim keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# plugin section, managed by zplug
+source ~/.zplug/init.zsh
+
+# Can manage local plugins
+zplug "~/.zsh", from:local
+zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/npm", from:oh-my-zsh
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Load theme file
+# acceptable: duellj, ys, af-magic, best: sunrise
+zplug "themes/sunrise", from:oh-my-zsh
+
+if ! zplug check; then
+  zplug install
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load
