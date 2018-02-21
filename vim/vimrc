@@ -122,6 +122,9 @@ set scrolloff=3			" minimum lines to keep above and below cursor
 nnoremap J 10jzz
 nnoremap K 10kzz
 
+" map ; to "write ; at end of line"
+nnoremap ; A;<ESC>
+
 " do not show current cursor position because of speed issues
 set nocursorline
 set nocursorcolumn
@@ -250,3 +253,7 @@ endif
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+
+" EasyMotion settings
+map <Space> <Plug>(easymotion-bd-w)
+nmap <Space> <Plug>(easymotion-overwin-w)
