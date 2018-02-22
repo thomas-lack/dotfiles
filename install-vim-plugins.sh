@@ -32,7 +32,6 @@ PLUGINLIST=(
     https://github.com/artur-shaik/vim-javacomplete2.git
     https://github.com/vim-scripts/SearchComplete
     https://github.com/SirVer/ultisnips
-    https://github.com/easymotion/vim-easymotion
   )
   
 # create necessaryt clone https://github.com/scrooloose/nerdcommenter.git vim folders if not available

@@ -1,16 +1,21 @@
 snippet fn "complete lambda function"
 (($1) => {
 	$2
-});
-$0
+});$0
 endsnippet
 
 snippet log "console.log"
-console.log('${1:log message}', ${2:log variable(s)});$0
+console.log('${1:log variable}', $1);$0
 endsnippet
 
 snippet sub "RxJS subscribe"
 .subscribe(($1) => {
+	$2
+})$0
+endsnippet
+
+snippet map "RxJS / Array map"
+.map($1 => {
 	$2
 })$0
 endsnippet
