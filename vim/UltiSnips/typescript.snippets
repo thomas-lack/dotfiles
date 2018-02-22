@@ -45,3 +45,14 @@ endsnippet
 snippet imp "Import statement"
 import { $2 } from '$1';$0
 endsnippet
+
+snippet it "Jasmine: it statement"
+it('should ${1:test condition}', () => {
+	$2
+	expect();
+});$0
+endsnippet
+
+snippet spy "Jasmine: spyOn statement"
+spyOn((${1:(<any>component).}, '$2');
+endsnippet
