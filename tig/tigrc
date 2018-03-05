@@ -1,0 +1,7 @@
+set line-graphics = utf-8
+set tab-size = 2
+set reference-format = (branch) <tag>
+set commit-order = topo
+
+set main-view = line-number:no,interval=5 id:yes date:relative-compact author:abbreviated commit-title:yes,graph,refs,overflow=80
+set blame-view  = date:relative-compact author:abbreviated file-name:auto id:yes,color line-number:yes,interval=1 text
