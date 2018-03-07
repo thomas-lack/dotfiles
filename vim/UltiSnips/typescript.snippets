@@ -4,6 +4,12 @@ snippet fn "complete lambda function"
 });$0
 endsnippet
 
+snippet ff "minimal lambda function"
+($1) => {
+	$0
+}
+endsnippet
+
 snippet log "console.log"
 console.log('${1:log variable}', $1);$0
 endsnippet
@@ -49,6 +55,10 @@ endsnippet
 
 snippet imp "Import statement"
 import { $2 } from '$1';$0
+endsnippet
+
+snippet exp "Export statement"
+export { $2 } from '$1';$0
 endsnippet
 
 snippet it "Jasmine: it statement"
