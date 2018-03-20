@@ -26,6 +26,13 @@ if [[ -r ~/.aliasrc ]]; then
    . ~/.aliasrc   
 fi
 
+# load highlighting helper function h
+# source: https://github.com/paoloantinori/hhighlighter 
+HIGHLIGHTHELPER="./dotfiles/sh/scripts/h.sh"
+if [ -f $HIGHLIGHTHELPER ]; then
+. $HIGHLIGHTHELPER
+fi
+
 # start tmux if not already running
 if [ -z "$TMUX" ]
 then
