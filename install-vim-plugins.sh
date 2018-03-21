@@ -33,6 +33,7 @@ PLUGINLIST=(
     https://github.com/vim-scripts/SearchComplete
     https://github.com/SirVer/ultisnips
     https://github.com/gko/vim-coloresque
+    https://github.com/prettier/vim-prettier
   )
   
 # create necessaryt clone https://github.com/scrooloose/nerdcommenter.git vim folders if not available
