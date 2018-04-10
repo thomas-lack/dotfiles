@@ -15,7 +15,7 @@ set showmode				" display current mode
 set number relativenumber	" show hybrid relative line numbers
 set t_Co=256				" set 256 colors
 set background=dark
-colorscheme lack
+colorscheme gruvbox
 
 " Vim GUI settings
 if has("gui_running")
@@ -75,8 +75,9 @@ set mouse=a
 set ruler
 set showcmd			" show partial commands in status line
 								" and selected characters/lines in visual mode
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%101v', 255)
+"highlight ColorColumn ctermbg=magenta
+"call matchadd('ColorColumn', '\%101v', 255)
+set colorcolumn=100
 
 " do not break words on linebreak and indent automatically if linebreaking in
 " tags
