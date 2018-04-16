@@ -13,11 +13,12 @@ PLUGINLIST=(
     https://github.com/Raimondi/delimitMate
     https://github.com/ctrlpvim/ctrlp.vim
     https://github.com/editorconfig/editorconfig-vim
+    https://github.com/NLKNguyen/papercolor-theme
     https://github.com/morhetz/gruvbox
     https://github.com/othree/html5.vim
     https://github.com/kien/rainbow_parentheses.vim
     https://github.com/vim-syntastic/syntastic
-    https://github.com/leafgarland/typescript-vim
+    #https://github.com/leafgarland/typescript-vim
     https://github.com/vim-airline/vim-airline
     https://github.com/vim-airline/vim-airline-themes
     https://github.com/qpkorr/vim-bufkill
@@ -34,6 +35,7 @@ PLUGINLIST=(
     https://github.com/SirVer/ultisnips
     https://github.com/gko/vim-coloresque
     https://github.com/prettier/vim-prettier
+    https://github.com/HerringtonDarkholme/yats.vim
   )
   
 # create necessaryt clone https://github.com/scrooloose/nerdcommenter.git vim folders if not available
