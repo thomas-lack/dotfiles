@@ -76,13 +76,50 @@ snippet comp "Angular component"
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'cmms-${2:Component selector}',  
-	templateUrl: './${1:Component file name}.component.html',  
+	selector: 'cmms-${2:ComponentSelector}',  
+	templateUrl: './${1:ComponentFileName}.component.html',  
 	styleUrls: [ './$1.component.css' ]
 }) 
-export class ${3:Component class name}Component implements OnInit {  
+export class ${3:ComponentClassName}Component implements OnInit {  
 	constructor() { }  
 	
 	ngOnInit() { }
 }$0
+endsnippet
+
+snippet spec "Jasmine spec"
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+import { $1 } from './';
+
+describe('${1:ComponentClassName}', () => {
+	let component: $1;
+	let fixture: ComponentFixture<$1>;
+
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			imports: [
+
+			],
+			declarations: [
+				$1
+			],
+			providers: [
+			
+			],
+			schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+		});
+	}));
+
+	beforeEach(() => {
+		fixture = TestBed.createComponent($1);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
+
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
+});$0
 endsnippet
