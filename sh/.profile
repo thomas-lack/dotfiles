@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-PS1='[\u@\h \W]\$ '
+#PS1='[\u@\h \W]\$ '
 
 # Set os specific environment settings
 case "$(uname -s)" in
@@ -9,7 +9,7 @@ case "$(uname -s)" in
   Darwin*)
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     export PATH="$PATH:$JAVA_HOME"
-    export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/Users/lack/bin:$PATH"
+    export PATH="/usr/local/sbin:/usr/local/bin:$HOME/bin:$HOME/.cargo/bin:$HOME/.local/bin:/Users/lack/bin:$PATH"
     ;;
 
   Linux*)
