@@ -10,46 +10,15 @@ if has("unix")
   set directory=$HOME/.vim/swapfiles//
 endif
 
-" Vim UI settings
-set showmode				" display current mode
-set number relativenumber	" show hybrid relative line numbers
-set t_Co=256				" set 256 colors
-set background=dark
-colorscheme gruvbox
-
-" Vim GUI settings
-if has("gui_running")
-  set macligatures
-  set guifont=FuraCode\ Nerd\ Font\ Mono:h12
-  set anti
-endif
-
-" Airline settings
-let g:airline_theme='gruvbox'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-" Airline symbols
-let g:airline_symbols.space = "\ua0"
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
+" statusline settings
+set laststatus=2 " statusline below every buffer
+"set statusline=%n:
+"set statusline+=\ %.40F
+"set statusline+=%=
+"set statusline+=%l/%L
+"set statusline+=\ %3c
+"set statusline+=%#warningmsg#
+"set statusline+=%*
 
 " define <leader> key
 let mapleader = "\\"
@@ -149,13 +118,14 @@ nnoremap <leader>h <C-w>s
 " buffer
 set autoread
 au FocusGained,BufEnter * :checktime
+nnoremap bn :bnext<CR>
+nnoremap bp :bprevious<CR>
 
 " Split window navigation
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
-nmap , <C-w><C-w>
 nmap <Tab> <C-w><C-w>
 nmap <S-Tab> <C-w><C-p>
 
@@ -188,27 +158,11 @@ let g:jsdoc_underscore_private = 1
 let g:jsdoc_enable_es6 = 1
 
 " tsuquyomi (typescript ide)
-let g:tsuquyomi_disable_quickfix = 1	" let syntastic do error rendering
+let g:tsuquyomi_disable_quickfix = 1	" let ALE do error rendering
 let g:tsuquyomi_single_quote_import = 1
 nmap gd <C-]>   " calls :TsuDefinition, goto definition
 nmap gb <C-t>   " goto last call of :TsuDefinition
 nnoremap <leader>i :TsuImport<CR>
-
-" sytastic syntax checker settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-let g:syntastic_javascript_checkers = [ 'eslint', 'jshint' ]
-if has("gui_running")
-  let g:syntastic_typescript_checkers = [ 'tslint' ]
-else
-  let g:syntastic_typescript_checkers = [ 'tsuquyomi' ]
-endif
 
 " ctrl-p file buffer settings
 let g:ctrlp_max_files = 0
@@ -255,4 +209,72 @@ endif
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+
+" lightline settings
+let g:lightline = {
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ], [ 'filename' ] ],
+  \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ], [ 'lineinfo' ], [ 'percent' ], [ 'fileencoding' ] ]
+  \ },
+  \ 'component_function': {
+  \   'modified': 'LightlineModified',
+  \   'readonly': 'LightlineReadonly',
+  \   'fileformat': 'LightlineFileformat',
+  \   'filetype': 'LightlineFiletype',
+  \   'mode': 'LightlineMode'
+  \ },
+  \ 'component_expand': {
+  \   'linter_checking': 'lightline#ale#checking',
+  \   'linter_warnings': 'lightline#ale#warnings',
+  \   'linter_errors': 'lightline#ale#errors',
+  \   'linter_ok': 'lightline#ale#ok'
+  \ },
+  \ 'component_type': {
+  \   'linter_checking': 'left',
+  \   'linter_warnings': 'warning',
+  \   'linter_errors': 'error',
+  \   'linter_ok': 'left'
+  \ },
+  \ 'subseparator': { 'left': '|', 'right': '|' }
+  \ }
+
+
+function! LightlineModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineReadonly()
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineMode()
+  let fname = expand('%:t')
+  return fname == 'ControlP' ? 'CtrlP' :
+    \ fname =~ 'NERD_tree' ? 'NERDTree' :
+    \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+" Set Vim UI settings at the end of the file to prevent other addons to
+" overwrite those settings
+" Vim UI settings
+set noshowmode				" do not display current mode (lightline does this)
+set number relativenumber	" show hybrid relative line numbers
+set t_Co=256				" set 256 colors
+set background=dark
+colorscheme gruvbox
+
+" Vim GUI settings
+if has("gui_running")
+  set macligatures
+  set guifont=FuraCode\ Nerd\ Font\ Mono:h12
+  set anti
+endif
 

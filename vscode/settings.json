@@ -1,8 +1,9 @@
 // Platzieren Sie Ihre Einstellungen in dieser Datei, um die Standardeinstellungen zu überschreiben.
 {
+    "telemetry.enableCrashReporter": false,
     "files.trimTrailingWhitespace": true,
     "editor.fontFamily": "FuraCode Nerd Font Mono, Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 12,
+    "editor.fontSize": 13,
     "editor.fontWeight": "600",
     "editor.fontLigatures": true,
     "workbench.fontAliasing": "antialiased",
