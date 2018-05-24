@@ -21,7 +21,7 @@ set laststatus=2 " statusline below every buffer
 "set statusline+=%*
 
 " define <leader> key
-let mapleader = "\\"
+let mapleader = " "
 
 " reduce timeout length for a snappier ESC key
 set timeoutlen=100 ttimeoutlen=0
@@ -48,10 +48,10 @@ set showcmd			" show partial commands in status line
 "call matchadd('ColorColumn', '\%101v', 255)
 set colorcolumn=100
 
-" do not break words on linebreak and indent automatically if linebreaking in
-" tags
+" do not break words on linebreak and indent automatically if linebreaking in tags
 set breakindent
 set wrap linebreak nolist
+set showbreak="@"
 
 " make vim try to detect file types and load plugins for them
 filetype on
@@ -110,12 +110,12 @@ set nrformats=alpha
 " Buffers
 set hidden				" allow changing buffers with unsaved changes
 " show buffer list by pressing F3, select number to change buffer
+nnoremap <leader>3 :buffers<CR>:buffer<Space>
 nnoremap <F3> :buffers<CR>:buffer<Space>
 " create split buffers with \v and \h
 nnoremap <leader>v <C-w>v
 nnoremap <leader>h <C-w>s
-" reload buffers if changed outside of vim, do so at least if focussing on a
-" buffer
+" reload buffers if changed outside of vim, do so at least if focussing on a buffer
 set autoread
 au FocusGained,BufEnter * :checktime
 nnoremap bn :bnext<CR>
@@ -130,11 +130,12 @@ nmap <Tab> <C-w><C-w>
 nmap <S-Tab> <C-w><C-p>
 
 " disable error sounds
-set noerrorbells
+set noerrorbells visualbell t_vb=
 
 " NERDTree
 " automatically close vim if only NERDTree is opened
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <leader>2 :NERDTreeToggle<CR> 
 map <F2> :NERDTreeToggle<CR> 
 let g:NERDTreeWinSize=45
 
@@ -209,6 +210,19 @@ endif
 
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " <C-R>=g:UltiSnips_Reverse()<cr>"
+
+" Ale syntax checker settings
+augroup Ale
+  autocmd!
+  set updatetime=1000
+  autocmd CursorHold * call ale#Lint()
+  autocmd InsertLeave * call ale#Lint()
+augroup END
+
+" FZF fuzzy finder
+let g:fzf_command_prefix="Fzf"
+nnoremap <leader>t :FZF<CR>
+nnoremap <leader>b :FzfBuffers<CR>
 
 " lightline settings
 let g:lightline = {

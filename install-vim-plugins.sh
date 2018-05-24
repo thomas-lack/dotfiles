@@ -11,17 +11,13 @@ PLUGINLIST=(
     https://github.com/airblade/vim-gitgutter
     https://github.com/alvan/vim-closetag
     https://github.com/Raimondi/delimitMate
-    https://github.com/ctrlpvim/ctrlp.vim
     https://github.com/editorconfig/editorconfig-vim
     https://github.com/NLKNguyen/papercolor-theme
     https://github.com/morhetz/gruvbox
     https://github.com/othree/html5.vim
     https://github.com/kien/rainbow_parentheses.vim
     https://github.com/w0rp/ale
-    #https://github.com/vim-syntastic/syntastic
-    #https://github.com/leafgarland/typescript-vim
-    #https://github.com/vim-airline/vim-airline
-    #https://github.com/vim-airline/vim-airline-themes
+    https://github.com/junegunn/fzf.vim
     https://github.com/itchyny/lightline.vim
     https://github.com/maximbaz/lightline-ale
     https://github.com/qpkorr/vim-bufkill
