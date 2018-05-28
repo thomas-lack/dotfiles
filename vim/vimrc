@@ -220,6 +220,7 @@ augroup Ale
 augroup END
 
 " FZF fuzzy finder
+set rtp+=/usr/local/opt/fzf
 let g:fzf_command_prefix="Fzf"
 nnoremap <leader>t :FZF<CR>
 nnoremap <leader>b :FzfBuffers<CR>
