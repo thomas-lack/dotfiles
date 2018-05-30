@@ -85,6 +85,8 @@ set autoindent
 set hlsearch							" highlight search terms
 set ignorecase							" case insensitive
 nnoremap <CR> :noh<CR><CR>:<backspace>	" press enter to get rid of search results
+nnoremap n nzz      
+nnoremap N Nzz
 
 " scrolling
 set scrolljump=8		" lines to scroll when cursor leaves the screen
