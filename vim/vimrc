@@ -120,8 +120,8 @@ nnoremap <leader>h <C-w>s
 " reload buffers if changed outside of vim, do so at least if focussing on a buffer
 set autoread
 au FocusGained,BufEnter * :checktime
-nnoremap bn :bnext<CR>
-nnoremap bp :bprevious<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
 
 " Split window navigation
 nmap <C-h> <C-w>h
