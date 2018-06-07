@@ -32,6 +32,9 @@ alias grep='grep --color=auto'
 # tig with all branches
 alias tig='tig --all'
 
+# get all files changed in the current branch compared to the branch 'develop'
+alias changes='git diff --name-only develop `git name-rev --name-only HEAD`'
+
 # green pdf reader with i3 compatible width settings
 alias green='green -width=785 -fit=width'
 
