@@ -16,6 +16,7 @@ PLUGINLIST=(
     https://github.com/morhetz/gruvbox
     https://github.com/othree/html5.vim
     https://github.com/kien/rainbow_parentheses.vim
+    https://github.com/easymotion/vim-easymotion
     https://github.com/w0rp/ale
     https://github.com/junegunn/fzf.vim
     https://github.com/itchyny/lightline.vim
