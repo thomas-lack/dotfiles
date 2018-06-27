@@ -22,6 +22,9 @@ case "$(uname -s)" in
     ;;
 esac
 
+# set os independent environment settings
+export VISUAL="vim"
+
 # include alias definitions from .aliasrc
 if [[ -r ~/.aliasrc ]]; then
    . ~/.aliasrc   
