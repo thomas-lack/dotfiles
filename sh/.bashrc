@@ -5,3 +5,5 @@ fi
 
 # include highlighting helper "h"
 . ~/dotfiles/sh/scripts/h.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

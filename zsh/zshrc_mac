@@ -33,6 +33,7 @@ source ~/.zplug/init.zsh
 zplug "~/.zsh", from:local
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/git-flow", from:oh-my-zsh
 zplug "plugins/npm", from:oh-my-zsh
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
@@ -48,3 +49,5 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
