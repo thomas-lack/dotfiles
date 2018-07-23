@@ -24,7 +24,7 @@
     "workbench.activityBar.visible": true,
     "workbench.iconTheme": "material-icon-theme",
     "terminal.integrated.shell.osx": "/bin/zsh",
-    "terminal.integrated.fontFamily": "'SourceCodePro+Powerline+Awesome Regular'",
+    "terminal.integrated.fontFamily": "'SauceCodePro Nerd Font Mono'",
     "terminal.integrated.fontSize": 12,
     "search.exclude": {
         "**/node_modules": true,
@@ -33,9 +33,6 @@
         "**/coverage": true
     },
     "path-intellisense.autoSlashAfterDirectory": true,
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/",
-    "java.errors.incompleteClasspath.severity": "ignore",
-    "vim.disableAnnoyingNeovimMessage": true,
     "vim.useSystemClipboard": true,
     "vim.statusBarColorControl": true,
     "vim.statusBarColors" : {
@@ -46,11 +43,54 @@
         "visualblock": "#86592d",
         "replace": "#000000"
     },
+    "vim.easymotion": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "2"],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        },
+        {
+            "before": ["<leader>", "t"],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": ["<leader>", "v"],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": ["<leader>", "h"],
+            "commands": [
+                "workbench.action.splitEditorOrthogonal"
+            ]
+        },
+        {
+            "before": ["<tab>"],
+            "commands": [
+                "workbench.action.switchWindow"
+            ]
+        },
+        {
+            "before": ["J"],
+            "after": ["1","5","j","z","z"]
+        },
+        {
+            "before": ["K"],
+            "after": ["1","5","k","z","z"]
+        },
+    ],
     "workbench.colorTheme": "Tomorrow Night Bright",
     "workbench.colorCustomizations": {
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f"
     },
-    "window.nativeTabs": true
+    "window.nativeTabs": true,
+    "sonarlint.ls.javaHome": "/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home"
 }
