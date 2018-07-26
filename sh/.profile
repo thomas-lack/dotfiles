@@ -18,7 +18,7 @@ case "$(uname -s)" in
     eval $(keychain --eval --quiet --agents ssh id_rsa) 
 
     export XENVIRONMENT="${HOME}/.Xresources"
-    export PATH="$PATH:/home/thomas/bin"
+    export PATH="$HOME/bin:$PATH"
     ;;
 esac
 
