@@ -49,4 +49,4 @@ alias reload='source ~/.bash_profile'
 alias md2wiki='pandoc readme.md -f markdown -t mediawiki -s -o readme.wiki'
 
 # start cmms backend with needed db containers
-alias backend='cmms && docker start postgres-cmms && npm run backend'
+alias backend='cmms && docker start postgres-cmms && docker start pdfserver-cmms && npm run backend'
