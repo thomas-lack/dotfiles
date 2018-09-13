@@ -4,6 +4,9 @@ case "${os}" in
     # ls alias for color-mode
     alias ls="ls -h --color=auto"
     alias ll="ls -lha --color=auto"
+    alias grep='grep --colour=auto'
+    alias egrep='egrep --colour=auto'
+    alias fgrep='fgrep --colour=auto'
     ;;
   Darwin*)
     # ls alias for color-mode
@@ -22,9 +25,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias v4='cd ~/var/importexport/import/import_csv_generic/Tools/create_stub/v4'
-alias cmms='cd ~/var/CMMS/cmms-frontend'
-alias cdb='cd ~/var/skygate_cdb'
 
 # grep with color
 alias grep='grep --color=auto'
@@ -48,5 +48,3 @@ alias reload='source ~/.bash_profile'
 # convert a given markdown file to mediawiki
 alias md2wiki='pandoc readme.md -f markdown -t mediawiki -s -o readme.wiki'
 
-# start cmms backend with needed db containers
-alias backend='cmms && docker start postgres-cmms && docker start pdfserver-cmms && npm run backend'
