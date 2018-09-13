@@ -41,6 +41,7 @@ PLUGINLIST=(
 # create necessaryt clone https://github.com/scrooloose/nerdcommenter.git vim folders if not available
 mkdir -p ~/.vim/autoload
 mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/swapfiles
 
 # add pathogen plugin manager
 [ ! -f ~/.vim/autoload/pathogen.vim ] && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
