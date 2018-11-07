@@ -234,8 +234,8 @@ au InsertEnter * exec "inoremap <silent> " . g:UltiSnipsJumpBackwardTrigger . " 
 augroup Ale
   autocmd!
   set updatetime=1000
-  autocmd CursorHold * call ale#Lint()
-  autocmd InsertLeave * call ale#Lint()
+  autocmd CursorHold * ALELint
+  autocmd InsertLeave * ALELint
 augroup END
 
 " FZF fuzzy finder
