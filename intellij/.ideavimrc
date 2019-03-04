@@ -1,0 +1,89 @@
+" enable standard vim plugins
+set surround
+set multiple-cursors
+
+" set clipboard as default register
+set clipboard=unnamedplus,unnamed
+
+" show hybrid relative line numbers
+" set number relativenumber
+
+" set leader key
+let mapleader = " "
+
+" indentation settings
+set tabstop=2				" the width of tabs is set to 2
+set shiftwidth=2		" indents will have a width of 2
+set softtabstop=2		" sets the # of columns for tabs
+set expandtab				" expand tabs to spaces
+set autoindent
+
+" search settings
+set hlsearch							" highlight search terms
+set ignorecase						" case insensitive
+" press enter to get rid of search results
+nnoremap <CR> :nohlsearch<CR> 
+nnoremap n nzz      
+nnoremap N Nzz
+
+" scrolling
+set scrolljump=8		" lines to scroll when cursor leaves the screen
+set scrolloff=3			" minimum lines to keep above and below cursor
+nnoremap J 10jzz
+nnoremap K 10kzz
+
+" move line up/down
+" nnoremap <A-j> :m .+1<CR>==
+" nnoremap <A-k> :m .-2<CR>==
+
+" map ; to "write ; at end of line"
+nnoremap ; A;<ESC>
+
+" set number format always to decimal
+set nrformats=alpha
+
+" replace split buffer creation
+nnoremap <leader>v :action SplitVertically<CR>
+nnoremap <leader>h :action SplitHorizontally<CR>
+
+" Split window navigation
+nnoremap <C-h> :action VimWindowLeft<CR>
+nnoremap <C-j> :action VimWindowDown<CR>
+nnoremap <C-k> :action VimWindowUp<CR>
+nnoremap <C-l> :action VimWindowRight<CR>
+nnoremap <Tab> :action VimWindowNext<CR>
+nnoremap <S-Tab> :action VimWindowPrev<CR>
+
+" disable error sounds
+set noerrorbells visualbell t_vb=
+
+" bufkill settings
+map <C-c> :BD<cr>				" map Ctrl-c to close the current buffer
+map <leader>q :action CloseAllEditorsButActive<CR>
+
+" replace project tree toggle (TODO: repair)
+nnoremap <F2> :action ActivateProjectToolWindow<CR>
+nnoremap <leader>2 :action ActivateProjectToolWindow<CR>
+
+" open fzf alternative
+nnoremap <leader>gf :action GotoFile<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gs :action GotoSymbol<CR>
+nnoremap <leader>p :action FileStructurePopup<CR>
+nnoremap <leader>e :action ShowErrorDescription<CR>
+nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>u :action FindUsages<CR>
+
+" go back after goto command
+nnoremap gb :action Back<CR>
+
+" activate kjump as easymotion substitute
+nnoremap <leader><leader> :action KJumpAction<CR>
+
+" reformatting
+nnoremap <leader>c :action ReformatCode<CR>
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>s :action ReplaceInPath<CR>
+
+" display
+nnoremap <leader>V :action ChangeView<CR>
