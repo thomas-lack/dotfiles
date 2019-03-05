@@ -29,8 +29,8 @@ nnoremap N Nzz
 " scrolling
 set scrolljump=8		" lines to scroll when cursor leaves the screen
 set scrolloff=3			" minimum lines to keep above and below cursor
-nnoremap J 10jzz
-nnoremap K 10kzz
+noremap J 10jzz
+noremap K 10kzz
 
 " move line up/down
 " nnoremap <A-j> :m .+1<CR>==
@@ -58,8 +58,8 @@ nnoremap <S-Tab> :action VimWindowPrev<CR>
 set noerrorbells visualbell t_vb=
 
 " bufkill settings
-map <C-c> :BD<cr>				" map Ctrl-c to close the current buffer
-map <leader>q :action CloseAllEditorsButActive<CR>
+nnoremap <C-c> :BD<cr>				" map Ctrl-c to close the current buffer
+nnoremap <leader>q :action CloseAllEditorsButActive<CR>
 
 " replace project tree toggle (TODO: repair)
 nnoremap <F2> :action ActivateProjectToolWindow<CR>
@@ -70,7 +70,8 @@ nnoremap <leader>gf :action GotoFile<CR>
 nnoremap <leader>gc :action GotoClass<CR>
 nnoremap <leader>gs :action GotoSymbol<CR>
 nnoremap <leader>p :action FileStructurePopup<CR>
-nnoremap <leader>e :action ShowErrorDescription<CR>
+nnoremap <leader>e :action GotoNextError<CR>
+nnoremap <leader>E :action GotoPreviousError<CR>
 nnoremap <leader>f :action FindInPath<CR>
 nnoremap <leader>u :action FindUsages<CR>
 
