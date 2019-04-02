@@ -11,6 +11,9 @@ set clipboard=unnamedplus,unnamed
 " set leader key
 let mapleader = " "
 
+" set alternative ESC key
+imap jj <Esc>
+
 " indentation settings
 set tabstop=2				" the width of tabs is set to 2
 set shiftwidth=2		" indents will have a width of 2
@@ -91,6 +94,7 @@ nnoremap <leader>s :action ReplaceInPath<CR>
 nnoremap zf :action CollapseRegion<CR>
 nnoremap zd :action ExpandRegion<CR>
 nnoremap za :action CollapseAllRegions<CR>
+nnoremap zs :action ExpandAllRegions<CR>
 
 " display
 nnoremap <leader>V :action ChangeView<CR>
