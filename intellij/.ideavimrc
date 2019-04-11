@@ -69,9 +69,6 @@ nnoremap <F2> :action ActivateProjectToolWindow<CR>
 nnoremap <leader>2 :action ActivateProjectToolWindow<CR>
 
 " open fzf alternative
-nnoremap <leader>gf :action GotoFile<CR>
-nnoremap <leader>gc :action GotoClass<CR>
-nnoremap <leader>gs :action GotoSymbol<CR>
 nnoremap <leader>p :action FileStructurePopup<CR>
 nnoremap <leader>e :action GotoNextError<CR>
 nnoremap <leader>E :action GotoPreviousError<CR>
@@ -79,8 +76,12 @@ nnoremap <leader>f :action FindInPath<CR>
 nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>i :action ExtractInterface<CR>
 
-" go back after goto command
+" goto commands 
 nnoremap gb :action Back<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap gc :action GotoClass<CR>
+nnoremap gs :action GotoSymbol<CR>
+nnoremap gi :action GotoImplementation<CR>
 
 " activate kjump as easymotion substitute
 nnoremap <leader><leader> :action KJumpAction<CR>
@@ -88,13 +89,13 @@ nnoremap <leader><leader> :action KJumpAction<CR>
 " reformatting
 nnoremap <leader>c :action ReformatCode<CR>
 nnoremap <leader>r :action RenameElement<CR>
-nnoremap <leader>s :action ReplaceInPath<CR>
+nnoremap <leader>R :action ReplaceInPath<CR>
 
 " code folding
 nnoremap zf :action CollapseRegion<CR>
 nnoremap zd :action ExpandRegion<CR>
-nnoremap za :action CollapseAllRegions<CR>
-nnoremap zs :action ExpandAllRegions<CR>
+nnoremap zs :action CollapseAllRegions<CR>
+nnoremap za :action ExpandAllRegions<CR>
 
 " display
 nnoremap <leader>V :action ChangeView<CR>
