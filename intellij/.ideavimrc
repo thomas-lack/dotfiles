@@ -4,12 +4,16 @@ set multiple-cursors
 
 " set clipboard as default register
 set clipboard=unnamedplus,unnamed
+set clipboard+=ideaput
 
 " show hybrid relative line numbers
-" set number relativenumber
+set number relativenumber
 
 " set leader key
 let mapleader = " "
+
+" disable special keys
+let g:C_Ctrl_j = "off"
 
 " set alternative ESC key
 imap jj <Esc>
@@ -25,8 +29,8 @@ set autoindent
 set hlsearch							" highlight search terms
 set ignorecase						" case insensitive
 " press enter to get rid of search results
-nnoremap <CR> :nohlsearch<CR> 
-nnoremap n nzz      
+nnoremap <CR> :nohlsearch<CR>
+nnoremap n nzz
 nnoremap N Nzz
 
 " scrolling
@@ -50,12 +54,8 @@ nnoremap <leader>v :action SplitVertically<CR>
 nnoremap <leader>h :action SplitHorizontally<CR>
 
 " Split window navigation
-nnoremap <C-h> :action VimWindowLeft<CR>
-nnoremap <C-j> :action VimWindowDown<CR>
-nnoremap <C-k> :action VimWindowUp<CR>
-nnoremap <C-l> :action VimWindowRight<CR>
-nnoremap <Tab> :action VimWindowNext<CR>
-nnoremap <S-Tab> :action VimWindowPrev<CR>
+nnoremap <Tab> <C-w>w
+nnoremap <S-Tab> <C-w>p
 
 " disable error sounds
 set noerrorbells visualbell t_vb=
@@ -74,9 +74,9 @@ nnoremap <leader>e :action GotoNextError<CR>
 nnoremap <leader>E :action GotoPreviousError<CR>
 nnoremap <leader>f :action FindInPath<CR>
 nnoremap <leader>u :action FindUsages<CR>
-nnoremap <leader>i :action ExtractInterface<CR>
+nnoremap <leader>xi :action ExtractInterface<CR>
 
-" goto commands 
+" goto commands
 nnoremap gb :action Back<CR>
 nnoremap gf :action GotoFile<CR>
 nnoremap gc :action GotoClass<CR>
@@ -90,6 +90,7 @@ nnoremap <leader><leader> :action KJumpAction<CR>
 nnoremap <leader>c :action ReformatCode<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>R :action ReplaceInPath<CR>
+nnoremap <leader>i :action Inline<CR>
 
 " code folding
 nnoremap zf :action CollapseRegion<CR>
@@ -99,3 +100,6 @@ nnoremap za :action ExpandAllRegions<CR>
 
 " display
 nnoremap <leader>V :action ChangeView<CR>
+
+" code generator
+nnoremap <leader>g :action GenerateGetterAndSetter<CR>
