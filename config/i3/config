@@ -20,7 +20,9 @@ gaps inner 10
 gaps outer 0
 
 # border settings
-for_window [class="^.*"] border pixel 0
+# for_window [class="^.*"] border pixel 0
+default_border none
+default_floating_border pixel 2
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
