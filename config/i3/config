@@ -34,7 +34,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+space exec rofi -show run
+bindsym $mod+space exec rofi -show run -font "Terminess Powerline 19"
 
 # change focus
 bindsym $mod+j focus left
