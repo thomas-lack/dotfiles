@@ -28,7 +28,6 @@ PLUGINLIST=(
     https://github.com/heavenshell/vim-jsdoc
     https://github.com/Valloric/YouCompleteMe
     https://github.com/scrooloose/nerdcommenter.git
-    https://github.com/vim-IDE/MatchTagAlways
     https://github.com/luochen1990/rainbow
     https://github.com/artur-shaik/vim-javacomplete2.git
     https://github.com/vim-scripts/SearchComplete
