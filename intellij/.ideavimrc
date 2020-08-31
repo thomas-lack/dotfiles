@@ -43,6 +43,9 @@ noremap K 10kzz
 " nnoremap <A-j> :m .+1<CR>==
 " nnoremap <A-k> :m .-2<CR>==
 
+" remap zero to jump to first non-empty character in line
+nnoremap 0 ^
+
 " map ; to "write ; at end of line"
 nnoremap ; A;<ESC>
 
@@ -103,3 +106,7 @@ nnoremap <leader>V :action ChangeView<CR>
 
 " code generator
 nnoremap <leader>g :action GenerateGetterAndSetter<CR>
+
+" git commands
+nnoremap <leader>vc :action ChangesView.ToggleCommitUi<CR>
+nnoremap <leader>vp :action Vcs.Push<CR>
