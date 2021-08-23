@@ -85,12 +85,14 @@ nnoremap gf :action GotoFile<CR>
 nnoremap gc :action GotoClass<CR>
 nnoremap gs :action GotoSymbol<CR>
 nnoremap gi :action GotoImplementation<CR>
+nnoremap gp :action FrameSwitchAction<CR>
 
 " activate kjump as easymotion substitute
 nnoremap <leader><leader> :action KJumpAction<CR>
 
 " reformatting
 nnoremap <leader>c :action ReformatCode<CR>
+" nnoremap <leader>p :action ReformatWithPrettierAction<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>R :action ReplaceInPath<CR>
 nnoremap <leader>i :action Inline<CR>
