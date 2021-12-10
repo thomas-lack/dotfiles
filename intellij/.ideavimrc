@@ -61,7 +61,8 @@ nnoremap <Tab> <C-w>w
 nnoremap <S-Tab> <C-w>p
 
 " disable error sounds
-set noerrorbells visualbell t_vb=
+set visualbell
+set noerrorbells
 
 " bufkill settings
 nnoremap <C-c> :BD<cr>				" map Ctrl-c to close the current buffer
@@ -76,8 +77,10 @@ nnoremap <leader>p :action FileStructurePopup<CR>
 nnoremap <leader>e :action GotoNextError<CR>
 nnoremap <leader>E :action GotoPreviousError<CR>
 nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>F :action SelectInProjectView<CR>
 nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>xi :action ExtractInterface<CR>
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 
 " goto commands
 nnoremap gb :action Back<CR>
