@@ -184,6 +184,10 @@ nmap gd <C-]>   " calls :TsuDefinition, goto definition
 nmap gb <C-t>   " goto last call of :TsuDefinition
 nnoremap <leader>i :TsuImport<CR>
 
+" vim-svelte-plugin
+let g:vim_svelte_plugin_use_typescript = 1
+let g:vim_svelte_plugin_use_sass = 1
+
 " ctrl-p file buffer settings
 let g:ctrlp_max_files = 0
 let g:ctrlp_working_path_mode = ''

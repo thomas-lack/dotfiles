@@ -96,7 +96,7 @@ nnoremap gp :action FrameSwitchAction<CR>
 nnoremap <leader><leader> :action KJumpAction<CR>
 
 " reformatting
-nnoremap <leader>c :action ReformatCode<CR>
+nnoremap <leader>c :action ReformatCode<CR>:action OptimizeImports<CR>
 " nnoremap <leader>p :action ReformatWithPrettierAction<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>R :action ReplaceInPath<CR>
