@@ -4,6 +4,7 @@ Personal preferences in various dotfiles
 ## Dependencies
 The following software packages should be installed:
 - [vim](https://vim.sourceforge.io/)
+- [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 - [pathogen.vim](https://github.com/tpope/vim-pathogen)
 - [tmux](https://github.com/tmux/tmux)
 - [zsh](https://github.com/zsh-users/zsh)
