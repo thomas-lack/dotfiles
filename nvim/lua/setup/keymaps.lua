@@ -42,3 +42,9 @@ map('n', '<leader>2', ':NvimTreeToggle<CR>', opts)
 -- bufferline
 map('n', 'gt', ':BufferLineCycleNext<CR>')
 map('n', 'gT', ':BufferLineCyclePrev<CR>')
+
+-- telescope
+map('n', 'gf', ':Telescope find_files<CR>', opts)
+map('n', '<leader>f', ':Telescope live_grep<CR>', opts)
+map('n', 'gp', ':Telescope projects<CR>', opts)
+map('n', 'gb', ':Telescope buffers<CR>', opts)

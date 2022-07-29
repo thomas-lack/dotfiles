@@ -58,4 +58,4 @@ opt.scrolljump = 8
 opt.scrolloff = 3
 
 -- hide fill chars '~'
-opt.fillchars.eob = ' '
+opt.fillchars = { eob = ' ' }

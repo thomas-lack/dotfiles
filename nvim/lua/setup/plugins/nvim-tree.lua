@@ -42,6 +42,10 @@ nvim_tree.setup {
         },
       },
     },
+		indent_markers = {
+			enable = true,
+			inline_arrows = true,
+		}
   },
   diagnostics = {
     enable = true,
@@ -57,12 +61,20 @@ nvim_tree.setup {
     width = 30,
     height = 30,
     side = 'left',
+		adaptive_size = true,
+		signcolumn = 'auto',
     mappings = {
       list = {
-        { key = { 'l', '<CR>', 'o' }, cb = tree_cb 'edit' },
-        { key = 'h', cb = tree_cb 'close_node' },
-        { key = 'v', cb = tree_cb 'vsplit' },
+        { key = { 'l', '<CR>', '<2-LeftMouse>' }, cb = tree_cb('edit') },
+        { key = 'h', cb = tree_cb('close_node') },
+				{ key = 'u', cb = tree_cb('dir_up') },
+				{ key = '<ESC>', cb = tree_cb('close') },
+				{ key = 'c', cb = tree_cb('create') },
+				{ key = 'd', cb = tree_cb('remove') },
       },
     },
   },
+	filters = {
+		dotfiles = false,
+	}
 }
