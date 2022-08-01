@@ -13,8 +13,10 @@ map('n', '<space>', '<nop>')
 -- buffers
 map('n', '<leader>v', '<C-w>v')
 map('n', '<leader>h', '<C-w>s')
-map('n', '<leader>bn', ':bnext<CR>')
-map('n', '<leader>bp', ':bprevious<CR>')
+map('n', 'gn', '<C-I>')
+map('n', 'gb', '<C-O>')
+map('n', '<leader>q', ':w<bar>%bd<bar>e#<bar>bd#<CR>')
+
 
 -- split window navigation
 map('n', '<C-h>', '<C-w>h')
@@ -47,4 +49,4 @@ map('n', 'gT', ':BufferLineCyclePrev<CR>')
 map('n', 'gf', ':Telescope find_files<CR>', opts)
 map('n', '<leader>f', ':Telescope live_grep<CR>', opts)
 map('n', 'gp', ':Telescope projects<CR>', opts)
-map('n', 'gb', ':Telescope buffers<CR>', opts)
+map('n', 'gB', ':Telescope buffers<CR>', opts)
