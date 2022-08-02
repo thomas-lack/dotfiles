@@ -50,3 +50,6 @@ map('n', 'gf', ':Telescope find_files<CR>', opts)
 map('n', '<leader>f', ':Telescope live_grep<CR>', opts)
 map('n', 'gp', ':Telescope projects<CR>', opts)
 map('n', 'gB', ':Telescope buffers<CR>', opts)
+
+-- hop.nvim
+map('n', '<leader><leader>', ":HopWord<cr>", {})

@@ -56,26 +56,26 @@ return packer.startup(function(use)
 --  use { 'lewis6991/impatient.nvim', commit = '969f2c5c90457612c09cf2a13fee1adaa986d350' }
 --  use { 'lukas-reineke/indent-blankline.nvim', commit = '6177a59552e35dfb69e1493fd68194e673dc3ee2' }
 --  use { 'goolord/alpha-nvim', commit = 'ef27a59e5b4d7b1c2fe1950da3fe5b1c5f3b4c94' }
---
+
   -- Colorschemes
 	use { 'ellisonleao/gruvbox.nvim' }
   use { 'folke/tokyonight.nvim' }
   use { 'lunarvim/darkplus.nvim' }
   use { 'arcticicestudio/nord-vim' }
---
---  -- cmp plugins
+
+  -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
   use { 'hrsh7th/cmp-buffer' } -- buffer completions
   use { 'hrsh7th/cmp-path' } -- path completions
   use { 'saadparwaiz1/cmp_luasnip' }
   use { 'hrsh7th/cmp-nvim-lsp' }
   use { 'hrsh7th/cmp-nvim-lua' }
---
---  -- snippets
+
+  -- snippets
   use { 'L3MON4D3/LuaSnip' } --snippet engine
 --  use { 'rafamadriz/friendly-snippets', commit = 'd27a83a363e61009278b6598703a763ce9c8e617' } -- a bunch of snippets to use
---
---  -- LSP
+
+  -- LSP
   use { 'neovim/nvim-lspconfig' } -- enable LSP
   use { 'williamboman/mason.nvim' } -- simple to use language server installer
   use { 'williamboman/mason-lspconfig.nvim' } -- bride mason.nvim with lspconfig plugin
@@ -90,14 +90,17 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
 		run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
   }
---
---  -- Git
---  use { 'lewis6991/gitsigns.nvim', commit = 'c18e016864c92ecf9775abea1baaa161c28082c3' }
---
---  -- DAP
+
+  -- Git
+  use { 'lewis6991/gitsigns.nvim' }
+
+  -- DAP
 --  use { 'mfussenegger/nvim-dap', commit = '014ebd53612cfd42ac8c131e6cec7c194572f21d' }
 --  use { 'rcarriga/nvim-dap-ui', commit = 'd76d6594374fb54abf2d94d6a320f3fd6e9bb2f7' }
 --  use { 'ravenxrz/DAPInstall.nvim', commit = '8798b4c36d33723e7bba6ed6e2c202f84bb300de' }
+	
+	--  Navigation
+	use { 'phaazon/hop.nvim', branch = 'v2' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
