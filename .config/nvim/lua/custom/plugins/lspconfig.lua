@@ -7,7 +7,6 @@ local servers = {
   "cssls",
   "html",
   "svelte",
-  "tailwindcss",
   "tsserver",
 }
 
@@ -17,3 +16,19 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- efm setup example
+-- lspconfig["efm"].setup {
+--   on_attach = on_attach,
+--   filetypes = { 'ts', 'js', 'scss', 'html', 'svelte' },
+--   init_options = {documentFormatting = true},
+--   settings = {
+--       rootMarkers = {".git/"},
+--       languages = {
+--           prettier = {
+--             formatCommand = 'prettierd "${INPUT}"',
+--             formatStdin = true,
+--           }
+--       }
+--   },
+-- }

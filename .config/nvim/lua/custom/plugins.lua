@@ -12,10 +12,6 @@ return {
   },
 
   ["neovim/nvim-lspconfig"] = {
-    opt = true,
-    setup = function()
-      require("core.lazy_load").on_file_open "nvim-lspconfig"
-    end,
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.plugins.lspconfig"
