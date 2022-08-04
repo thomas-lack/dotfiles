@@ -1,5 +1,0 @@
-require 'setup.plugins'
-require 'setup.lsp'
-require 'setup.options'
-require 'setup.keymaps'
-require 'setup.colorscheme'

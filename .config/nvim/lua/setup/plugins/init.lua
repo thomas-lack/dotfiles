@@ -1,8 +1,0 @@
-require 'setup.plugins.packer'
-require 'setup.plugins.treesitter'
-require 'setup.plugins.nvim-tree'
-require 'setup.plugins.bufferline'
-require 'setup.plugins.telescope'
-require 'setup.plugins.lualine'
-require 'setup.plugins.cmp'
-require 'setup.plugins.hop-nvim'
