@@ -28,8 +28,8 @@ M.tabufline = {
 M.telescope = {
   n = {
     -- find
-    ["gf"] = { "<cmd> Telescope find_files <CR>", "  goto file" },
-    ["<leader>f"] = { "<cmd> Telescope live_grep <CR>", "   find in files" },
+    ["gf"] = { "<cmd> Telescope find_files hidden=true follow=true <CR>", "  goto file" },
+    ["<leader>f"] = { "<cmd> Telescope live_grep hidden=true <CR>", "   find in files" },
     ["gB"] = { "<cmd> Telescope buffers <CR>", "  goto buffer" },
     ["gp"] = { "<cmd> Telescope projects <CR>", "  goto project" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "  help page" },
