@@ -2,7 +2,10 @@ local M = {}
 
 M.nvimtree = {
   n = {
+    ["<leader>1"] = { "<cmd> :NvimTreeFocus <CR>", "   toggle nvimtree" },
     ["<leader>2"] = { "<cmd> :NvimTreeToggle <CR>", "   toggle nvimtree" },
+    ["<leader>cf"] = { "<cmd> lua require('nvim-tree.api').fs.create() <CR>", "   create file" },
+    ["<leader>df"] = { "<cmd> lua require('nvim-tree.api').fs.remove() <CR>", "   delete file" },
   },
 }
 
@@ -28,17 +31,20 @@ M.tabufline = {
 M.telescope = {
   n = {
     -- find
-    ["gf"] = { "<cmd> Telescope find_files hidden=true follow=true <CR>", "  goto file" },
-    ["<leader>f"] = { "<cmd> Telescope live_grep hidden=true <CR>", "   find in files" },
+    ["gf"] = { "<cmd> Telescope find_files hidden=true <CR>", "  goto file" },
+    ["<leader>fw"] = { "<cmd> Telescope live_grep hidden=true <CR>", "   find word" },
     ["gB"] = { "<cmd> Telescope buffers <CR>", "  goto buffer" },
     ["gp"] = { "<cmd> Telescope projects <CR>", "  goto project" },
+    ["<leader>fu"] = { "<cmd> lua vim.lsp.buf.references() <CR>", "   find usages" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "  help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "   find oldfiles" },
     ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "   show keys" },
 
     -- git
-    ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "   git commits" },
-    ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "  git status" },
+    ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "  git commits" },
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "  git status" },
+    ["<leader>gt"] = nil,
+
 
     -- pick a hidden term
     ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "   pick hidden term" },
@@ -98,6 +104,24 @@ M.lspconfig = {
         vim.lsp.buf.format()
       end,
       "   lsp formatting",
+    },
+    ["<leader>fe"] = {
+      function()
+        vim.diagnostic.open_float()
+      end,
+      "   floating error",
+    },
+    ["<leader>e"] = {
+      function()
+        vim.diagnostic.goto_next()
+      end,
+      "   goto next error",
+    },
+    ["<leader>E"] = {
+      function()
+        vim.diagnostic.goto_prev()
+      end,
+      "   goto previous error",
     },
   },
 }
