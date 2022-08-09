@@ -1,11 +1,22 @@
 local M = {}
 
+M.disabled = {
+  n = {
+    -- general
+    ["<leader>n"] = "",
+    -- telescope
+    ["<leader>gt"] = "",
+    ["<leader>cm"] = "",
+    -- nvimtree
+    ["<leader>e"] = "",
+    ["<C-n>"] = "",
+  },
+}
+
 M.nvimtree = {
   n = {
-    ["<leader>1"] = { "<cmd> :NvimTreeFocus <CR>", "   toggle nvimtree" },
+    ["<leader>1"] = { "<cmd> :NvimTreeFocus <CR>", "   focus nvimtree" },
     ["<leader>2"] = { "<cmd> :NvimTreeToggle <CR>", "   toggle nvimtree" },
-    ["<leader>cf"] = { "<cmd> lua require('nvim-tree.api').fs.create() <CR>", "   create file" },
-    ["<leader>df"] = { "<cmd> lua require('nvim-tree.api').fs.remove() <CR>", "   delete file" },
   },
 }
 
@@ -18,7 +29,6 @@ M.tabufline = {
       end,
       "  goto next buffer",
     },
-
     ["gT"] = {
       function()
         require("core.utils").tabuflinePrev()
@@ -32,19 +42,17 @@ M.telescope = {
   n = {
     -- find
     ["gf"] = { "<cmd> Telescope find_files hidden=true <CR>", "  goto file" },
-    ["<leader>fw"] = { "<cmd> Telescope live_grep hidden=true <CR>", "   find word" },
     ["gB"] = { "<cmd> Telescope buffers <CR>", "  goto buffer" },
     ["gp"] = { "<cmd> Telescope projects <CR>", "  goto project" },
+    ["<leader>fw"] = { "<cmd> Telescope live_grep hidden=true <CR>", "   find word" },
     ["<leader>fu"] = { "<cmd> lua vim.lsp.buf.references() <CR>", "   find usages" },
-    ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "  help page" },
-    ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "   find oldfiles" },
-    ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "   show keys" },
+    ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "  find help page" },
+    ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "   find old files" },
+    ["<leader>sk"] = { "<cmd> Telescope keymaps <CR>", "   show keys" },
 
     -- git
     ["<leader>gc"] = { "<cmd> Telescope git_commits <CR>", "  git commits" },
     ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "  git status" },
-    ["<leader>gt"] = nil,
-
 
     -- pick a hidden term
     ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "   pick hidden term" },
@@ -129,6 +137,7 @@ M.lspconfig = {
 M.generic = {
   n = {
     [';'] = {"A;<ESC>", "End line with ';'"},
+    ["<leader>tr"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
   }
 }
 
@@ -155,7 +164,8 @@ M.buffers = {
   n = {
     ["<leader>v"] = {"<C-w>v", "Create vertical buffer"},
     ["<leader>h"] = {"<C-w>s", "Create horizontal buffer"},
-    ["<leader>q"] = {"w<bar>%bd<bar>e#<bar>bd#<CR>", "Close other buffers"},
+    ["<leader>q"] = {"<cmd> %bdelete <bar> edit# <bar> normal`\" <CR>", "Close other buffers"},
+    ["<leader>x"] = {"<cmd> lua require('bufdelete').bufdelete(0, true) <CR>", "Close current buffer"},
     ["gn"] = {"<C-I>", "Go next in buffer history"},
     ["gb"] = {"<C-O>", "Go back in buffer history"},
   }

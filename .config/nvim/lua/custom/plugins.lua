@@ -4,13 +4,6 @@ return {
     disable = false,
   },
 
-  ["phaazon/hop.nvim"] = {
-    branch = "v2",
-    config = function()
-      require"hop".setup { keys = 'etovxqpdygfblzhckisuran' }
-    end,
-  },
-
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
@@ -25,4 +18,16 @@ return {
     end,
   },
 
+  ['folke/which-key.nvim'] = {
+    disable = false
+  },
+
+  ["phaazon/hop.nvim"] = {
+    branch = "v2",
+    config = function()
+      require"hop".setup { keys = 'etovxqpdygfblzhckisuran' }
+    end,
+  },
+
+  ["famiu/bufdelete.nvim"] = {},
 }

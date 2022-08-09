@@ -7,7 +7,6 @@ local servers = {
   "cssls",
   "html",
   "svelte",
-  "tsserver",
 }
 
 for _, lsp in ipairs(servers) do
@@ -17,6 +16,26 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig["tsserver"].setup {
+  on_attach = on_attach,
+  filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'svelte' },
+  importModuleSpecifierPreference = 'relative',
+  init_options = {
+    documentFormatting = true,
+    preferences = {
+      importModuleSpecifierPreference = 'relative',
+    },
+  },
+  settings = {
+      rootMarkers = {".git/"},
+      languages = {
+          prettier = {
+            formatCommand = 'prettierd "${INPUT}"',
+            formatStdin = true,
+          }
+      },
+  },
+}
 -- efm setup example
 -- lspconfig["efm"].setup {
 --   on_attach = on_attach,
