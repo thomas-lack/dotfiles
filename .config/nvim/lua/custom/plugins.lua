@@ -19,7 +19,7 @@ return {
   },
 
   ['folke/which-key.nvim'] = {
-    disable = false
+    disable = false,
   },
 
   ["phaazon/hop.nvim"] = {
@@ -30,4 +30,11 @@ return {
   },
 
   ["famiu/bufdelete.nvim"] = {},
+
+  ["kylechui/nvim-surround"] = {
+    config = function()
+      require"nvim-surround".setup {}
+    end,
+  },
+
 }

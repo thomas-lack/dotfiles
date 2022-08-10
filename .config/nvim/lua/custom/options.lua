@@ -26,3 +26,6 @@ opt.scrolloff = 3
 -- color scheme / color support
 opt.syntax = 'on'
 opt.cursorline = true
+
+-- snippets
+vim.g.luasnippets_path = '~/.config/snippets/'

@@ -165,7 +165,7 @@ M.buffers = {
     ["<leader>v"] = {"<C-w>v", "Create vertical buffer"},
     ["<leader>h"] = {"<C-w>s", "Create horizontal buffer"},
     ["<leader>q"] = {"<cmd> %bdelete <bar> edit# <bar> normal`\" <CR>", "Close other buffers"},
-    ["<leader>x"] = {"<cmd> lua require('bufdelete').bufdelete(0, true) <CR>", "Close current buffer"},
+    ["<leader>x"] = {"<cmd> Bdelete <CR>", "Close current buffer"},
     ["gn"] = {"<C-I>", "Go next in buffer history"},
     ["gb"] = {"<C-O>", "Go back in buffer history"},
   }
