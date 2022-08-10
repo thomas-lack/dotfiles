@@ -10,10 +10,12 @@ local sources = {
 
   -- webdev stuff
   b.formatting.prettierd.with {
-    filetypes = { "html", "json", "svelte", "markdown", "css", "javascript", "javascriptangular", "typescript", "typescriptangular" },
+    filetypes = { "html", "json", "markdown", "css", "javascript", "javascriptangular", "typescript", "typescriptangular", "svelte" },
   },
   b.formatting.fixjson,
-  b.diagnostics.eslint_d,
+  b.diagnostics.eslint_d.with {
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" }
+  },
 
   -- Python
   b.diagnostics.flake8,
