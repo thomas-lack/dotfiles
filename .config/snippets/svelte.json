@@ -1,0 +1,13 @@
+{
+  "svelte-component-format": {
+    "prefix": "svel",
+    "body": [
+      "<script lang=\"ts\">",
+      "</script>",
+      "",
+      "",
+      "<style lang=\"scss\">",
+      "</style>"
+    ]
+  }
+}
