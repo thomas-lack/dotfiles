@@ -134,6 +134,22 @@ M.lspconfig = {
   },
 }
 
+M.gitsigns = {
+  n = {
+    ["<leader>gb"] = {"<cmd> Gitsigns blame_line <CR>", "  git blame"},
+    ["<leader>gh"] = {"<cmd> Gitsigns preview_hunk <CR>", "  git hunk preview"},
+    ["<leader>gp"] = {"<cmd> Gitsigns prev_hunk <CR>", "  git previous hunk"},
+    ["<leader>gn"] = {"<cmd> Gitsigns next_hunk <CR>", "  git next hunk"}
+  }
+}
+
+M.lazygit = {
+  n = {
+    ["<leader>gg"] = { "<cmd> LazyGit <CR>", "  LazyGit" },
+    ["<leader>gf"] = { "<cmd> LazyGitFilterCurrentFile <CR>", "  LazyGit current File" },
+  }
+}
+
 M.generic = {
   n = {
     [';'] = {"A;<ESC>", "End line with ';'"},

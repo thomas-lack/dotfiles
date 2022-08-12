@@ -37,4 +37,11 @@ return {
     end,
   },
 
+  ["kdheepak/lazygit.nvim"] = {
+    after = "plenary.nvim",
+    setup = function()
+      require("core.lazy_load").on_file_open "lazygit.nvim"
+    end,
+  },
+
 }
