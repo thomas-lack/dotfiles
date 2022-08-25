@@ -16,6 +16,7 @@ local sources = {
   b.diagnostics.eslint_d.with {
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" }
   },
+  b.formatting.elm_format,
 
   -- Python
   b.diagnostics.flake8,

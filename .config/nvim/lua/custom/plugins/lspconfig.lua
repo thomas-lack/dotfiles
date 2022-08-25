@@ -7,6 +7,7 @@ local servers = {
   "cssls",
   "html",
   "svelte",
+  "elmls",
 }
 
 for _, lsp in ipairs(servers) do
