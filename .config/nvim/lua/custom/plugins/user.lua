@@ -44,6 +44,4 @@ return {
     end,
   },
 
-  ["jeffkreeftmeijer/vim-numbertoggle"] = {}
-
 }
