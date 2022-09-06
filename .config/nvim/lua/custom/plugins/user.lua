@@ -44,4 +44,14 @@ return {
     end,
   },
 
+  ["David-Kunz/jester"] = {
+    config = function()
+      require"jester".setup {
+        cmd = "ng test -- -t '$result' -- $file", -- run command
+        dap = {
+          console = "externalTerminal"
+        }
+      }
+    end,
+  },
 }

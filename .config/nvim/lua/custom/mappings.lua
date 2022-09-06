@@ -11,6 +11,8 @@ M.disabled = {
     -- lspconfig
     ["<leader>ca"] = "",
     ["<leader>ra"] = "",
+    -- blankline
+    ["<leader>cc"] = "",
     -- line numbers
     ["<leader>n"] = "",
     ["<leader>rn"] = "",
@@ -163,6 +165,13 @@ M.lazygit = {
   n = {
     ["<leader>gg"] = { "<cmd> LazyGit <CR>", " LazyGit" },
     ["<leader>gf"] = { "<cmd> LazyGitFilterCurrentFile <CR>", " LazyGit current File" },
+  }
+}
+
+M.jester = {
+  n = {
+    ["<leader>tf"] = { "<cmd> lua require\"jester\".run_file() <CR>", " test file" },
+    ["<leader>tn"] = { "<cmd> lua require\"jester\".run() <CR>", " test nearest" },
   }
 }
 
