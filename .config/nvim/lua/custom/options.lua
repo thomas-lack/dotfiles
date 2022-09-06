@@ -6,7 +6,7 @@ opt.backup = false
 opt.writebackup = false
 
 -- line numbers
-opt.number = false
+opt.number = true
 opt.relativenumber = true
 opt.nrformats = 'alpha'
 
