@@ -170,8 +170,10 @@ M.lazygit = {
 
 M.jester = {
   n = {
-    ["<leader>tf"] = { "<cmd> lua require\"jester\".run_file() <CR>", " test file" },
+    ["<leader>ta"] = { "<cmd> lua require\"jester\".run_file({cmd=\"ng test\"}) <CR>", " test all" },
+    ["<leader>tf"] = { "<cmd> lua require\"jester\".run_file({cmd=\"ng test -- $file\"}) <CR>", " test file" },
     ["<leader>tn"] = { "<cmd> lua require\"jester\".run() <CR>", " test nearest" },
+    ["<leader>la"] = { "<cmd> lua require\"jester\".run_file({cmd=\"ng lint\"}) <CR>", " lint all" },
   }
 }
 
