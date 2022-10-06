@@ -31,13 +31,13 @@ M.tabufline = {
     -- cycle through buffers
     ["gt"] = {
       function()
-        require("core.utils").tabuflineNext()
+        require("nvchad_ui.tabufline").tabuflineNext()
       end,
       " goto next buffer",
     },
     ["gT"] = {
       function()
-        require("core.utils").tabuflinePrev()
+        require("nvchad_ui.tabufline").tabuflinePrev()
       end,
       " goto prev buffer",
     },
