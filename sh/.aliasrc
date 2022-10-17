@@ -1,24 +1,10 @@
-os="$(uname -s)"
-case "${os}" in
-  Linux*)
-    # ls alias for color-mode
-    alias ls="ls -h --color=auto"
-    alias ll="ls -lha --color=auto"
-    alias grep='grep --colour=auto'
-    alias egrep='egrep --colour=auto'
-    alias fgrep='fgrep --colour=auto'
-    ;;
-  Darwin*)
-    # ls alias for color-mode
-    alias ls="ls -hG"
-    alias ll="ls -lhaG"
-
-    # lock computer
-    alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
-    ;;
-  *)
-    ;;
-esac
+# ls alias for color-mode
+alias ls='ls -G'
+alias ll='exa --group-directories-first -G -F -a'
+alias l='exa --icons --long --group-directories-first --octal-permissions --no-permissions -F -a'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
 # up 'n' folders
 alias ..='cd ..'
@@ -26,11 +12,20 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+# auto human readable output
+alias df='df -h'
+
 # grep with color
 alias grep='grep --color=auto'
 
 # tig with all branches
 alias tig='tig --all'
+
+# lazygit
+alias lg='lazygit'
+
+# lazydocker
+alias ldo='lazydocker'
 
 # get all files changed in the current branch compared to the branch 'develop'
 alias changes='git diff --name-only develop `git name-rev --name-only HEAD`'
@@ -48,3 +43,15 @@ alias reload='source ~/.bash_profile'
 # convert a given markdown file to mediawiki
 alias md2wiki='pandoc readme.md -f markdown -t mediawiki -s -o readme.wiki'
 
+# development daily usages
+alias a='cd "$HOME/OneDrive - Hypoport AG/Documents/Abrechnungen/2022"'
+alias d='cd $HOME/dev'
+alias desktop='cd $HOME/Desktop'
+alias n='nvim'
+alias vim='nvim'
+
+# remove all changes (including new files) in git folder
+alias gitclean='git checkout -- .'
+
+# clean node_modules/@hypoport folder and package-lock.json in current folder
+alias hypoclean='rm -rf node_modules/\@vergleichde && rm -rf node_modules/\@drklein && rm -rf node_modules/\@hypoport && rm package-lock.json && npm install'
