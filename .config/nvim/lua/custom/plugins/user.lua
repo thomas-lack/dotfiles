@@ -44,6 +44,19 @@ return {
     end,
   },
 
+  ["vuki656/package-info.nvim"] = {
+    config = function()
+      require"package-info".setup {
+        autostart = true,
+        package_manager = 'npm',
+        hide_up_to_date = true,
+        hide_unstable_versions = true,
+      }
+    end,
+  },
+
+  ["MunifTanjim/nui.nvim"] = {},
+
   ["David-Kunz/jester"] = {
     config = function()
       require"jester".setup {
@@ -54,4 +67,14 @@ return {
       }
     end,
   },
+
+  ["mfussenegger/nvim-jdtls"] = {},
+
+  ["glepnir/lspsaga.nvim"] = {
+    branch = "main",
+    config = function()
+      local saga = require("lspsaga")
+      saga.init_lsp_saga()
+    end,
+  }
 }

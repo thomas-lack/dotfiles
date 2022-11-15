@@ -5,12 +5,14 @@ M.disabled = {
     -- telescope
     ["<leader>gt"] = "",
     ["<leader>cm"] = "",
+    ["<leader>ff"] = "",
     -- nvimtree
     ["<leader>e"] = "",
     ["<C-n>"] = "",
     -- lspconfig
     ["<leader>ca"] = "",
     ["<leader>ra"] = "",
+    ["gd"] = "",
     -- blankline
     ["<leader>cc"] = "",
     -- line numbers
@@ -119,18 +121,6 @@ M.lspconfig = {
       end,
       " lsp formatting",
     },
-    ["<leader>a"] = {
-      function()
-        vim.lsp.buf.code_action()
-      end,
-      " lsp code_action",
-    },
-    ["<leader>r"] = {
-      function()
-        require("nvchad_ui.renamer").open()
-      end,
-      " lsp rename",
-    },
     ["<leader>fe"] = {
       function()
         vim.diagnostic.open_float()
@@ -174,6 +164,25 @@ M.jester = {
     ["<leader>tf"] = { "<cmd> lua require\"jester\".run_file({cmd=\"bun run test -- $file\"}) <CR>", " test file" },
     ["<leader>tn"] = { "<cmd> lua require\"jester\".run() <CR>", " test nearest" },
     ["<leader>la"] = { "<cmd> lua require\"jester\".run_file({cmd=\"bun run lint\"}) <CR>", " lint all" },
+  }
+}
+
+M.package_info = {
+  n = {
+    ["<leader>tp"] = { "<cmd> lua require\"package-info\".show() <CR>", " toggle package info" },
+    ["<leader>dp"] = { "<cmd> lua require\"package-info\".delete() <CR>", " delete package" },
+    ["<leader>ip"] = { "<cmd> lua require\"package-info\".install() <CR>", " install package" },
+    ["<leader>up"] = { "<cmd> lua require\"package-info\".change_version() <CR>", " update package version" },
+  }
+}
+
+M.lspsaga = {
+  n = {
+    ["<leader>ff"] = { "<cmd> Lspsaga lsp_finder <CR>", " lsp finder" },
+    ["<leader>a"] = { "<cmd> Lspsaga code_action <CR>", " lsp code_action" },
+    ["<leader>r"] = { "<cmd> Lspsaga rename <CR>", " lsp rename" },
+    ["gd"] = { "<cmd> Lspsaga peek_definition <CR>", " goto definition" },
+    ["<leader>3"] = { "<cmd> Lspsaga LSoutlineToggle <CR>", " lsp rename" },
   }
 }
 
