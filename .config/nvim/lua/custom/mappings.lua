@@ -12,7 +12,7 @@ M.disabled = {
     -- lspconfig
     ["<leader>ca"] = "",
     ["<leader>ra"] = "",
-    ["gd"] = "",
+    ["gD"] = "",
     -- blankline
     ["<leader>cc"] = "",
     -- line numbers
@@ -181,7 +181,7 @@ M.lspsaga = {
     ["<leader>ff"] = { "<cmd> Lspsaga lsp_finder <CR>", " lsp finder" },
     ["<leader>a"] = { "<cmd> Lspsaga code_action <CR>", " lsp code_action" },
     ["<leader>r"] = { "<cmd> Lspsaga rename <CR>", " lsp rename" },
-    ["gd"] = { "<cmd> Lspsaga peek_definition <CR>", " goto definition" },
+    ["gD"] = { "<cmd> Lspsaga peek_definition <CR>", " goto definition" },
     ["<leader>3"] = { "<cmd> Lspsaga LSoutlineToggle <CR>", " lsp rename" },
   }
 }

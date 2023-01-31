@@ -71,10 +71,9 @@ return {
   ["mfussenegger/nvim-jdtls"] = {},
 
   ["glepnir/lspsaga.nvim"] = {
-    branch = "main",
+    event = "BufRead",
     config = function()
-      local saga = require("lspsaga")
-      saga.init_lsp_saga()
+      require('lspsaga').setup({})
     end,
   }
 }
