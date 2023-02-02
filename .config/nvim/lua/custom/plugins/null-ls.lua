@@ -10,7 +10,7 @@ local sources = {
 
   -- webdev stuff
   b.formatting.prettierd.with {
-    filetypes = { "html", "json", "markdown", "css", "javascript", "javascriptangular", "typescript", "typescriptangular", "svelte" },
+    filetypes = { "html", "json", "markdown", "css", "scss", "javascript", "javascriptangular", "typescript", "typescriptangular", "svelte" },
   },
   b.formatting.fixjson,
   b.diagnostics.eslint_d.with {
