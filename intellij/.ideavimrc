@@ -57,8 +57,14 @@ nnoremap <leader>v :action SplitVertically<CR>
 nnoremap <leader>h :action SplitHorizontally<CR>
 
 " Split window navigation
-nnoremap <Tab> <C-w>w
-nnoremap <S-Tab> <C-w>p
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+
+" tab navigation
+nnoremap <Tab> :action NextTab<CR>
+nnoremap <S-Tab> :action PreviousTab<CR>
 
 " disable error sounds
 set visualbell
@@ -67,6 +73,7 @@ set noerrorbells
 " bufkill settings
 nnoremap <C-c> :BD<cr>				" map Ctrl-c to close the current buffer
 nnoremap <leader>q :action CloseAllEditorsButActive<CR>
+nnoremap <leader>x :action CloseEditor<CR>
 
 " replace project tree toggle (TODO: repair)
 nnoremap <F2> :action ActivateProjectToolWindow<CR>
@@ -76,10 +83,10 @@ nnoremap <leader>2 :action ActivateProjectToolWindow<CR>
 nnoremap <leader>p :action FileStructurePopup<CR>
 nnoremap <leader>e :action GotoNextError<CR>
 nnoremap <leader>E :action GotoPreviousError<CR>
-nnoremap <leader>f :action FindInPath<CR>
-nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>fw :action FindInPath<CR>
+nnoremap <leader>fu :action FindUsages<CR>
 nnoremap <leader>xi :action ExtractInterface<CR>
-nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+nnoremap <D-I> :action ActivateTerminalToolWindow<CR>
 
 " file browser
 nnoremap <leader>2 :action SelectInProjectView<CR>
@@ -96,11 +103,12 @@ nnoremap gp :action FrameSwitchAction<CR>
 nnoremap <leader><leader> :action KJumpAction<CR>
 
 " reformatting
-nnoremap <leader>c :action ReformatCode<CR>:action OptimizeImports<CR>
-" nnoremap <leader>p :action ReformatWithPrettierAction<CR>
+" nnoremap <leader>c :action ReformatCode<CR>:action OptimizeImports<CR>
+nnoremap <leader>c :action ReformatWithPrettierAction<CR>:action OptimizeImports<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>R :action ReplaceInPath<CR>
 nnoremap <leader>i :action Inline<CR>
+nnoremap <leader>a :action InspectCodeActionInPopupMenus<CR>
 
 " code folding
 nnoremap zf :action CollapseRegion<CR>
@@ -108,14 +116,18 @@ nnoremap zd :action ExpandRegion<CR>
 nnoremap zs :action CollapseAllRegions<CR>
 nnoremap za :action ExpandAllRegions<CR>
 
+" comments
+nnoremap <leader>/ :action CommentByLineComment<CR>
+vnoremap <leader>/ :action CommentByLineComment<CR>
+
 " display
 nnoremap <leader>V :action ChangeView<CR>
 
 " code generator
-nnoremap <leader>g :action GenerateGetterAndSetter<CR>
+" nnoremap <leader>g :action GenerateGetterAndSetter<CR>
 
 " git commands
-nnoremap <leader>vc :action ChangesView.ToggleCommitUi<CR>
+nnoremap <leader>gg :action ChangesView.ToggleCommitUi<CR>
 nnoremap <leader>vp :action Vcs.Push<CR>
 
 " scratch files
