@@ -1,6 +1,5 @@
-" enable standard vim plugins
-set surround
-set multiple-cursors
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
 
 " set clipboard as default register
 set clipboard=unnamedplus,unnamed
@@ -11,6 +10,11 @@ set number relativenumber
 
 " set leader key
 let mapleader = " "
+
+" activate easymotion via AceJump and ideavim-easymotion plugins
+set easymotion
+let g:Easymotion_do_mapping = 0
+map <leader><leader> <Plug>(easymotion-s)
 
 " disable special keys
 let g:C_Ctrl_j = "off"
@@ -75,10 +79,6 @@ nnoremap <C-c> :BD<cr>				" map Ctrl-c to close the current buffer
 nnoremap <leader>q :action CloseAllEditorsButActive<CR>
 nnoremap <leader>x :action CloseEditor<CR>
 
-" replace project tree toggle (TODO: repair)
-nnoremap <F2> :action ActivateProjectToolWindow<CR>
-nnoremap <leader>2 :action ActivateProjectToolWindow<CR>
-
 " open fzf alternative
 nnoremap <leader>p :action FileStructurePopup<CR>
 nnoremap <leader>e :action GotoNextError<CR>
@@ -89,6 +89,7 @@ nnoremap <leader>xi :action ExtractInterface<CR>
 nnoremap <D-I> :action ActivateTerminalToolWindow<CR>
 
 " file browser
+nnoremap <leader>1 :NERDTree<CR>
 nnoremap <leader>2 :action SelectInProjectView<CR>
 
 " goto commands
@@ -99,12 +100,12 @@ nnoremap gs :action GotoSymbol<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gp :action FrameSwitchAction<CR>
 
-" activate kjump as easymotion substitute
-nnoremap <leader><leader> :action KJumpAction<CR>
+" activate AceJump as easymotion substitute
+" map <leader><leader> :action AceAction<CR>
 
 " reformatting
 " nnoremap <leader>c :action ReformatCode<CR>:action OptimizeImports<CR>
-nnoremap <leader>c :action ReformatWithPrettierAction<CR>:action OptimizeImports<CR>
+nnoremap <leader>c :action OptimizeImports<CR>:action ReformatWithPrettierAction<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>R :action ReplaceInPath<CR>
 nnoremap <leader>i :action Inline<CR>
@@ -132,3 +133,4 @@ nnoremap <leader>vp :action Vcs.Push<CR>
 
 " scratch files
 nnoremap <leader>b :action NewScratchBuffer<CR>
+
