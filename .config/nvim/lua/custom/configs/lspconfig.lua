@@ -2,6 +2,8 @@ local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
+
+-- if you just want default config for the servers then put them in a table
 local servers = {
   "angularls",
   "cssls",
@@ -20,22 +22,22 @@ end
 
 lspconfig["tsserver"].setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx' },
-  importModuleSpecifierPreference = 'relative',
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx","svelte" },
+  importModuleSpecifierPreference = "relative",
   init_options = {
     documentFormatting = true,
     preferences = {
-      importModuleSpecifierPreference = 'relative',
+      importModuleSpecifierPreference = "relative",
     },
   },
   settings = {
-      rootMarkers = {".git/"},
-      languages = {
-          prettier = {
-            formatCommand = 'prettierd "${INPUT}"',
-            formatStdin = true,
-          }
+    rootMarkers = { ".git/" },
+    languages = {
+      prettier = {
+        formatCommand = 'prettierd "${INPUT}"',
+        formatStdin = true,
       },
+    },
   },
 }
 -- efm setup example

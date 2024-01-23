@@ -2,5 +2,9 @@
   "console.log": {
     "prefix": "log",
     "body": "console.log('${2:description}', ${1:variable});$0"
+  },
+  "console.log": {
+    "prefix": "lg",
+    "body": "console.log(${1:variable}, '(${1:variable})');$0"
   }
 }

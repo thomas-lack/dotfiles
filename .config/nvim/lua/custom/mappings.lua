@@ -1,3 +1,4 @@
+---@type MappingsTable
 local M = {}
 
 M.disabled = {
@@ -23,7 +24,7 @@ M.disabled = {
 
 M.nvimtree = {
   n = {
-    ["<leader>1"] = { "<cmd> :NvimTreeFocus <CR>", " focus nvimtree" },
+    ["<leader>1"] = { "<cmd> :NvimTreeFindFile <CR>", " focus nvimtree" },
     ["<leader>2"] = { "<cmd> :NvimTreeToggle <CR>", " toggle nvimtree" },
   },
 }
@@ -33,13 +34,13 @@ M.tabufline = {
     -- cycle through buffers
     ["gt"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflineNext()
+        require("nvchad.tabufline").tabuflineNext()
       end,
       " goto next buffer",
     },
     ["gT"] = {
       function()
-        require("nvchad_ui.tabufline").tabuflinePrev()
+        require("nvchad.tabufline").tabuflinePrev()
       end,
       " goto prev buffer",
     },
@@ -161,7 +162,7 @@ M.lazygit = {
 M.jester = {
   n = {
     ["<leader>ta"] = { "<cmd> lua require\"jester\".run_file({cmd=\"bun run test\"}) <CR>", " test all" },
-    ["<leader>tf"] = { "<cmd> lua require\"jester\".run_file({cmd=\"bun run test -- $file\"}) <CR>", " test file" },
+    ["<leader>tf"] = { "<cmd> lua require\"jester\".run_file({cmd=\"bun run test --test-match $file\"}) <CR>", " test file" },
     ["<leader>tn"] = { "<cmd> lua require\"jester\".run() <CR>", " test nearest" },
     ["<leader>la"] = { "<cmd> lua require\"jester\".run_file({cmd=\"bun run lint\"}) <CR>", " lint all" },
   }
@@ -178,17 +179,16 @@ M.package_info = {
 
 M.lspsaga = {
   n = {
-    ["<leader>ff"] = { "<cmd> Lspsaga lsp_finder <CR>", " lsp finder" },
+    ["<leader>ff"] = { "<cmd> Lspsaga finder <CR>", " lsp finder" },
     ["<leader>a"] = { "<cmd> Lspsaga code_action <CR>", " lsp code_action" },
     ["<leader>r"] = { "<cmd> Lspsaga rename <CR>", " lsp rename" },
     ["gD"] = { "<cmd> Lspsaga peek_definition <CR>", " goto definition" },
     ["<leader>3"] = { "<cmd> Lspsaga LSoutlineToggle <CR>", " lsp rename" },
   }
 }
-
-M.generic = {
+M.general = {
   n = {
-    [';'] = {"A;<ESC>", "End line with ';'"},
+    [";"] = {"A;<ESC>", "End line with ';'"},
     ["<leader>tl"] = { "<cmd> set nu! <CR>", "toggle line number" },
     ["<leader>tr"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
   }
@@ -223,5 +223,13 @@ M.buffers = {
     ["gb"] = {"<C-O>", "Go back in buffer history"},
   }
 }
+
+M.nvchad = {
+  n = {
+    ["<leader>uu"] = {"<cmd> :NvChadUpdate<CR>", "NvChad update"},
+  }
+}
+
+-- more keybinds!
 
 return M
