@@ -57,8 +57,8 @@ nnoremap ; A;<ESC>
 set nrformats=alpha
 
 " replace split buffer creation
-nnoremap <leader>v :action SplitVertically<CR>
-nnoremap <leader>h :action SplitHorizontally<CR>
+:nmap <leader>v <Action>(SplitVertically)
+:nmap <leader>h <Action>(SplitHorizontally)
 
 " Split window navigation
 nnoremap <C-l> <C-w>l
@@ -67,8 +67,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 
 " tab navigation
-nnoremap <Tab> :action NextTab<CR>
-nnoremap <S-Tab> :action PreviousTab<CR>
+:nmap <Tab> <Action>(NextTab)
+:nmap <S-Tab> <Action>(PreviousTab)
 
 " disable error sounds
 set visualbell
@@ -76,61 +76,68 @@ set noerrorbells
 
 " bufkill settings
 nnoremap <C-c> :BD<cr>				" map Ctrl-c to close the current buffer
-nnoremap <leader>q :action CloseAllEditorsButActive<CR>
-nnoremap <leader>x :action CloseEditor<CR>
+:nmap <leader>q <Action>(CloseAllEditorsButActive)
+:nmap <leader>x <Action>(CloseEditor)
 
 " open fzf alternative
-nnoremap <leader>p :action FileStructurePopup<CR>
-nnoremap <leader>e :action GotoNextError<CR>
-nnoremap <leader>E :action GotoPreviousError<CR>
-nnoremap <leader>fw :action FindInPath<CR>
-nnoremap <leader>fu :action FindUsages<CR>
-nnoremap <leader>xi :action ExtractInterface<CR>
-nnoremap <D-I> :action ActivateTerminalToolWindow<CR>
+:nmap <leader>p <Action>(FileStructurePopup)
+:nmap <leader>e <Action>(GotoNextError)
+:nmap <leader>E <Action>(GotoPreviousError)
+:nmap <leader>fw <Action>(FindInPath)
+:nmap <leader>fu <Action>(FindUsages)
+:nmap <leader>xi <Action>(ExtractInterface)
+:nmap <D-I> <Action>(ActivateTerminalToolWindow)
 
 " file browser
 nnoremap <leader>1 :NERDTree<CR>
-nnoremap <leader>2 :action SelectInProjectView<CR>
+:nmap <leader>2 <Action>(SelectInProjectView)
 
 " goto commands
-nnoremap gb :action Back<CR>
-nnoremap gf :action GotoFile<CR>
-nnoremap gc :action GotoClass<CR>
-nnoremap gs :action GotoSymbol<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gp :action FrameSwitchAction<CR>
+:nmap gb <Action>(Back)
+:nmap gf <Action>(GotoFile)
+:nmap gc <Action>(GotoClass)
+:nmap gs <Action>(GotoSymbol)
+:nmap gi <Action>(GotoImplementation)
+:nmap gp <Action>(FrameSwitchAction)
 
 " activate AceJump as easymotion substitute
-" map <leader><leader> :action AceAction<CR>
+:nmap map <leader><leader> <Action>(AceAction)
 
 " reformatting
 " nnoremap <leader>c :action ReformatCode<CR>:action OptimizeImports<CR>
 nnoremap <leader>c :action OptimizeImports<CR>:action ReformatWithPrettierAction<CR>
-nnoremap <leader>r :action RenameElement<CR>
-nnoremap <leader>R :action ReplaceInPath<CR>
-nnoremap <leader>i :action Inline<CR>
-nnoremap <leader>a :action InspectCodeActionInPopupMenus<CR>
+:nmap <leader>r <Action>(RenameElement)
+:nmap <leader>R <Action>(ReplaceInPath)
+:nmap <leader>i <Action>(Inline)
+:nmap <leader>a <Action>(InspectCodeActionInPopupMenus)
 
 " code folding
-nnoremap zf :action CollapseRegion<CR>
-nnoremap zd :action ExpandRegion<CR>
-nnoremap zs :action CollapseAllRegions<CR>
-nnoremap za :action ExpandAllRegions<CR>
+:nmap zf <Action>(CollapseRegion)
+:nmap zd <Action>(ExpandRegion)
+:nmap zs <Action>(CollapseAllRegions)
+:nmap za <Action>(ExpandAllRegions)
 
 " comments
-nnoremap <leader>/ :action CommentByLineComment<CR>
-vnoremap <leader>/ :action CommentByLineComment<CR>
+:nmap <leader>/ <Action>(CommentByLineComment)
+:vmap <leader>/ <Action>(CommentByLineComment)
+
+" Greatest remap EVER!!
+" Let me explain, this remap while in visiual mode
+" will delete what is currently highlighted and replace it
+" with what is in the register BUT it will YANK (delete) it
+" to a VOID register. Meaning I still have what I originally had
+" when I pasted. I don't loose the previous thing I YANKED!
+vnoremap <leader>p "_dP
 
 " display
-nnoremap <leader>V :action ChangeView<CR>
+:nmap <leader>V <Action>(ChangeView)
 
 " code generator
 " nnoremap <leader>g :action GenerateGetterAndSetter<CR>
 
 " git commands
-nnoremap <leader>gg :action ChangesView.ToggleCommitUi<CR>
-nnoremap <leader>vp :action Vcs.Push<CR>
+:nmap <leader>gg <Action>(CheckinProject)
+:nmap <leader>vp <Action>(Vcs.Push)
 
 " scratch files
-nnoremap <leader>b :action NewScratchBuffer<CR>
-
+:nmap <leader>b <Action>(NewScratchBuffer)
