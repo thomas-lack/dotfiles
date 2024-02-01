@@ -1,0 +1,63 @@
+[
+  // normal & visual mode
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "0": "editor::MoveToBeginningOfLine",
+      "g f": "file_finder::Toggle",
+      "g p": "project_panel::Open",
+      "shift-k": "vim::PageUp",
+      "shift-j": "vim::PageDown",
+      "space x": "pane::CloseActiveItem",
+      "space q": "pane::CloseInactiveItems",
+      "space c": "editor::Format",
+      "space f f": "editor::FindAllReferences",
+      "space f w": "workspace::NewSearch",
+      "space /": "editor::ToggleComments",
+      "space 2": "project_panel::ToggleFocus",
+      "space v": "pane::SplitRight",
+      "space h": "pane::SplitDown",
+      "space e": "editor::GoToDiagnostic",
+      "space shift-e": "editor::GoToPrevDiagnostic",
+      "space r": "editor::Rename",
+      "alt-enter": "editor::ToggleCodeActions",
+      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "space t": "workspace::ToggleTerminalFocus",
+      "ctrl-shift-i": "workspace::ToggleTerminalFocus"
+    }
+  },
+  // normal mode
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {}
+  },
+  // visual mode
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "space /": "editor::ToggleComments"
+    }
+  },
+  // insert mode
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {}
+  },
+  // project panel
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "ctrl-l": "project_panel::ToggleFocus"
+    }
+  },
+  // terminal panel
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-ESC": "terminal_panel::ToggleFocus"
+    }
+  }
+]
