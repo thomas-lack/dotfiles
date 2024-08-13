@@ -165,6 +165,7 @@ vim.keymap.set('n', 'J', '10jzz')
 vim.keymap.set('n', 'K', '10kzz')
 vim.keymap.set('v', 'J', '10jzz')
 vim.keymap.set('v', 'K', '10kzz')
+vim.keymap.set('n', '0', '^')
 
 -- buffer navigation
 vim.keymap.set('n', '<leader>v', '<C-w>v', { desc = 'Create vertical buffer' })
@@ -362,8 +363,8 @@ require('lazy').setup({
           timeout = 500,
         },
       }
-      vim.keymap.set('n', '<leader>1', ':NvimTreeFindFile<CR>', { desc = ' focus nvimtree' })
-      vim.keymap.set('n', '<leader>2', ':NvimTreeToggle<CR>', { desc = ' toggle nvimtree' })
+      vim.keymap.set('n', '<leader>1', '<cmd> NvimTreeFindFile<CR>', { desc = ' focus nvimtree' })
+      vim.keymap.set('n', '<leader>2', '<cmd> NvimTreeToggle<CR>', { desc = ' toggle nvimtree' })
     end,
   },
 
@@ -458,6 +459,21 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', 'gf', '<cmd> Telescope find_files hidden=true <CR>', { desc = ' goto file' })
+      vim.keymap.set('n', 'gB', '<cmd> Telescope buffers <CR>', { desc = ' goto buffer' })
+      vim.keymap.set('n', 'gp', '<cmd> Telescope projects <CR>', { desc = ' goto project' })
+      vim.keymap.set('n', '<leader>fw', '<cmd> Telescope live_grep hidden=true <CR>', { desc = ' find word' })
+      vim.keymap.set('n', '<leader>fu', '<cmd> lua vim.lsp.buf.references() <CR>', { desc = ' find usages' })
+      vim.keymap.set('n', '<leader>fh', '<cmd> Telescope help_tags <CR>', { desc = ' find help page' })
+      vim.keymap.set('n', '<leader>fo', '<cmd> Telescope oldfiles <CR>', { desc = ' find old files' })
+      vim.keymap.set('n', '<leader>sk', '<cmd> Telescope keymaps <CR>', { desc = ' show keys' })
+
+      -- git
+      vim.keymap.set('n', '<leader>gc', '<cmd> Telescope git_commits <CR>', { desc = ' git commits' })
+      vim.keymap.set('n', '<leader>gs', '<cmd> Telescope git_status <CR>', { desc = ' git status' })
+
+      -- pick a hidden term
+      vim.keymap.set('n', '<leader>pt', '<cmd> Telescope terms <CR>', { desc = ' pick hidden term' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
@@ -708,6 +724,23 @@ require('lazy').setup({
           end,
         },
       }
+    end,
+  },
+  {
+    'nvimdev/lspsaga.nvim',
+    lazy = false,
+    config = function()
+      require('lspsaga').setup {
+        symbols_in_winbar = {
+          enable = false,
+        },
+      }
+
+      vim.keymap.set('n', '<leader>ff', '<cmd> Lspsaga finder <CR>', { desc = ' lsp finder' })
+      vim.keymap.set('n', '<leader>a', '<cmd> Lspsaga code_action <CR>', { desc = ' lsp code_action' })
+      vim.keymap.set('n', '<leader>r', '<cmd> Lspsaga rename <CR>', { desc = ' lsp rename' })
+      vim.keymap.set('n', 'gD', '<cmd> Lspsaga peek_definition <CR>', { desc = ' goto definition' })
+      vim.keymap.set('n', '<leader>3', '<cmd> Lspsaga LSoutlineToggle <CR>', { desc = ' lsp rename' })
     end,
   },
 
