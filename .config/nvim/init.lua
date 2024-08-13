@@ -160,11 +160,29 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
--- Add default navigation
+-- default navigation
 vim.keymap.set('n', 'J', '10jzz')
 vim.keymap.set('n', 'K', '10kzz')
 vim.keymap.set('v', 'J', '10jzz')
 vim.keymap.set('v', 'K', '10kzz')
+
+-- buffer navigation
+vim.keymap.set('n', '<leader>v', '<C-w>v', { desc = 'Create vertical buffer' })
+vim.keymap.set('n', '<leader>h', '<C-w>s', { desc = 'Create horizontal buffer' })
+vim.keymap.set('n', '<leader>q', '<cmd> %bdelete <bar> edit# <bar> normal`" <CR>', { desc = 'Close other buffers' })
+vim.keymap.set('n', '<leader>x', '<cmd> Bdelete <CR>', { desc = 'Close current buffer' })
+vim.keymap.set('n', 'gn', '<C-I>', { desc = 'Go next in buffer history' })
+vim.keymap.set('n', 'gb', '<C-O>', { desc = 'Go back in buffer history' })
+
+-- search navigation
+vim.keymap.set('n', '<CR>', '<cmd> :noh<CR><CR>:<backspace>', { desc = 'Delete search results' })
+vim.keymap.set('n', 'n', 'nzz', { desc = 'next and center' })
+vim.keymap.set('n', 'N', 'Nzz', { desc = 'previous and center' })
+
+-- general keys
+vim.keymap.set('n', ';', 'A;<ESC>', { desc = "End line with ';'" })
+vim.keymap.set('n', '<leader>tl', '<cmd> set nu! <CR>', { desc = 'toggle line number' })
+vim.keymap.set('n', '<leader>tr', '<cmd> set rnu! <CR>', { desc = 'toggle relative number' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
@@ -344,15 +362,20 @@ require('lazy').setup({
           timeout = 500,
         },
       }
-      vim.keymap.set('n', '<leader>2', ':NvimTreeToggle<CR>', { desc = 'Toggle file tree' })
-      vim.keymap.set('n', '<leader>3', ':NvimTreeFindFile<CR>', { desc = 'Find file in tree' })
+      vim.keymap.set('n', '<leader>1', ':NvimTreeFindFile<CR>', { desc = ' focus nvimtree' })
+      vim.keymap.set('n', '<leader>2', ':NvimTreeToggle<CR>', { desc = ' toggle nvimtree' })
     end,
   },
 
-  {
-    'nvim-tree/nvim-web-devicons',
+  { -- LazyGit support
+    'kdheepak/lazygit.nvim',
+    lazy = false,
+    dependencies = {
+      { 'nvim-lua/plenary.nvim' },
+    },
     config = function()
-      require('nvim-web-devicons').setup {}
+      vim.keymap.set('n', '<leader>gg', '<cmd> LazyGit <CR>', { desc = ' LazyGit' })
+      vim.keymap.set('n', '<leader>gf', '<cmd> LazyGitFilterCurrentFile <CR>', { desc = ' LazyGit current File' })
     end,
   },
 
