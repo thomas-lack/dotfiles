@@ -1,8 +1,11 @@
 # dotfiles
+
 Personal preferences in various dotfiles
 
 ## Dependencies
+
 The following software packages should be installed:
+
 - [neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 - [tmux](https://github.com/tmux/tmux)
 - [zsh](https://github.com/zsh-users/zsh)
@@ -10,6 +13,12 @@ The following software packages should be installed:
 - [starship](https://starship.rs/)
 
 ### Usage
+
 Clone the repo and link the subdirectories into config folders, e.g. `~/.config`.
 
+## How to set up the NixOS configuration
 
+```
+sudo nixos-rebuild switch --flake ~/dotfiles/nixos -L
+home-manager switch --flake ~/dotfiles/nixos
+```
