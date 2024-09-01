@@ -9,6 +9,7 @@
       nixd.enable = true;
       svelte.enable = true;
       tsserver.enable = true;
+      marksman.enable = true;
     };
   };
 
