@@ -5,7 +5,6 @@
     # nnn # file manager
     mc
     bat
-    lazygit
     ncmpcpp
 
     # archives
