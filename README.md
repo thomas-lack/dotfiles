@@ -20,5 +20,4 @@ Clone the repo and link the subdirectories into config folders, e.g. `~/.config`
 
 ```
 sudo nixos-rebuild switch --flake path/to/dotfiles/nixos -L
-home-manager switch --flake path/to/dotfiles/nixos
 ```
