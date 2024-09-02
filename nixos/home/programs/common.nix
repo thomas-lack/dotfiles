@@ -18,6 +18,9 @@
     ripgrep
     wl-clipboard
 
+    # encryption
+    openssl
+
     # networking tools
 
     # monitoring
