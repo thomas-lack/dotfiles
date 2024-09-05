@@ -22,6 +22,7 @@
     openssl
 
     # networking tools
+    freerdp3
 
     # monitoring
     btop
