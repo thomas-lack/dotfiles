@@ -202,7 +202,12 @@ vim.keymap.set('n', '<leader>tr', '<cmd> set rnu! <CR>', { desc = 'toggle relati
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open [d]iagnostic [q]uickfix list' })
+vim.keymap.set('n', '<leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', { desc = 'Open [d]iagnostic [f]loat' })
+vim.keymap.set('n', '<leader>E', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { desc = 'Goto previous [E]rror' })
+vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.goto_next()<CR>', { desc = 'Goto next [e]rror' })
+-- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
+vim.keymap.set('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { desc = 'Open telescope diagnostics' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
