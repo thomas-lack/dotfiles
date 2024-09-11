@@ -1,16 +1,8 @@
-{ config, pkgs, inputs, ... }:
-
-{
-
+{...}: {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-    ./shell
-    ./development
-		./programs
+    ./thomas
+    ./work
   ];
-
-  home.username = "thomas";  
-  home.homeDirectory = "/home/thomas";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

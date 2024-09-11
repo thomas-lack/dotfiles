@@ -58,7 +58,7 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = false;
+  services.xserver.enable = true;
   services.xserver.videoDrivers = ["amdgpu"];
 
   # Enable the KDE Plasma Desktop Environment.
@@ -115,10 +115,18 @@
       kdePackages.kate
     ];
   };
+  users.users.work = {
+    isNormalUser = true;
+    description = "Work Account";
+    extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [
+      kdePackages.kate
+    ];
+  };
 
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "thomas";
+  #services.displayManager.autoLogin.enable = true;
+  #services.displayManager.autoLogin.user = "thomas";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -134,16 +142,6 @@
     xorg.xhost
     neovim
     gparted
-    #(lutris.override {
-    #  extraPkgs = pkgs: [
-    #    python3
-    #    gnome3.adwaita-icon-theme
-    #    ryujinx
-    #  ];
-    #})
-    ## wineWowPackages.stable
-    #wineWowPackages.waylandFull
-    #winetricks
     dropbox # does not work in home manager
   ];
 
