@@ -1,5 +1,5 @@
-{config, ...}: {
-  home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
+{...}: {
+  home.sessionVariables.STARSHIP_CACHE = "/tmp/starship";
 
   programs.starship = {
     enable = true;
