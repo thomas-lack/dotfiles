@@ -392,6 +392,131 @@ require('lazy').setup({
     end,
   },
 
+  { -- nvim debugging
+    'rcarriga/nvim-dap-ui',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      'nvim-neotest/nvim-nio',
+      'williamboman/mason.nvim',
+      --'jay-babu/mason-nvim-dap.nvim',
+      'mxsdev/nvim-dap-vscode-js',
+      'microsoft/vscode-js-debug',
+    },
+    config = function()
+      local dap = require 'dap'
+      local dapui = require 'dapui'
+      local utils = require 'dap.utils'
+
+      vim.keymap.set('n', '<F5>', dap.continue, { desc = '[debug] continue' })
+      vim.keymap.set('n', '<F10>', dap.step_over, { desc = '[debug] step over' })
+      vim.keymap.set('n', '<F11>', dap.step_into, { desc = '[debug] step into' })
+      vim.keymap.set('n', '<F12>', dap.step_out, { desc = '[debug] step out' })
+      vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = '[debug] toggle breakpoint' })
+      -- dap-ui
+      vim.keymap.set('n', '<leader>du', function()
+        dapui.toggle {
+          -- Always open the nvim dap ui in the default sizes
+          reset = true,
+        }
+      end, { desc = '[debug] Toggle [U]I' })
+
+      require('dap-vscode-js').setup {
+        -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
+        -- debugger_path = '(runtimedir)/site/pack/packer/opt/vscode-js-debug', -- Path to vscode-js-debug installation.
+        -- debugger_path = vim.fn.stdpath 'data' .. '/lazy/vscode-js-debug', -- Path to vscode-js-debug installation.
+        debugger_path = '/home/pdadm16/Downloads/js-debug', -- Path to vscode-js-debug installation.
+        -- debugger_cmd = { "extension" }, -- Command to use to launch the debug server. Takes precedence over `node_path` and `debugger_path`.
+        adapters = { 'chrome', 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost', 'node', 'chrome' }, -- which adapters to register in nvim-dap
+        -- log_file_path = "(stdpath cache)/dap_vscode_js.log" -- Path for file logging
+        -- log_file_level = false -- Logging level for output to file. Set to false to disable file logging.
+        -- log_console_level = vim.log.levels.ERROR -- Logging level for output to console. Set to false to disable console output.
+      }
+
+      --require('mason-nvim-dap').setup {
+      --  automatic_setup = true,
+
+      --  -- NOTE: I think nil here is important so that I don't work with the defaults from mason-nvim-dap, which would make my debugging process harder
+      --  handlers = nil,
+
+      --  ensure_installed = {
+      --    'js',
+      --  },
+      --  automatic_installation = true,
+      --}
+
+      --dap.adapters = {
+      --  ['pwa-node'] = {
+      --    type = 'server',
+      --    host = '::1',
+      --    port = '${port}',
+      --    executable = {
+      --      command = 'js-debug-adapter',
+      --      args = {
+      --        '${port}',
+      --      },
+      --    },
+      --  },
+      --}
+
+      for _, language in ipairs { 'typescript', 'javascript' } do
+        -- js-debug-adapter options:
+        -- https://github.com/microsoft/vscode-js-debug/blob/main/OPTIONS.md
+        dap.configurations[language] = {
+          {
+            type = 'pwa-node',
+            request = 'launch',
+            name = 'Launch file',
+            program = '${file}',
+            cwd = '${workspaceFolder}',
+          },
+          {
+            type = 'pwa-node',
+            request = 'attach',
+            name = 'Attach to process ID',
+            processId = utils.pick_process,
+            cwd = '${workspaceFolder}',
+          },
+          {
+            type = 'pwa-node',
+            request = 'attach',
+            name = 'Local inspect (port 9229)',
+            address = 'localhost',
+            port = 9229,
+            cwd = '${workspaceFolder}',
+            restart = true,
+          },
+        }
+      end
+
+      -- Dap UI setup
+      -- For more information, see |:help nvim-dap-ui|
+      -- TODO: set up dapui with neodev (see: https://github.com/rcarriga/nvim-dap-ui#installation)
+      dapui.setup {
+        -- Set icons to characters that are more likely to work in every terminal.
+        --    Feel free to remove or use ones that you like more! :)
+        --    Don't feel like these are good choices.
+        icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+        controls = {
+          icons = {
+            pause = '⏸',
+            play = '▶',
+            step_into = '⏎',
+            step_over = '⏭',
+            step_out = '⏮',
+            step_back = 'b',
+            run_last = '▶▶',
+            terminate = '⏹',
+            disconnect = '⏏',
+          },
+        },
+      }
+
+      dap.listeners.after.event_initialized['dapui_config'] = dapui.open
+      dap.listeners.before.event_terminated['dapui_config'] = dapui.close
+      dap.listeners.before.event_exited['dapui_config'] = dapui.close
+    end,
+  },
+
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
@@ -529,6 +654,7 @@ require('lazy').setup({
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
+    opts = { autoformat = false },
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
@@ -727,6 +853,9 @@ require('lazy').setup({
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
+            if server_name == 'tsserver' then
+              server_name = 'ts_ls'
+            end
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed
             -- by the server configuration above. Useful when disabling
@@ -762,33 +891,34 @@ require('lazy').setup({
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>f',
+        '<leader>c',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
         mode = '',
-        desc = '[F]ormat buffer',
+        desc = 'Format buffer',
       },
     },
     opts = {
       notify_on_error = false,
-      format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
-        return {
-          timeout_ms = 500,
-          lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-        }
-      end,
+      -- format_on_save = function(bufnr)
+      --   -- Disable "format_on_save lsp_fallback" for languages that don't
+      --   -- have a well standardized coding style. You can add additional
+      --   -- languages here or re-enable it for the disabled ones.
+      --   local disable_filetypes = { c = true, cpp = true }
+      --   return {
+      --     timeout_ms = 500,
+      --     lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+      --   }
+      -- end,
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
       },
     },
   },
@@ -1014,6 +1144,20 @@ require('lazy').setup({
       --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+
+      -- add treesitter support for ejs files
+      local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+      parser_config.ejs = {
+        install_info = {
+          url = 'https://github.com/tree-sitter/tree-sitter-embedded-template', -- local path or git repo
+          files = { 'src/parser.c' }, -- note that some parsers also require src/scanner.c or src/scanner.cc
+          -- optional entries:
+          branch = 'master', -- default branch in case of git repo if different from master
+          generate_requires_npm = false, -- if stand-alone parser without npm dependencies
+          requires_generate_from_grammar = true, -- if folder contains pre-generated src/parser.c
+        },
+        filetype = 'ejs', -- if filetype does not match the parser name
+      }
     end,
   },
 
