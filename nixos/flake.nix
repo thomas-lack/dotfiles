@@ -1,5 +1,4 @@
 {
-
   description = "nixderp NixOS configuration";
 
   inputs = {
@@ -14,18 +13,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: {
+  outputs = {
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
     nixosConfigurations.nixderp = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-				./hosts/msi-x470
-				home-manager.nixosModules.home-manager {
-					home-manager.useGlobalPkgs = true;
-					home-manager.useUserPackages = true;
-					home-manager.backupFileExtension = "backup";
-					home-manager.extraSpecialArgs = { inherit inputs; };
-					home-manager.users.thomas = import ./home;
-				}
+        ./hosts/msi-x470
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
+          home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.users.thomas = import ./home/thomas;
+          home-manager.users.work = import ./home/work;
+        }
       ];
     };
   };
