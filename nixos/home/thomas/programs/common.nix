@@ -20,6 +20,7 @@
 
     # encryption
     openssl
+    openconnect
 
     # networking tools
     freerdp3
