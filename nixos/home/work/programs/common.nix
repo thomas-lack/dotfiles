@@ -24,6 +24,7 @@
 
     # networking tools
     freerdp3
+    tightvnc
 
     # monitoring
     btop
