@@ -1,0 +1,42 @@
+{
+  "workbench.colorTheme": "Catppuccin Macchiato",
+  "editor.fontFamily": "'CaskaydiaMono Nerd Font', 'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.minimap.enabled": false,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.surround": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["J"],
+      "after": ["1", "0", "j", "z", "z"]
+    },
+    {
+      "before": ["K"],
+      "after": ["1", "0", "k", "z", "z"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["J"],
+      "after": ["1", "0", "j", "z", "z"]
+    },
+    {
+      "before": ["K"],
+      "after": ["1", "0", "k", "z", "z"]
+    }
+  ],
+  "explorer.confirmDelete": false,
+  "playwright.reuseBrowser": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "breadcrumbs.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.fontLigatures": true,
+  "git.autofetch": false
+}
