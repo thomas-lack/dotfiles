@@ -4,5 +4,6 @@
     ./browsers.nix
     ./media.nix
     ./gaming.nix
+    ./usb.nix
   ];
 }
