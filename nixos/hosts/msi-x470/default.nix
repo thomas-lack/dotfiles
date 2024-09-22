@@ -143,6 +143,9 @@
     neovim
     gparted
     dropbox # does not work in home manager
+    usbutils
+    udiskie
+    udisks
   ];
 
   # add steam support (no home-manager available)
@@ -170,6 +173,10 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
+
+  # add support for usb sticks
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
