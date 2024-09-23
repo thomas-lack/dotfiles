@@ -2,8 +2,9 @@
   imports = [
     ./common.nix
     ./browsers.nix
-    ./media.nix
     ./gaming.nix
+    ./kde.nix
+    ./media.nix
     ./usb.nix
   ];
 }
