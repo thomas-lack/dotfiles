@@ -1,6 +1,6 @@
 {
   "workbench.colorTheme": "Catppuccin Macchiato",
-  "editor.fontFamily": "'CaskaydiaMono Nerd Font', 'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontFamily": "'CaskaydiaMono Nerd Font', 'Cascadia Code', 'DroidSansMono Nerd Font', 'monospace', monospace",
   "editor.minimap.enabled": false,
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
@@ -16,6 +16,50 @@
     {
       "before": ["K"],
       "after": ["1", "0", "k", "z", "z"]
+    },
+    {
+      "before": [";"],
+      "after": ["A", ";", "<Esc>"]
+    },
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["0"],
+      "after": ["^"]
+    },
+    {
+      "before": ["<Enter>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "v"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.splitEditorOrthogonal"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -28,7 +72,10 @@
       "after": ["1", "0", "k", "z", "z"]
     }
   ],
-  "explorer.confirmDelete": false,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "explorer.confirmDelete": true,
   "playwright.reuseBrowser": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
