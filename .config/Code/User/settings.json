@@ -34,8 +34,48 @@
       "after": ["^"]
     },
     {
+      "before": ["<leader>", "c"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "R"],
+      "commands": ["editor.action.refactor"]
+    },
+    {
+      "before": ["g", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["filesExplorer.findInFolder"]
+    },
+    {
       "before": ["<Enter>"],
       "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "1"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<leader>", "2"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["go-to-next-error.nextInFiles.error"]
+    },
+    {
+      "before": ["<leader>", "E"],
+      "commands": ["go-to-next-error.prevInFiles.error"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"]
     },
     {
       "before": ["<leader>", "v"],
@@ -70,6 +110,10 @@
     {
       "before": ["K"],
       "after": ["1", "0", "k", "z", "z"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.blockComment"]
     }
   ],
   "extensions.experimental.affinity": {
@@ -85,5 +129,6 @@
   "breadcrumbs.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.fontLigatures": true,
+  "editor.bracketPairColorization.enabled": true,
   "git.autofetch": false
 }
