@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-
-{
-	programs.java = {
-		enable = true;
-		package = pkgs.jdk;
-	};
+{pkgs, ...}: {
+  home.packages = [
+    (pkgs.jdk.override {enableJavaFX = true;})
+    pkgs.maven
+  ];
 }
