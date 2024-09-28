@@ -6,10 +6,11 @@
       html.enable = true;
       jsonls.enable = true;
       lua-ls.enable = true;
+      marksman.enable = true;
       nixd.enable = true;
+      ruff-lsp.enable = true;
       svelte.enable = true;
       tsserver.enable = true;
-      marksman.enable = true;
     };
   };
 
