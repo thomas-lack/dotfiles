@@ -42,6 +42,7 @@
     discord
     webex
     zoom-us
+    skypeforlinux
 
     # misc
     prusa-slicer
