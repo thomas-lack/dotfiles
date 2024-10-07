@@ -110,18 +110,12 @@
   users.users.thomas = {
     isNormalUser = true;
     description = "Thomas";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
+    extraGroups = ["networkmanager" "wheel" "plugdev"];
   };
   users.users.work = {
     isNormalUser = true;
     description = "Work Account";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      kdePackages.kate
-    ];
+    extraGroups = ["networkmanager" "wheel" "plugdev"];
   };
 
   # Enable automatic login for the user.
