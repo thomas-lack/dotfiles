@@ -13,5 +13,6 @@
 
     # misc
     keymapp
+    carlito
   ];
 }
