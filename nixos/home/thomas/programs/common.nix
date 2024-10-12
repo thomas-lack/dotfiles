@@ -17,5 +17,6 @@
     prusa-slicer
     keymapp
     mcomix
+    bchunk
   ];
 }
