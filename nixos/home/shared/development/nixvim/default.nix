@@ -46,6 +46,7 @@
       #oil.enable = true;
       #undotree.enable = true;
       nvim-tree.enable = true;
+      web-devicons.enable = true;
     };
 
     extraPackages = with pkgs; [

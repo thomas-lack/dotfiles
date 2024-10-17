@@ -153,10 +153,9 @@
   # add gaming specific graphic card settings
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.opengl = {
+  hardware.graphics = {
     # radv: open source Vulkan driver from freedesktop
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
 
     # amdvlk: open source Vulkan driver from AMD
     extraPackages = [pkgs.amdvlk];
