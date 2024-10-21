@@ -140,6 +140,10 @@
     usbutils
     udiskie
     udisks
+    (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
+      [General]
+      background=${kdePackages.plasma-workspace-wallpapers}/share/wallpapers/MilkyWay/contents/images/5120x2880.png
+    '')
   ];
 
   # add steam support (no home-manager available)
