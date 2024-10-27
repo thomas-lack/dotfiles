@@ -5,5 +5,10 @@
       package = pkgs.firefox;
       profiles.work = {};
     };
+
+    librewolf = {
+      enable = true;
+      package = pkgs.librewolf;
+    };
   };
 }
