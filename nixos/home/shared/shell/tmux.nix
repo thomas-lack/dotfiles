@@ -43,6 +43,9 @@
       bind -n M-H previous-window
       bind -n M-L next-window
 
+      # kill window at once
+      bind q killw
+
       # key bindings vim copy mode
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
