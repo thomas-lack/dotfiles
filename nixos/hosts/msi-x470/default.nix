@@ -260,6 +260,9 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="3000", MODE="0666", GROUP="plugdev"
   '';
 
+  # Allow flatpak packages
+  services.flatpak.enable = true;
+
   # Enable the Flakes feature and command-line tool
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

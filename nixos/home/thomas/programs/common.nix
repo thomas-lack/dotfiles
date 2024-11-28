@@ -1,8 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    # networking tools
-    freerdp3
-
     # office
     libreoffice-qt6-fresh
     drawio
@@ -12,6 +9,9 @@
     webex
     zoom-us
     skypeforlinux
+
+    # file transfer
+    qbittorrent
 
     # misc
     prusa-slicer
