@@ -11,7 +11,7 @@
     skypeforlinux
 
     # file transfer
-    qbittorrent
+    aria2
 
     # misc
     prusa-slicer
