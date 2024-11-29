@@ -21,6 +21,7 @@
     # encryption
     openssl
     openconnect
+    openvpn
 
     # monitoring
     btop
