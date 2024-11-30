@@ -22,6 +22,7 @@
     openssl
     openconnect
     openvpn
+    openvpn3
 
     # monitoring
     btop
