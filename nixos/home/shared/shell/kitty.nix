@@ -6,7 +6,7 @@
       name = "Cascadia Code";
       size = 12;
     };
-    theme = "Catppuccin-Macchiato";
+    themeFile = "Catppuccin-Macchiato";
     settings = {
       term = "xterm-256color";
       copy_on_select = "clipboard";

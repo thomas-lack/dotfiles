@@ -3,7 +3,7 @@
     (lutris.override {
       extraPkgs = pkgs: [
         python3
-        gnome3.adwaita-icon-theme
+        adwaita-icon-theme
         ryujinx
       ];
     })
