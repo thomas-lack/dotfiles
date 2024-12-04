@@ -5,6 +5,7 @@
     playerctl
     pulsemixer
     mpc-cli
+    mpd
     # audio
     spotify
     # images
