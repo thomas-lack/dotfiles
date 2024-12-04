@@ -25,6 +25,13 @@
     mpd = {
       enable = true;
       musicDirectory = "$HOME/Musik";
+      extraConfig = ''
+        audio_output {
+        	type "pulse"
+        	name "My PulseAudio"
+        }
+      '';
+      network.startWhenNeeded = true;
     };
   };
 }
