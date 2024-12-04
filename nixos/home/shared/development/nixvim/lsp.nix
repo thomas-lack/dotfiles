@@ -8,7 +8,7 @@
       lua_ls.enable = true;
       marksman.enable = true;
       nixd.enable = true;
-      ruff_lsp.enable = true;
+      ruff.enable = true;
       svelte.enable = true;
       ts_ls.enable = true;
     };
@@ -147,7 +147,7 @@
         })
 
         -- Python LSP
-        require("lspconfig").ruff_lsp.setup({
+        require("lspconfig").ruff.setup({
         	on_attach = function()
         		set_cmn_lsp_keybinds()
         	end,
@@ -161,7 +161,7 @@
         })
 
         -- Typescript/Javascript LSP
-        require("lspconfig").tsserver.setup({
+        require("lspconfig").ts_ls.setup({
         	on_attach = function()
         		set_cmn_lsp_keybinds()
         	end,
