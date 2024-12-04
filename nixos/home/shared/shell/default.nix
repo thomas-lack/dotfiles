@@ -7,6 +7,7 @@
     ./fzf.nix
     ./tmux.nix
     ./eza.nix
+    ./ncmpcpp.nix
   ];
 
   # add environment variables
