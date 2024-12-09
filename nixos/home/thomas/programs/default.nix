@@ -5,5 +5,6 @@
     ./kde.nix
     ./media.nix
     ./usb.nix
+    ./wine.nix
   ];
 }
