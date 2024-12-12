@@ -6,5 +6,6 @@
     ./media.nix
     ./usb.nix
     ./wine.nix
+    ./gaming.nix
   ];
 }
