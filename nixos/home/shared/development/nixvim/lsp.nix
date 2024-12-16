@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   plugins.lsp = {
-		enable = true;
+    enable = true;
     servers = {
       bashls.enable = true;
       cssls.enable = true;
@@ -9,12 +9,12 @@
       lua_ls.enable = true;
       marksman.enable = true;
       nixd = {
-				enable = true;
-				settings = 
-					formatting.command = [ "nixpkgs-fmt" ];
-					nixpkgs.expr = "import <nixpkgs> {}";
-				};
-			};
+        enable = true;
+        settings = {
+          formatting.command = ["nixpkgs-fmt"];
+          nixpkgs.expr = "import <nixpkgs> {}";
+        };
+      };
       ruff.enable = true;
       svelte.enable = true;
       ts_ls.enable = true;
