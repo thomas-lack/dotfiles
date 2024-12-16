@@ -5,5 +5,6 @@
     ./java.nix
     ./javascript.nix
     ./vscode.nix
+    ./helix.nix
   ];
 }
