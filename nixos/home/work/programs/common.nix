@@ -3,6 +3,7 @@
     # networking tools
     freerdp3
     tigervnc
+    nmap
 
     # office
     libreoffice-qt6-fresh

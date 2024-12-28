@@ -8,6 +8,7 @@
     ./tmux.nix
     ./eza.nix
     ./ncmpcpp.nix
+    ./zoxide.nix
   ];
 
   # add environment variables
