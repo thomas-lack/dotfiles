@@ -5,6 +5,7 @@
     # nnn # file manager
     mc
     bat
+    ghostty
 
     # archives
     zip
