@@ -88,10 +88,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio = {
-    enable = false;
-    systemWide = true;
-  };
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -113,12 +110,12 @@
   users.users.thomas = {
     isNormalUser = true;
     description = "Thomas";
-    extraGroups = ["networkmanager" "wheel" "plugdev" "pulse-access" "audio"];
+    extraGroups = ["networkmanager" "wheel" "plugdev"];
   };
   users.users.work = {
     isNormalUser = true;
     description = "Work Account";
-    extraGroups = ["networkmanager" "wheel" "plugdev" "pulse-access" "audio"];
+    extraGroups = ["networkmanager" "wheel" "plugdev"];
   };
 
   # Enable automatic login for the user.
