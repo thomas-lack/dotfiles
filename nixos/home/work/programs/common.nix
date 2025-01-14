@@ -15,5 +15,6 @@
     # misc
     keymapp
     carlito
+    vice
   ];
 }
