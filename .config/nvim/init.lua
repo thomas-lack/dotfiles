@@ -517,6 +517,13 @@ require('lazy').setup({
     end,
   },
 
+  -- Rust
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^5',
+    lazy = false, -- This plugin is already lazy
+  },
+
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
