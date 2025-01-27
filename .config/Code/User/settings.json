@@ -135,5 +135,7 @@
   "rust-analyzer.rustfmt.enableRangeFormatting": true,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
-  }
+  },
+  "tabby.endpoint": "http://localhost:7488",
+  "tabby.config.telemetry": true
 }
