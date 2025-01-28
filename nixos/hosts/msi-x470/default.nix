@@ -119,12 +119,12 @@
   users.users.thomas = {
     isNormalUser = true;
     description = "Thomas";
-    extraGroups = ["networkmanager" "wheel" "plugdev" "gamers"];
+    extraGroups = ["networkmanager" "wheel" "plugdev"];
   };
   users.users.work = {
     isNormalUser = true;
     description = "Work Account";
-    extraGroups = ["networkmanager" "wheel" "plugdev" "gamers"];
+    extraGroups = ["networkmanager" "wheel" "plugdev"];
   };
 
   # Enable automatic login for the user.
