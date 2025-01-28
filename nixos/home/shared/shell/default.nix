@@ -32,7 +32,7 @@
     ".." = "cd ..";
     "..." = "cd ../..";
     l = "ls -a";
-    ll = "ls -l";
+    ll = "ls -la";
   };
 
   # add fonts
