@@ -32,7 +32,8 @@
     ".." = "cd ..";
     "..." = "cd ../..";
     l = "ls -a";
-    ll = "ls -la";
+    ll = "ls -l";
+    du = "du -h --max-depth=1 . | sort -h";
   };
 
   # add fonts
