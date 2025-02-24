@@ -130,7 +130,7 @@
   "editor.stickyScroll.enabled": false,
   "editor.fontLigatures": true,
   "editor.bracketPairColorization.enabled": true,
-  "git.autofetch": false,
+  "git.autofetch": true,
   "playwright.showTrace": false,
   "rust-analyzer.rustfmt.enableRangeFormatting": true,
   "[rust]": {
