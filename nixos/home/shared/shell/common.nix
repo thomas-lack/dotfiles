@@ -17,7 +17,7 @@
     # utils
     ripgrep
     wl-clipboard
-    xclip
+    xsel
 
     # encryption
     openssl
