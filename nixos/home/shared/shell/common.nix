@@ -24,8 +24,6 @@
     openconnect
     openvpn
     openvpn3
-    gnupg
-    pinentry-tty
 
     # monitoring
     btop
