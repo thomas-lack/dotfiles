@@ -115,6 +115,21 @@
   #  };
   #};
 
+  # Enable streaming service
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
+
+  #security.wrappers.sunshine = {
+  #  owner = "root";
+  #  group = "root";
+  #  capabilities = "cap_sys_admin+p";
+  #  source = "${pkgs.sunshine}/bin/sunshine";
+  #};
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.thomas = {
     isNormalUser = true;
