@@ -37,5 +37,8 @@
 
     # man pages
     tlrc
+
+    # password manager
+    prs
   ];
 }
