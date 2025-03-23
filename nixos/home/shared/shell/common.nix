@@ -24,6 +24,7 @@
     openconnect
     openvpn
     openvpn3
+    gnupg
 
     # monitoring
     btop
