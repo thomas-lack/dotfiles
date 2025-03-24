@@ -6,10 +6,10 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryFlavor = "gtk2";
+    pinentryFlavor = "tty";
     pinentryPackage = {
       _type = "literalMD";
-      text = "pkgs.pinentry-gtk2";
+      text = "pkgs.pinentry-tty";
     };
   };
 

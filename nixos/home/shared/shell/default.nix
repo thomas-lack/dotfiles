@@ -8,6 +8,7 @@
     ./eza.nix
     ./ncmpcpp.nix
     ./zoxide.nix
+    ./gnupg.nix
   ];
 
   # add environment variables
