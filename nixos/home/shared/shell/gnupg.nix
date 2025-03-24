@@ -1,17 +1,10 @@
-{...}: {
-  #home.packages = with pkgs; [
-  #  pinentry-gtk2
-  #];
+{pkgs, ...}: {
+  programs.gpg.enable = true;
 
-  programs.gnupg.agent = {
+  services.gpg-agent = {
     enable = true;
-    enableSSHSupport = true;
-    pinentryFlavor = "tty";
-    pinentryPackage = {
-      _type = "literalMD";
-      text = "pkgs.pinentry-tty";
-    };
+    enableSshSupport = true;
+    enableZshIntegration = true;
+    pinentryPackage = pkgs.pinentry-tty;
   };
-
-  services.pcscd.enable = true;
 }
