@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    wineWowPackages.stable
+    wineWowPackages.unstable
     #wineWowPackages.waylandFull
     winetricks
   ];
