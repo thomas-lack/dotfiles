@@ -1,6 +1,10 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    lutris
-    vice
+{
+  pkgs,
+  unstablePkgs,
+  ...
+}: {
+  home.packages = [
+    unstablePkgs.lutris
+    pkgs.vice
   ];
 }
