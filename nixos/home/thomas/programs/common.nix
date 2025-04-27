@@ -9,7 +9,6 @@
 
     # communication
     discord
-    webex
     zoom-us
     skypeforlinux
 

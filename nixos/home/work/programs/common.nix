@@ -9,9 +9,6 @@
     libreoffice-qt6-fresh
     drawio
 
-    # communication
-    webex
-
     # misc
     keymapp
     carlito

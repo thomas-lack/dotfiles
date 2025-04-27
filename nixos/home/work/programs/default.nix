@@ -4,5 +4,6 @@
     ./browsers.nix
     ./kde.nix
     ./media.nix
+    ./webex.nix
   ];
 }
