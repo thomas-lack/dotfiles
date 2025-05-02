@@ -16,7 +16,6 @@
     aria2
 
     # misc
-    prusa-slicer
     keymapp
     mcomix
     bchunk
