@@ -161,6 +161,7 @@
     neovim
     gparted
     dropbox # does not work in home manager
+    rclone
     usbutils
     udiskie
     udisks
@@ -239,7 +240,7 @@
     fsType = "ntfs";
   };
 
-  system.fsPackages = [pkgs.sshfs];
+  #system.fsPackages = [pkgs.sshfs];
   system.activationScripts.sshKeys = ''cp /var/src/secrets/* /run/keys'';
   #fileSystems.nasderp = {
   #  device = "root@nasderp.local:/mnt/user/";
@@ -251,6 +252,25 @@
   #    "identityFile=/run/keys/id_ed25519"
   #  ];
   #};
+  environment.etc."rclone-mnt.conf".text = ''
+    [nasderp]
+    type = sftp
+    host = 192.168.0.27
+    user = root
+    key_file = /run/keys/id_ed25519
+  '';
+  fileSystems.nasderp = {
+    device = "nasderp:/mnt/user/";
+    mountPoint = "/mnt/nasderp";
+    fsType = "rclone";
+    options = [
+      "nodev"
+      "nofail"
+      "allow_other"
+      "args2env"
+      "config=/etc/rclone-mnt.conf"
+    ];
+  };
 
   services.udev.extraRules = ''
     # Rules for Oryx web flashing and live training
