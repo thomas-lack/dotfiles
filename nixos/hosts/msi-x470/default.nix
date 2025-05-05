@@ -248,7 +248,7 @@
     options = [
       "allow_other" # non-root access
       "_netdev" # requires network to mount
-      "x.systemd.automount" # mount on demand
+      "x-systemd.automount" # mount on demand
       "identityFile=/run/keys/id_ed25519"
       # handle connection drops better
       "ServerAliveInterval=15"
