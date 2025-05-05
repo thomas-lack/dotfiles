@@ -241,16 +241,16 @@
 
   system.fsPackages = [pkgs.sshfs];
   system.activationScripts.sshKeys = ''cp /var/src/secrets/* /run/keys'';
-  fileSystems.nasderp = {
-    device = "root@nasderp.local:/mnt/user/";
-    mountPoint = "/mnt/nasderp";
-    fsType = "sshfs";
-    options = [
-      "allow_other"
-      "_netdev"
-      "identityFile=/run/keys/id_ed25519"
-    ];
-  };
+  #fileSystems.nasderp = {
+  #  device = "root@nasderp.local:/mnt/user/";
+  #  mountPoint = "/mnt/nasderp";
+  #  fsType = "sshfs";
+  #  options = [
+  #    "allow_other"
+  #    "_netdev"
+  #    "identityFile=/run/keys/id_ed25519"
+  #  ];
+  #};
 
   services.udev.extraRules = ''
     # Rules for Oryx web flashing and live training
