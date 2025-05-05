@@ -246,9 +246,15 @@
     mountPoint = "/mnt/nasderp";
     fsType = "sshfs";
     options = [
-      "allow_other"
-      "_netdev"
+      "allow_other" # non-root access
+      "_netdev" # requires network to mount
+      "x.systemd.automount" # mount on demand
       "identityFile=/run/keys/id_ed25519"
+      # handle connection drops better
+      "ServerAliveInterval=15"
+      "reconnect"
+      # uncomment this to figure out why mount is failing
+      #"debug"
     ];
   };
   #environment.etc."rclone-mnt.conf".text = ''
