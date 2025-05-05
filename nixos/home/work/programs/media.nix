@@ -25,7 +25,7 @@
     playerctld.enable = true;
     mpd = {
       enable = true;
-      musicDirectory = "$HOME/Musik";
+      musicDirectory = "/mnt/nasderp/Musik";
       extraConfig = ''
         audio_output {
         	type "pulse"
