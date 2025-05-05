@@ -59,7 +59,6 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = ["amdgpu"];
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm = {
@@ -240,40 +239,40 @@
     fsType = "ntfs";
   };
 
-  #system.fsPackages = [pkgs.sshfs];
+  system.fsPackages = [pkgs.sshfs];
   system.activationScripts.sshKeys = ''cp /var/src/secrets/* /run/keys'';
-  #fileSystems.nasderp = {
-  #  device = "root@nasderp.local:/mnt/user/";
-  #  mountPoint = "/mnt/nasderp";
-  #  fsType = "sshfs";
-  #  options = [
-  #    "allow_other"
-  #    "_netdev"
-  #    "identityFile=/run/keys/id_ed25519"
-  #  ];
-  #};
-  environment.etc."rclone-mnt.conf".text = ''
-    [nasderp]
-    type = sftp
-    host = 192.168.0.27
-    user = root
-    key_file = /run/keys/id_ed25519
-    shell_type = unix
-    md5sum_command = md5sum
-    sha1sum_command = sha1sum
-  '';
   fileSystems.nasderp = {
-    device = "nasderp:/mnt/user/";
+    device = "root@nasderp.local:/mnt/user/";
     mountPoint = "/mnt/nasderp";
-    fsType = "rclone";
+    fsType = "sshfs";
     options = [
-      "nodev"
-      "nofail"
       "allow_other"
-      "args2env"
-      "config=/etc/rclone-mnt.conf"
+      "_netdev"
+      "identityFile=/run/keys/id_ed25519"
     ];
   };
+  #environment.etc."rclone-mnt.conf".text = ''
+  #  [nasderp]
+  #  type = sftp
+  #  host = 192.168.0.27
+  #  user = root
+  #  key_file = /run/keys/id_ed25519
+  #  shell_type = unix
+  #  md5sum_command = md5sum
+  #  sha1sum_command = sha1sum
+  #'';
+  #fileSystems.nasderp = {
+  #  device = "nasderp:/mnt/user/";
+  #  mountPoint = "/mnt/nasderp";
+  #  fsType = "rclone";
+  #  options = [
+  #    "nodev"
+  #    "nofail"
+  #    "allow_other"
+  #    "args2env"
+  #    "config=/etc/rclone-mnt.conf"
+  #  ];
+  #};
 
   services.udev.extraRules = ''
     # Rules for Oryx web flashing and live training
