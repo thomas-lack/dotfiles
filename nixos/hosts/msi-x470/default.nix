@@ -258,6 +258,9 @@
     host = 192.168.0.27
     user = root
     key_file = /run/keys/id_ed25519
+    shell_type = unix
+    md5sum_command = md5sum
+    sha1sum_command = sha1sum
   '';
   fileSystems.nasderp = {
     device = "nasderp:/mnt/user/";
