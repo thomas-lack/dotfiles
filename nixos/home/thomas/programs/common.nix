@@ -10,7 +10,6 @@
     # communication
     discord
     zoom-us
-    skypeforlinux
 
     # file transfer
     aria2
