@@ -11,8 +11,11 @@
     # images
     imv
     # video
-    plex-media-player
+    plex-desktop
   ];
+
+  # enable plex user login
+  xdg.portal.xdgOpenUsePortal = true;
 
   programs.mpv = {
     enable = true;
