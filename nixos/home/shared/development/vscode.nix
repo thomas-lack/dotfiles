@@ -1,7 +1,11 @@
 {...}: {
   programs.vscode = {
     enable = true;
-    userSettings = {};
-    keybindings = [];
+    profiles = {
+      default = {
+        userSettings = {};
+        keybindings = [];
+      };
+    };
   };
 }

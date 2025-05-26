@@ -5,6 +5,8 @@
     enable = true;
     enableSshSupport = true;
     enableZshIntegration = true;
-    pinentryPackage = pkgs.pinentry-tty;
+    pinentry = {
+      package = pkgs.pinentry-tty;
+    };
   };
 }
