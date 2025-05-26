@@ -67,11 +67,11 @@
     },
     {
       "before": ["<leader>", "e"],
-      "commands": ["go-to-next-error.nextInFiles.error"]
+      "commands": ["editor.action.marker.next"]
     },
     {
       "before": ["<leader>", "E"],
-      "commands": ["go-to-next-error.prevInFiles.error"]
+      "commands": ["editor.action.marker.prev"]
     },
     {
       "before": ["<leader>", "/"],
@@ -137,5 +137,8 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "tabby.endpoint": "http://localhost:7488",
-  "tabby.config.telemetry": true
+  "tabby.config.telemetry": true,
+  "[xml]": {
+    "editor.defaultFormatter": "PrateekMahendrakar.prettyxml"
+  }
 }
