@@ -7,15 +7,143 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}: let
+  amdgpu-kernel-module = pkgs.callPackage ./amdgpu-patch/amdgpu-kernel-module.nix {
+    # Make sure the module targets the same kernel as your system is using
+    kernel = config.boot.kernelPackages.kernel;
+  };
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
-  boot.kernelModules = ["kvm-amd"];
-  boot.extraModulePackages = [];
+  boot = {
+    initrd = {
+      availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = ["kvm-amd"];
+    kernelParams = [];
+    extraModulePackages = [
+      # Workaround https://gitlab.freedesktop.org/drm/amd/-/issues?show=eyJpaWQiOiI0MjM4IiwiZnVsbF9wYXRoIjoiZHJtL2FtZCIsImlkIjoxMzMwODl9
+      (amdgpu-kernel-module.overrideAttrs (_: {
+        patches = [./amdgpu-patch/amdgpu-revert.patch];
+      }))
+    ];
+  };
+
+  # mount file systems
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/7b564546-35c4-45e1-9ce3-901a0e02a7fd";
+    fsType = "ext4";
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/E794-6BEE";
+    fsType = "vfat";
+    options = ["fmask=0022" "dmask=0022"];
+  };
+
+  fileSystems."/mnt/spiele" = {
+    device = "/dev/disk/by-uuid/ac9bcbac-57fa-4200-b83e-26101c8ee479";
+    fsType = "ext4";
+  };
+
+  fileSystems."/mnt/daten" = {
+    device = "/dev/disk/by-uuid/86D08A37D08A2D8D";
+    fsType = "ntfs";
+  };
+
+  fileSystems."/mnt/daten2" = {
+    device = "/dev/disk/by-uuid/0024255224254BCA";
+    fsType = "ntfs";
+  };
+
+  system.fsPackages = [pkgs.sshfs];
+  system.activationScripts.sshKeys = ''cp /var/src/secrets/* /run/keys'';
+  fileSystems.nasderp = {
+    device = "root@nasderp.local:/mnt/user/";
+    mountPoint = "/mnt/nasderp";
+    fsType = "sshfs";
+    options = [
+      "allow_other" # non-root access
+      "_netdev" # requires network to mount
+      "x-systemd.automount" # mount on demand
+      "identityFile=/run/keys/id_ed25519"
+      # handle connection drops better
+      "ServerAliveInterval=15"
+      "reconnect"
+      # uncomment this to figure out why mount is failing
+      #"debug"
+    ];
+  };
+  #environment.etc."rclone-mnt.conf".text = ''
+  #  [nasderp]
+  #  type = sftp
+  #  host = 192.168.0.27
+  #  user = root
+  #  key_file = /run/keys/id_ed25519
+  #  shell_type = unix
+  #  md5sum_command = md5sum
+  #  sha1sum_command = sha1sum
+  #'';
+  #fileSystems.nasderp = {
+  #  device = "nasderp:/mnt/user/";
+  #  mountPoint = "/mnt/nasderp";
+  #  fsType = "rclone";
+  #  options = [
+  #    "nodev"
+  #    "nofail"
+  #    "allow_other"
+  #    "args2env"
+  #    "config=/etc/rclone-mnt.conf"
+  #  ];
+  #};
+
+  services.udev.extraRules = ''
+    # Rules for Oryx web flashing and live training
+    KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", MODE="0664", GROUP="plugdev"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0664", GROUP="plugdev"
+
+    # Legacy rules for live training over webusb (Not needed for firmware v21+)
+    	# Rule for all ZSA keyboards
+    	SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
+    	# Rule for the Moonlander
+    	SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
+    	# Rule for the Ergodox EZ
+    	SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
+    	# Rule for the Planck EZ
+    	SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
+
+    # Wally Flashing rules for the Ergodox EZ
+    ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
+    ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
+    KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
+
+    # Keymapp or Wally Flashing rules for the Moonlander and Planck EZ
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", MODE:="0666", SYMLINK+="stm32_dfu"
+    # Keymapp Flashing rules for the Voyager
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="3297", MODE:="0666", SYMLINK+="ignition_dfu"
+
+    # Rule for NSW
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="3000", MODE="0666", GROUP="plugdev"
+  '';
+
+  # add gaming specific graphic card settings
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.amdgpu = {
+    initrd.enable = true;
+    amdvlk = {
+      enable = true;
+      support32Bit.enable = true;
+    };
+  };
+
+  # add support for game controllers
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   swapDevices = [];
 

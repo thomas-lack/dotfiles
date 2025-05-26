@@ -18,6 +18,7 @@
     ripgrep
     wl-clipboard
     xsel
+    memtest86plus
 
     # encryption
     openssl
