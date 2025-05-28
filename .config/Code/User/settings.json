@@ -126,6 +126,7 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
   "breadcrumbs.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.fontLigatures": true,
@@ -139,6 +140,6 @@
   "tabby.endpoint": "http://localhost:7488",
   "tabby.config.telemetry": true,
   "[xml]": {
-    "editor.defaultFormatter": "PrateekMahendrakar.prettyxml"
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
   }
 }
