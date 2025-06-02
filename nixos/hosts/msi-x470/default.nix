@@ -126,6 +126,7 @@
         layout = "us";
         variant = "";
       };
+      videoDrivers = ["nvidia"];
       # Enable the Cinnamon Desktop Environment
       #displayManager = {
       #  lightdm.enable = true;

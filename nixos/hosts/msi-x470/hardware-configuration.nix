@@ -7,12 +7,7 @@
   pkgs,
   modulesPath,
   ...
-}: let
-  amdgpu-kernel-module = pkgs.callPackage ./amdgpu-patch/amdgpu-kernel-module.nix {
-    # Make sure the module targets the same kernel as your system is using
-    kernel = config.boot.kernelPackages.kernel;
-  };
-in {
+}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -24,12 +19,7 @@ in {
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = ["kvm-amd"];
     kernelParams = [];
-    extraModulePackages = [
-      # Workaround https://gitlab.freedesktop.org/drm/amd/-/issues?show=eyJpaWQiOiI0MjM4IiwiZnVsbF9wYXRoIjoiZHJtL2FtZCIsImlkIjoxMzMwODl9
-      (amdgpu-kernel-module.overrideAttrs (_: {
-        patches = [./amdgpu-patch/amdgpu-revert.patch];
-      }))
-    ];
+    extraModulePackages = [];
   };
 
   # mount file systems
@@ -131,19 +121,39 @@ in {
   '';
 
   # add gaming specific graphic card settings
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  hardware.amdgpu = {
-    initrd.enable = true;
-    amdvlk = {
-      enable = true;
-      support32Bit.enable = true;
-    };
+  nixpkgs.hostPlatform =
+    lib.mkDefault "x86_64-linux";
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+    # Modesetting is required.
+    modesetting.enable = true;
+    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
+    # Enable this if you have graphical corruption issues or application crashes after waking
+    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead
+    # of just the bare essentials.
+    powerManagement.enable = false;
+    # Fine-grained power management. Turns off GPU when not in use.
+    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+    powerManagement.finegrained = true;
+    # Use the NVidia open source kernel module (not to be confused with the
+    # independent third-party "nouveau" open source driver).
+    # Support is limited to the Turing and later architectures. Full list of
+    # supported GPUs is at:
+    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
+    # Only available from driver 515.43.04+
+    open = true;
+    # Enable the Nvidia settings menu,
+    # accessible via `nvidia-settings`.
+    nvidiaSettings = true;
   };
 
   # add support for game controllers
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.enable =
+    true;
+  hardware.bluetooth.powerOnBoot =
+    true;
 
   swapDevices = [];
 
@@ -151,7 +161,8 @@ in {
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
+  networking.useDHCP =
+    lib.mkDefault true;
   # networking.interfaces.enp34s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp36s0.useDHCP = lib.mkDefault true;
 }
