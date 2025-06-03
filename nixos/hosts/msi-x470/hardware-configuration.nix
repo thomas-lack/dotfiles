@@ -16,7 +16,8 @@
     initrd = {
       availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" "sr_mod"];
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    #kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_14;
     kernelModules = ["kvm-amd"];
     kernelParams = [];
     extraModulePackages = [];
@@ -126,7 +127,8 @@
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.production;
+    #package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     # Modesetting is required.
     modesetting.enable = true;
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
