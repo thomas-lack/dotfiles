@@ -128,30 +128,30 @@
       };
       videoDrivers = ["nvidia"];
       # Enable the Cinnamon Desktop Environment
-      #displayManager = {
-      #  lightdm.enable = true;
-      #};
-      #desktopManager.cinnamon.enable = true;
+      displayManager = {
+        lightdm.enable = true;
+      };
+      desktopManager.cinnamon.enable = true;
     };
-    #displayManager = {
-    #  defaultSession = "cinnamon";
-    #};
-    # Enable the KDE Plasma Desktop Environment.
     displayManager = {
-      sddm = {
-        enable = true;
-        wayland = {
-          enable = true;
-          compositor = "kwin";
-        };
-        autoNumlock = true;
-      };
-      autoLogin = {
-        enable = false;
-        user = "thomas";
-      };
+      defaultSession = "cinnamon";
     };
-    desktopManager.plasma6.enable = true;
+    # Enable the KDE Plasma Desktop Environment.
+    #displayManager = {
+    #  sddm = {
+    #    enable = true;
+    #    wayland = {
+    #      enable = true;
+    #      compositor = "kwin";
+    #    };
+    #    autoNumlock = true;
+    #  };
+    #  autoLogin = {
+    #    enable = false;
+    #    user = "thomas";
+    #  };
+    #};
+    #desktopManager.plasma6.enable = true;
     # Enable sound with pipewire.
     pulseaudio.enable = false;
     pipewire = {
@@ -178,12 +178,12 @@
     # Allow flatpak packages
     flatpak.enable = true;
     # Enable streaming service
-    sunshine = {
-      enable = true;
-      autoStart = true;
-      capSysAdmin = true;
-      openFirewall = true;
-    };
+    #sunshine = {
+    #  enable = true;
+    #  autoStart = true;
+    #  capSysAdmin = true;
+    #  openFirewall = true;
+    #};
   };
 
   security.rtkit.enable = true;
