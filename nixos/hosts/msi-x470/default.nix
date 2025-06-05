@@ -179,6 +179,9 @@
     flatpak.enable = true;
     # Enable streaming service
     #sunshine = {
+    #  package = pkgs.sunshine.override {
+    #    cudaSupport = true;
+    #  };
     #  enable = true;
     #  autoStart = true;
     #  capSysAdmin = true;
