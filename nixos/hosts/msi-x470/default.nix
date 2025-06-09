@@ -93,10 +93,10 @@
     usbutils
     udiskie
     udisks
-    (writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
-      [General]
-      background=${kdePackages.plasma-workspace-wallpapers}/share/wallpapers/MilkyWay/contents/images/5120x2880.png
-    '')
+    #(writeTextDir "share/sddm/themes/breeze/theme.conf.user" ''
+    #  [General]
+    #  background=${kdePackages.plasma-workspace-wallpapers}/share/wallpapers/MilkyWay/contents/images/5120x2880.png
+    #'')
   ];
 
   # add steam support (no home-manager available)
@@ -178,15 +178,15 @@
     # Allow flatpak packages
     flatpak.enable = true;
     # Enable streaming service
-    #sunshine = {
-    #  package = pkgs.sunshine.override {
-    #    cudaSupport = true;
-    #  };
-    #  enable = true;
-    #  autoStart = true;
-    #  capSysAdmin = true;
-    #  openFirewall = true;
-    #};
+    sunshine = {
+      package = pkgs.sunshine.override {
+        cudaSupport = true;
+      };
+      enable = true;
+      autoStart = true;
+      capSysAdmin = true;
+      openFirewall = true;
+    };
   };
 
   security.rtkit.enable = true;
