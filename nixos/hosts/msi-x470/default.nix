@@ -66,12 +66,12 @@
   users.users.thomas = {
     isNormalUser = true;
     description = "Thomas";
-    extraGroups = ["networkmanager" "wheel" "plugdev"];
+    extraGroups = ["networkmanager" "wheel" "plugdev" "docker"];
   };
   users.users.work = {
     isNormalUser = true;
     description = "Work Account";
-    extraGroups = ["networkmanager" "wheel" "plugdev"];
+    extraGroups = ["networkmanager" "wheel" "plugdev" "docker"];
   };
 
   # Allow unfree packages

@@ -68,6 +68,14 @@
       #"debug"
     ];
   };
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 16 * 1024; # 16GB
+    }
+  ];
+
   #environment.etc."rclone-mnt.conf".text = ''
   #  [nasderp]
   #  type = sftp
@@ -121,7 +129,7 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="3000", MODE="0666", GROUP="plugdev"
   '';
 
-  # add gaming specific graphic card settings
+  # add graphic card settings
   nixpkgs.hostPlatform =
     lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode =
@@ -151,18 +159,13 @@
     nvidiaSettings = true;
   };
 
-  # add support for game controllers
-  hardware.bluetooth.enable =
-    true;
-  hardware.bluetooth.powerOnBoot =
-    true;
+  # add docker with CUDA support
+  virtualisation.docker.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
 
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 16 * 1024; # 16GB
-    }
-  ];
+  # add support for game controllers
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
