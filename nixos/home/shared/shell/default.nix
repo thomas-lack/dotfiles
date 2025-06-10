@@ -1,14 +1,15 @@
 {pkgs, ...}: {
   imports = [
     ./common.nix
-    ./zsh.nix
-    ./starship.nix
-    ./fzf.nix
-    ./tmux.nix
+    ./direnv.nix
     ./eza.nix
-    ./ncmpcpp.nix
-    ./zoxide.nix
+    ./fzf.nix
     ./gnupg.nix
+    ./ncmpcpp.nix
+    ./starship.nix
+    ./tmux.nix
+    ./zoxide.nix
+    ./zsh.nix
   ];
 
   # add environment variables
