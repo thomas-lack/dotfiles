@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   # add graphic card settings
   hardware.nvidia = {
     #package = config.boot.kernelPackages.nvidiaPackages.production;
