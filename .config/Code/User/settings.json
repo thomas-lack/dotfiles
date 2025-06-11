@@ -1,4 +1,5 @@
 {
+  "telemetry.telemetryLevel": "off",
   "workbench.colorTheme": "Catppuccin Macchiato",
   "editor.fontFamily": "'CaskaydiaMono Nerd Font', 'Cascadia Code', 'DroidSansMono Nerd Font', 'monospace', monospace",
   "editor.minimap.enabled": false,
@@ -135,11 +136,12 @@
   "playwright.showTrace": false,
   "rust-analyzer.rustfmt.enableRangeFormatting": true,
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.codeLens": false
   },
-  "tabby.endpoint": "http://localhost:7488",
-  "tabby.config.telemetry": true,
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml"
-  }
+  },
+  "tabby.endpoint": "http://localhost:7488",
+  "tabby.config.telemetry": false
 }
