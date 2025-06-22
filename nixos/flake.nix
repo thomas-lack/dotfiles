@@ -19,6 +19,8 @@
     home-manager,
     ...
   } @ inputs: {
+    # nix matches the hostname with a nixosConfigurations block
+    # add multiple host definitions here by using their hostnames
     nixosConfigurations.nixderp = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
