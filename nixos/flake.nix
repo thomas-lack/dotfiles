@@ -22,7 +22,7 @@
     nixosConfigurations.nixderp = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/msi-x470
+        ./hosts/nixderp
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
