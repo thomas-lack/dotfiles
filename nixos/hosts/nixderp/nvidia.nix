@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   # add graphic card settings
   hardware = {
     graphics = {
@@ -31,6 +35,12 @@
     };
     opengl = {
       enable = true;
+      extraPackages = with pkgs; [
+        vulkan-loader
+      ];
+      extraPackages32 = with pkgs; [
+        vulkan-loader
+      ];
     };
   };
 
