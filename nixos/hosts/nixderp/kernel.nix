@@ -12,7 +12,9 @@
     };
     #kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_6_14;
-    kernelModules = ["kvm-amd"];
+    kernelModules = [
+      "kvm-amd"
+    ];
     kernelParams = [];
     extraModulePackages = [];
   };

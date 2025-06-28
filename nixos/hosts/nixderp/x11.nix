@@ -11,16 +11,16 @@
       };
       videoDrivers = ["nvidia"];
       # Enable the Cinnamon Desktop Environment
-      # displayManager = {
-      #   lightdm.enable = true;
-      # };
+      displayManager = {
+        lightdm.enable = true;
+      };
       desktopManager.cinnamon.enable = true;
     };
     displayManager = {
       defaultSession = "cinnamon";
-      ly = {
-        enable = true;
-      };
+      #ly = {
+      #  enable = true;
+      #};
     };
     # Enable the KDE Plasma Desktop Environment.
     #displayManager = {

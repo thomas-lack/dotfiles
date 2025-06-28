@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   # add graphic card settings
   hardware = {
     graphics = {
@@ -32,15 +28,6 @@
       # accessible via `nvidia-settings`.
       nvidiaSettings = true;
       # give some software, e.g. Blender, access to CUDA GPU
-    };
-    opengl = {
-      enable = true;
-      extraPackages = with pkgs; [
-        vulkan-loader
-      ];
-      extraPackages32 = with pkgs; [
-        vulkan-loader
-      ];
     };
   };
 
