@@ -29,6 +29,11 @@
       nvidiaSettings = true;
       # give some software, e.g. Blender, access to CUDA GPU
     };
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
   };
 
   nixpkgs.config.cudaSupport = true;
