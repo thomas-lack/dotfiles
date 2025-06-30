@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   # add graphic card settings
   hardware = {
     graphics = {
@@ -32,4 +36,11 @@
   };
 
   nixpkgs.config.cudaSupport = true;
+
+  environment.systemPackages = with pkgs; [
+    vulkan-tools
+    vulkan-loader
+    vulkan-validation-layers
+    (pkgsi686Linux.vulkan-loader)
+  ];
 }
