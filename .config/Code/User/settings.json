@@ -143,5 +143,6 @@
     "editor.defaultFormatter": "DotJoshJohnson.xml"
   },
   "tabby.endpoint": "http://localhost:7488",
-  "tabby.config.telemetry": false
+  "tabby.config.telemetry": false,
+  "svelte.enable-ts-plugin": true
 }
