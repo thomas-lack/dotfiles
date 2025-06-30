@@ -12,7 +12,10 @@
       videoDrivers = ["nvidia"];
       # Enable the Cinnamon Desktop Environment
       displayManager = {
-        lightdm.enable = true;
+        lightdm = {
+          enable = true;
+          background = "/usr/local/share/images/1358524.png";
+        };
       };
       desktopManager.cinnamon.enable = true;
     };
