@@ -87,6 +87,10 @@
       "commands": ["workbench.action.splitEditorOrthogonal"]
     },
     {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
       "before": ["<C-h>"],
       "commands": ["workbench.action.navigateLeft"]
     },
