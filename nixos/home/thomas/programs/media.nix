@@ -20,7 +20,14 @@
   programs.mpv = {
     enable = true;
     defaultProfiles = ["gpu-hq"];
-    scripts = [pkgs.mpvScripts.mpris];
+    package = (
+      pkgs.mpv-unwrapped.wrapper
+      {
+        mpv = pkgs.mpv-unwrapped.override {
+          ffmpeg = pkgs.ffmpeg-full;
+        };
+      }
+    );
   };
 
   services = {
