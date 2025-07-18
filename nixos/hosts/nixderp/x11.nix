@@ -11,19 +11,19 @@
       };
       videoDrivers = ["nvidia"];
       # Enable the Cinnamon Desktop Environment
-      displayManager = {
-        lightdm = {
-          enable = true;
-          background = "/usr/local/share/images/1358524.png";
-        };
-      };
+      #displayManager = {
+      #  lightdm = {
+      #    enable = true;
+      #    background = "/usr/local/share/images/1358524.png";
+      #  };
+      #};
       desktopManager.cinnamon.enable = true;
     };
     displayManager = {
-      defaultSession = "cinnamon";
-      #ly = {
-      #  enable = true;
-      #};
+      defaultSession = "Hyprland";
+      ly = {
+        enable = true;
+      };
     };
     # Enable the KDE Plasma Desktop Environment.
     #displayManager = {
