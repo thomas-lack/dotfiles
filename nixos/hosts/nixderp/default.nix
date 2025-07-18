@@ -17,6 +17,7 @@
     ./docker.nix
     ./filesystem.nix
     ./flatpak.nix
+    ./hyprland.nix
     ./kernel.nix
     ./localization.nix
     ./network.nix
