@@ -3,6 +3,7 @@
     # terminal
     neofetch
     # nnn # file manager
+    yazi
     mc
     bat
     ghostty
