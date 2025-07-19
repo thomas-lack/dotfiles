@@ -1,0 +1,100 @@
+{
+	"layer": "top",
+	"position": "top",
+	"reload_style_on_change": true,
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"cpu",
+		"memory",
+		"bluetooth",
+		"tray"
+	],
+	
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5"
+		},
+		"sort-by-number": true,
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": []
+		}
+	},
+
+	"cpu": {
+		"interval": 1,
+		"format": "<span color='#f5a97f' size='large'></span> CPU {usage}%{icon}",
+		"format-icons": [
+			"<span color='#a6da95'>▁</span>", // green
+			"<span color='#8aadf4'>▂</span>", // blue
+			"<span color='#cad3f5'>▃</span>", // white
+			"<span color='#cad3f5'>▄</span>", // white
+			"<span color='#eed49f'>▅</span>", // yellow
+			"<span color='#eed49f'>▆</span>", // yellow
+			"<span color='#f5a97f'>▇</span>", // orange
+			"<span color='#ed8796'>█</span>"  // red
+    ],
+		"tooltip": true
+	},
+
+	"memory": {
+		"interval": 30,
+		"format": "<span color='#8bd5ca' size='large'></span> Mem {used:0.1f}G",
+		"max-length": 12,
+		"tooltip": false
+	},
+
+	"bluetooth": {
+		"format": "<span color='#8aadf4' size='x-large'></span>",
+		"format-disabled": "<span color='#ed8796' size='x-large'></span>", // an empty format will hide the module
+		"format-connected": "<span color='#a6da95' size='x-large'></span> {num_connections}",
+		"tooltip-format": "{controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+	},
+
+	"tray": {
+		"icon-size": 14,
+		"spacing": 10
+	},
+
+	"clock": {
+		"format": "{:%H<span color='#8087a2'>:</span>%M  <span color='#6e738d'>%d.%m.%y</span>}",
+		"interval": 1,
+		"tooltip-format": "<tt>{calendar}</tt>",
+		"calendar": {
+			"mode"          : "year",
+			"mode-mon-col"  : 3,
+			"weeks-pos"     : "right",
+			"on-scroll"     : 1,
+			"format": {
+				"months":   "<span color='#c6a0f6'><b>{}</b></span>",
+				"days":     "<span color='#b8c0e0'><b>{}</b></span>",
+				"weeks":    "<span color='#8bd5ca'><b>W{}</b></span>",
+				"weekdays": "<span color='#f5a97f'><b>{}</b></span>",
+				"today":    "<span color='#1e2030' background='#91d7e3'><b>{}</b></span>"
+			}
+		},
+		"actions":  {
+			"on-click-right": "mode",
+			"on-scroll-up": "tz_up",
+			"on-scroll-down": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	}
+}

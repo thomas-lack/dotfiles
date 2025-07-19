@@ -1,0 +1,95 @@
+* {
+	min-height: 0;
+}
+
+#waybar.top {
+	background: none;
+	font-family: 'Cascadia Code';
+	font-size: 14px;
+}
+tooltip {
+	background: rgba(0,0,0,0.9);	
+	color: #ffffff;
+}
+
+#workspaces {
+	padding: 0 10px;
+	transition: all .3s ease;
+	color: #cad3f5;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	background: 
+		linear-gradient(to right, #1e2030, #24273a),
+		linear-gradient(to right, #f4dbd6, #c6a0f6);
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+}
+#workspaces button {
+  color: #494d64;
+}
+#workspaces button:not(:first-child) {
+  margin-left: 2pt;
+}
+#workspaces button.active {
+  color: #f4dbd6;
+}
+#workspaces button:hover, #workspaces button:focus {
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+#workspaces button:hover:not(.active):not(.visible), #workspaces button:focus:not(.active):not(.visible) {
+  color: #9399b2;
+}
+
+#clock {
+	padding: 0 20px;
+	transition: all .3s ease;
+	color: #cad3f5;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	background: 
+		linear-gradient(to right, #1e2030, #24273a),
+		linear-gradient(to right, #8bd5ca, #7dc4e4);
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+}
+#clock:hover {
+	transition: all .3s ease;
+	background: 
+		linear-gradient(to right, #cad3f5, #b8c0e0),
+		linear-gradient(to right, #8bd5ca, #7dc4e4);
+	color: #1e2030;
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+}
+
+#tray {
+	transition: all .3s ease;
+}
+
+#cpu {
+	padding-right: 20px;
+	transition: all .3s ease;
+}
+
+#memory {
+	padding-right: 20px;
+	transition: all .3s ease;
+}
+
+#bluetooth {
+	padding-right: 20px;
+}
+
+.modules-right {
+	color: #cad3f5;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	background: 
+		linear-gradient(to right, #1e2030, #24273a),
+		linear-gradient(to right, #f5a97f, #eed49f);
+	background-clip: padding-box, border-box;
+	background-origin: padding-box, border-box;
+	padding: 0 10px;
+}
