@@ -82,6 +82,10 @@ tooltip {
 	padding-right: 20px;
 }
 
+#pulseaudio {
+	padding-right: 20px;
+}
+
 .modules-right {
 	color: #cad3f5;
 	border: 2px solid transparent;
