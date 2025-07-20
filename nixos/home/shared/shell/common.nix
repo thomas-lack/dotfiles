@@ -20,6 +20,7 @@
     wl-clipboard
     xsel
     memtest86plus
+    jq
 
     # encryption
     openssl
