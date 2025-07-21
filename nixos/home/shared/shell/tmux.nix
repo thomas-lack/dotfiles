@@ -33,6 +33,11 @@
       set-window-option -g pane-base-index 1
       set-option -g renumber-windows on
 
+      # enable yazi image preview
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
+
       # switch panes with <prefix>+hjkl
       bind-key h select-pane -L
       bind-key l select-pane -R
