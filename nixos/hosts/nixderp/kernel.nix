@@ -10,8 +10,7 @@
         "sr_mod"
       ];
     };
-    #kernelPackages = pkgs.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages_6_14;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [
       "kvm-amd"
     ];
