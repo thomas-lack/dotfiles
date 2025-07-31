@@ -28,6 +28,7 @@
   # add aliases
   home.shellAliases = {
     vim = "nvim";
+    y = "yazi";
     n = "cd /etc/nixos";
     d = "cd $HOME/Dropbox/Dokumente";
     ".." = "cd ..";
