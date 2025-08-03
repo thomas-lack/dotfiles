@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     # terminal
     neofetch
-    # nnn # file manager
     yazi
     mc
     bat
@@ -21,6 +20,8 @@
     xsel
     memtest86plus
     jq
+    fd
+    dust
 
     # encryption
     openssl
@@ -32,6 +33,8 @@
     btop
     iotop
     iftop
+    procs
+    bandwhich
     ookla-speedtest
 
     # system tools
