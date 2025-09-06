@@ -45,7 +45,8 @@
     };
   };
 
-  nixpkgs.config.cudaSupport = true;
+  # enabling cuda support globally leads to lots of recompiling packages
+  #nixpkgs.config.cudaSupport = true;
 
   environment.systemPackages = with pkgs; [
     vulkan-tools
