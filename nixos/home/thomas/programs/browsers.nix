@@ -10,6 +10,10 @@
       enable = true;
       package = pkgs.librewolf;
     };
+
+    zen-browser = {
+      enable = true;
+    };
   };
 
   home.packages = with pkgs; [
