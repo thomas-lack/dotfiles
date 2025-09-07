@@ -1,7 +1,6 @@
 {inputs, ...}: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    inputs.zen-browser.homeModules.beta
     ../shared/shell
     ../shared/development
     ./programs
