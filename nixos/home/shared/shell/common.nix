@@ -40,6 +40,7 @@
     # system tools
     pciutils # lspci
     usbutils # lsusb
+    patchelf
 
     # man pages
     tlrc
