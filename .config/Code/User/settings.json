@@ -152,5 +152,10 @@
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
-  "workbench.editor.empty.hint": "hidden"
+  "workbench.editor.empty.hint": "hidden",
+  "telemetry.feedback.enabled": false,
+  "chat.agent.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "chat.notifyWindowOnConfirmation": false,
+  "continue.telemetryEnabled": false
 }
