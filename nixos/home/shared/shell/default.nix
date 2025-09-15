@@ -35,7 +35,7 @@
     ".." = "cd ..";
     "..." = "cd ../..";
     l = "ls -a";
-    ll = "ls -l";
+    ll = "ls -la";
     du = "du -h --max-depth=1 . | sort -h";
   };
 
