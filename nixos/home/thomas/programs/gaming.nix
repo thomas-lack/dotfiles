@@ -7,5 +7,6 @@
     unstablePkgs.lutris
     pkgs.vice
     unstablePkgs.bottles
+    unstablePkgs.protonup-rs
   ];
 }
