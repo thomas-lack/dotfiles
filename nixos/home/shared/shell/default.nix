@@ -28,7 +28,7 @@
   # add aliases
   home.shellAliases = {
     vim = "nvim";
-    code = "LD_LIBRARY_PATH=$(nix-build '<nixpkgs>' -A stdenv.cc.cc.lib)/lib code";
+    code = "LD_LIBRARY_PATH=$(nix-build '<nixpkgs>' -A stdenv.cc.cc.lib)/lib code --password-store=\"gnome-libsecret\"";
     y = "yazi";
     n = "cd /etc/nixos";
     d = "cd $HOME/Dropbox/Dokumente";
