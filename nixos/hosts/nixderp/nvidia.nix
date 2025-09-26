@@ -9,18 +9,20 @@
       enable = true;
     };
     nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.production;
+      #package = config.boot.kernelPackages.nvidiaPackages.production;
       #package = config.boot.kernelPackages.nvidiaPackages.beta;
       # load specific driver until kernel 6.15 is fully supported by beta / production packages
-      #      package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      #  version = "580.82.09";
-      #  sha256_64bit = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
-      #  sha256_aarch64 = "sha256-6tHiAci9iDTKqKrDIjObeFdtrlEwjxOHJpHfX4GMEGQ=";
-      #  openSha256 = "sha256-YB+mQD+oEDIIDa+e8KX1/qOlQvZMNKFrI5z3CoVKUjs=";
-      #  settingsSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
-      #  persistencedSha256 = "sha256-lbYSa97aZ+k0CISoSxOMLyyMX//Zg2Raym6BC4COipU=";
-      #  usePersistenced = true;
-      #};
+      # hashes can be found here:
+      # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/nvidia-x11/default.nix
+      package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+        version = "580.82.09";
+        sha256_64bit = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
+        sha256_aarch64 = "sha256-6tHiAci9iDTKqKrDIjObeFdtrlEwjxOHJpHfX4GMEGQ=";
+        openSha256 = "sha256-YB+mQD+oEDIIDa+e8KX1/qOlQvZMNKFrI5z3CoVKUjs=";
+        settingsSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
+        persistencedSha256 = "sha256-lbYSa97aZ+k0CISoSxOMLyyMX//Zg2Raym6BC4COipU=";
+        usePersistenced = true;
+      };
       # Modesetting is required.
       modesetting.enable = true;
       # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
