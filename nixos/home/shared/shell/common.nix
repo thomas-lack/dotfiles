@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  unstablePkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     # terminal
     neofetch
@@ -6,6 +10,7 @@
     mc
     bat
     ghostty
+    unstablePkgs.lazyssh
 
     # archives
     zip
