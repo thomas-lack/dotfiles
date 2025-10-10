@@ -8,6 +8,7 @@
     ./ncmpcpp.nix
     ./starship.nix
     ./tmux.nix
+    ./zellij.nix
     ./zoxide.nix
     ./zsh.nix
   ];
