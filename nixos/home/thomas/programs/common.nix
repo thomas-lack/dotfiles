@@ -13,6 +13,7 @@
 
     # file transfer
     aria2
+    seafile-client
 
     # misc
     keymapp
