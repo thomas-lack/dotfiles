@@ -157,5 +157,6 @@
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
   "chat.notifyWindowOnConfirmation": false,
-  "continue.telemetryEnabled": false
+  "continue.telemetryEnabled": false,
+  "remote.SSH.useExecServer": false
 }
