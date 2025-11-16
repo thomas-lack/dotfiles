@@ -8,7 +8,6 @@
     pkgs.vice
     (unstablePkgs.bottles.override {
       removeWarningPopup = true;
-      bottlesExtraLibraries = [pkgs.gnutls];
     })
     unstablePkgs.protonup-rs
   ];
