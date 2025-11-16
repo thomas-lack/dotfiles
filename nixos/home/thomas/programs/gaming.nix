@@ -6,7 +6,10 @@
   home.packages = [
     unstablePkgs.lutris
     pkgs.vice
-    unstablePkgs.bottles
+    (unstablePkgs.bottles.override {
+      removeWarningPopup = true;
+      bottlesExtraLibraries = [pkgs.gnutls];
+    })
     unstablePkgs.protonup-rs
   ];
 }
