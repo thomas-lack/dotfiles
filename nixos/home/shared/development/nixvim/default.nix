@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   imports = [
-    ./keymaps.nix
     ./style.nix
     ./telescope.nix
     ./treesitter.nix
@@ -86,6 +85,8 @@
 
     keymaps =
       []
-      ++ import ./keymaps/lsp.nix;
+      ++ import ./keymaps/base
+      ++ import ./keymaps/lsp
+      ++ import ./keymaps/nvimtree;
   };
 }
