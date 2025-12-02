@@ -47,6 +47,7 @@
       #undotree.enable = true;
       nvim-tree.enable = true;
       web-devicons.enable = true;
+      lspsaga.enable = true;
     };
 
     extraPackages = with pkgs; [

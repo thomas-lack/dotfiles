@@ -1,12 +1,20 @@
 [
   {
+    mode = "n";
     key = "<leader>k";
-    lspBufAction = "hover";
-    options.desc = "hover [k]nowledge with LSP";
+    action = "<cmd>Lspsaga hover_doc<CR>";
+    options = {
+      desc = "hover [k]nowledge with LSP";
+      silent = true;
+    };
   }
   {
+    mode = "n";
     key = "gd";
-    lspBufAction = "definition";
-    options.desc = "[g]o to [d]efinition with LSP";
+    action = "<cmd>Lspsaga goto_definition<cr>";
+    options = {
+      desc = "[g]o to [d]efinition with LSP";
+      silent = true;
+    };
   }
 ]
