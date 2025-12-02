@@ -4,7 +4,7 @@
     pavucontrol
     playerctl
     pulsemixer
-    mpc-cli
+    mpc
     mpd
     # audio
     spotify
