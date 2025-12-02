@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # networking tools
-    freerdp3
+    freerdp
     tigervnc
     nmap
 

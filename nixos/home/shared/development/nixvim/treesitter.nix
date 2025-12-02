@@ -16,7 +16,7 @@
 
   plugins.treesitter-textobjects = {
     enable = true;
-    extraOptions = {
+    settings = {
       select = {
         enable = true;
         lookahead = true;
