@@ -82,5 +82,9 @@
       tmux-sessionizer
       zig
     ];
+
+    keymaps =
+      []
+      ++ import ./keymaps/lsp.nix;
   };
 }
