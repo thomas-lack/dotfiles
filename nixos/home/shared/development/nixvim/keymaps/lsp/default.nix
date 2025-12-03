@@ -53,4 +53,13 @@
       silent = true;
     };
   }
+  {
+    mode = "n";
+    key = "<leader>sd";
+    action = "<cmd>Lspsaga hover_doc<cr>";
+    options = {
+      desc = "[s]how [d]ocumentation with LSP";
+      silent = true;
+    };
+  }
 ]
