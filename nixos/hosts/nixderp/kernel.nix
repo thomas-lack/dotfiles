@@ -10,7 +10,9 @@
         "sr_mod"
       ];
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    # do not use latest kernel, until open nvidia drivers are compatible
+    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_17;
     kernelModules = [
       "kvm-amd"
     ];
