@@ -14,6 +14,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./boot-loader.nix
+    ./cosmic.nix
     ./docker.nix
     ./filesystem.nix
     ./flatpak.nix
