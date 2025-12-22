@@ -1,8 +1,5 @@
 {pkgs, ...}: {
-  home.packages = [
-    (pkgs.ollama.override {
-      config.cudaSupport = true;
-      config.rocmSupport = false;
-    })
+  home.packages = with pkgs; [
+    ollama-cuda
   ];
 }

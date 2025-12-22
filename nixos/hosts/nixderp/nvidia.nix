@@ -9,8 +9,8 @@
       enable = true;
     };
     nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.production;
-      #package = config.boot.kernelPackages.nvidiaPackages.beta;
+      #package = config.boot.kernelPackages.nvidiaPackages.production;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       # load specific driver until kernel 6.15 is fully supported by beta / production packages
       # hashes can be found here:
       # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/nvidia-x11/default.nix
