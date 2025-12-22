@@ -18,6 +18,7 @@
       #  };
       #};
       desktopManager.cinnamon.enable = true;
+      desktopManager.cosmic.enable = true;
     };
     displayManager = {
       defaultSession = "Hyprland";
