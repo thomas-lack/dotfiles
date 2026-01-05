@@ -1,5 +1,5 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
+{unstablePkgs, ...}: {
+  home.packages = with unstablePkgs; [
     ollama-cuda
   ];
 }
