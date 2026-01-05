@@ -156,5 +156,6 @@
   "chat.commandCenter.enabled": false,
   "chat.notifyWindowOnConfirmation": false,
   "continue.telemetryEnabled": false,
-  "remote.SSH.useExecServer": false
+  "remote.SSH.useExecServer": false,
+  "workbench.editor.enablePreview": false
 }
