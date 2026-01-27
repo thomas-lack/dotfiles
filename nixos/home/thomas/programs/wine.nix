@@ -1,7 +1,12 @@
 {unstablePkgs, ...}: {
   home.packages = with unstablePkgs; [
     #wineWowPackages.unstable
-    wineWowPackages.waylandFull
+    wineWowPackages.stagingFull.override
+    {
+      waylandSupport = true;
+      vulkanSupport = true;
+      x11Support = false;
+    }
     winetricks
   ];
 }
