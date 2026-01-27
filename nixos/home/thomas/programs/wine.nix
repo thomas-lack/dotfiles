@@ -9,6 +9,4 @@
     })
     winetricks
   ];
-
-  programs.xwayland.enable = true;
 }
