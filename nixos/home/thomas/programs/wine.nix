@@ -4,8 +4,11 @@
     (wineWowPackages.stagingFull.override {
       waylandSupport = true;
       vulkanSupport = true;
-      x11Support = false;
+      # enable fallback to xwayland
+      x11Support = true;
     })
     winetricks
   ];
+
+  programs.xwayland.enable = true;
 }
