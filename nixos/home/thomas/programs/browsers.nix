@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  unstablePkgs,
+  ...
+}: {
   programs = {
     firefox = {
       enable = true;
@@ -8,7 +12,7 @@
 
     librewolf = {
       enable = true;
-      package = pkgs.librewolf;
+      package = unstablePkgs.librewolf;
     };
   };
 
