@@ -10,18 +10,18 @@
     };
     nvidia = {
       #package = config.boot.kernelPackages.nvidiaPackages.production;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+			#package = config.boot.kernelPackages.nvidiaPackages.beta;
       # load specific driver until kernel 6.15 is fully supported by beta / production packages
       # hashes can be found here:
       # https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/nvidia-x11/default.nix
-      #package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      #  version = "580.95.05";
-      #  sha256_64bit = "sha256-hJ7w746EK5gGss3p8RwTA9VPGpp2lGfk5dlhsv4Rgqc=";
-      #  sha256_aarch64 = "sha256-zLRCbpiik2fGDa+d80wqV3ZV1U1b4lRjzNQJsLLlICk=";
-      #  openSha256 = "sha256-RFwDGQOi9jVngVONCOB5m/IYKZIeGEle7h0+0yGnBEI=";
-      #  settingsSha256 = "sha256-F2wmUEaRrpR1Vz0TQSwVK4Fv13f3J9NJLtBe4UP2f14=";
-      #  persistencedSha256 = "sha256-QCwxXQfG/Pa7jSTBB0xD3lsIofcerAWWAHKvWjWGQtg=";
-      #  usePersistenced = true;
+      package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+				version = "590.48.01";
+				sha256_64bit = "sha256-ueL4BpN4FDHMh/TNKRCeEz3Oy1ClDWto1LO/LWlr1ok=";
+				sha256_aarch64 = "sha256-FOz7f6pW1NGM2f74kbP6LbNijxKj5ZtZ08bm0aC+/YA=";
+				openSha256 = "sha256-hECHfguzwduEfPo5pCDjWE/MjtRDhINVr4b1awFdP44=";
+				settingsSha256 = "sha256-NWsqUciPa4f1ZX6f0By3yScz3pqKJV1ei9GvOF8qIEE=";
+				persistencedSha256 = "sha256-wsNeuw7IaY6Qc/i/AzT/4N82lPjkwfrhxidKWUtcwW8=";
+        usePersistenced = true;
       #};
       # Modesetting is required.
       modesetting.enable = true;
