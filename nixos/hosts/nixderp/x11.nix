@@ -20,7 +20,7 @@
       desktopManager.cinnamon.enable = true;
     };
     displayManager = {
-      defaultSession = "Hyprland";
+      defaultSession = "Cinnamon";
       ly = {
         enable = true;
       };
