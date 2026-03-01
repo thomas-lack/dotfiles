@@ -1,8 +1,13 @@
 {
   pkgs,
-  unstablePkgs,
+  nixpkgs-unstable,
   ...
-}: {
+}: let
+  unstablePkgs = import nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in {
   services = {
     desktopManager.cosmic = {
       enable = true;
