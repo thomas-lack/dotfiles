@@ -1,6 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  unstablePkgs,
+  ...
+}: {
   services = {
-    desktopManager.cosmic.enable = true;
+    desktopManager.cosmic = {
+      enable = true;
+      package = unstablePkgs.cosmic;
+    };
     system76-scheduler.enable = true;
   };
 
