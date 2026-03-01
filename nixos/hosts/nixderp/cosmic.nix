@@ -1,12 +1,4 @@
-{
-  pkgs,
-  unstablePkgs,
-  ...
-}: {
-  imports = [
-    "${unstablePkgs.path}/nixos/modules/services/desktop-managers/cosmic.nix"
-  ];
-
+{pkgs, ...}: {
   services = {
     desktopManager.cosmic.enable = true;
     system76-scheduler.enable = true;
