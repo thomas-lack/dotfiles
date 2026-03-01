@@ -41,7 +41,7 @@
           home-manager.users.work = import ./home/work;
         }
       ];
-      extraSpecialArgs = {
+      specialArgs = {
         unstablePkgs = import inputs.nixpkgs-unstable {
           system = "x86_64-linux";
           config.allowUnfree = true;
