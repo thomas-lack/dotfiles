@@ -2,7 +2,7 @@
   networking = {
     hostName = "nixderp";
     hosts = {
-      "192.168.0.58" = ["nasderp.local"];
+      "192.168.0.27" = ["nasderp.local"];
     };
     networkmanager.enable = true;
 
