@@ -1,6 +1,6 @@
-{unstablePpkgs, ...}: {
+{pkgs, ...}: {
   home.packages = [
     #pkgs.super-slicer-beta
-    unstablePpkgs.orca-slicer
+    pkgs.orca-slicer
   ];
 }
