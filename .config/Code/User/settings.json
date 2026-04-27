@@ -154,7 +154,7 @@
   "telemetry.feedback.enabled": false,
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
-  "chat.notifyWindowOnConfirmation": false,
+  "chat.notifyWindowOnConfirmation": "off",
   "continue.telemetryEnabled": false,
   "remote.SSH.useExecServer": false,
   "workbench.editor.enablePreview": false
