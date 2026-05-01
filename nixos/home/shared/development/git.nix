@@ -12,6 +12,7 @@
         st = "status";
       };
     };
+    signing.format = null;
   };
 
   # additional tools

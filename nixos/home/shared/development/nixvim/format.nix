@@ -10,7 +10,7 @@
     #golines
     #gotools
     isort
-    nodePackages.prettier
+    prettier
     prettierd
     #rustfmt
     shfmt

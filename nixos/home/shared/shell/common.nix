@@ -1,16 +1,12 @@
-{
-  pkgs,
-  unstablePkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # terminal
-    neofetch
+    fastfetch
     yazi
     mc
     bat
     ghostty
-    unstablePkgs.lazyssh
+    lazyssh
 
     # archives
     zip

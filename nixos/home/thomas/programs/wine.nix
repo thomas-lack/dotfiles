@@ -1,5 +1,5 @@
-{unstablePkgs, ...}: {
-  home.packages = with unstablePkgs; [
+{pkgs, ...}: {
+  home.packages = with pkgs; [
     #wineWowPackages.unstable
     (wineWow64Packages.stagingFull.override {
       waylandSupport = true;

@@ -1,18 +1,13 @@
-{
-  pkgs,
-  unstablePkgs,
-  ...
-}: {
+{config, ...}: {
   programs = {
     firefox = {
       enable = true;
-      package = pkgs.firefox;
+      configPath = "${config.xdg.configHome}/mozilla/firefox";
       profiles.work = {};
     };
 
     librewolf = {
       enable = true;
-      package = unstablePkgs.librewolf;
     };
   };
 }

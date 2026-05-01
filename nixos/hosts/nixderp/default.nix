@@ -42,7 +42,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    xorg.xhost
+    xhost
     neovim
     gparted
     dropbox # does not work in home manager

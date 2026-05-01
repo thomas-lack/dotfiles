@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    nodePackages.nodejs
-    nodePackages.prettier
-    nodePackages.eslint
+    nodejs_24
+    prettier
+    eslint
   ];
 
   programs.bun = {
