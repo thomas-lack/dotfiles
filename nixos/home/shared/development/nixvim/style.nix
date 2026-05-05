@@ -14,7 +14,7 @@
         options = {
           icons_enabled = true;
           globalstatus = true;
-          theme = "catppuccin";
+          theme = "auto";
         };
       };
     };
