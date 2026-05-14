@@ -2,6 +2,7 @@
   imports = [
     ./common.nix
     ./direnv.nix
+    ./docker.nix
     ./eza.nix
     ./fzf.nix
     ./gnupg.nix
