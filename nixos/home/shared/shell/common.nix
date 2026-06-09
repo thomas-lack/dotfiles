@@ -47,6 +47,6 @@
     tlrc
 
     # password manager
-    prs
+    pass
   ];
 }
