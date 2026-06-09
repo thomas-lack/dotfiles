@@ -4,6 +4,7 @@
     # Directly use the pre-built Lutris package until openldap dependency is working
     /nix/store/s74admfd3w6nwf801qdf804wkxvmamcj-lutris-0.5.22
     #vice
+    /nix/store/7b20bhwighgigvwq40wdlkdbzkgda5p7-vice-3.10
     (bottles.override {
       removeWarningPopup = true;
     })
