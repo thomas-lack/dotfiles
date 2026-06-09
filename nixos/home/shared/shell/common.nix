@@ -23,6 +23,7 @@
     jq
     fd
     dust
+    hydra-check
 
     # encryption
     openssl

@@ -20,7 +20,7 @@
       desktopManager.cinnamon.enable = true;
     };
     displayManager = {
-      defaultSession = "Cinnamon";
+      defaultSession = "cinnamon";
       ly = {
         enable = true;
       };
