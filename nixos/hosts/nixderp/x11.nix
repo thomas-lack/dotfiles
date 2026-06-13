@@ -41,5 +41,7 @@
     #  };
     #};
     #desktopManager.plasma6.enable = true;
+    # plank on x11 needs bamf
+    bamf.enable = true;
   };
 }
