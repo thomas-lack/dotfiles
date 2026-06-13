@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     ulauncher
-    plank
   ];
 
   systemd.user.services.ulauncher = {

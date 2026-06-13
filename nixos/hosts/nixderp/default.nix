@@ -15,7 +15,6 @@
     ./bluetooth.nix
     ./boot-loader.nix
     ./cosmic.nix
-    ./dbus.nix
     ./docker.nix
     ./filesystem.nix
     ./flatpak.nix
