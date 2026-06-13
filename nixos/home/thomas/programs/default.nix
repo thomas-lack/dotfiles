@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./3dprint.nix
+    #./3dprint.nix
     ./common.nix
     ./browsers.nix
     ./cinnamon.nix
