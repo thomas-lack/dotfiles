@@ -12,127 +12,126 @@
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["J"],
-      "after": ["1", "0", "j", "z", "z"]
+      "after": ["1", "0", "j", "z", "z"],
     },
     {
       "before": ["K"],
-      "after": ["1", "0", "k", "z", "z"]
+      "after": ["1", "0", "k", "z", "z"],
     },
     {
       "before": [";"],
-      "after": ["A", ";", "<Esc>"]
+      "after": ["A", ";", "<Esc>"],
     },
     {
       "before": ["n"],
-      "after": ["n", "z", "z"]
+      "after": ["n", "z", "z"],
     },
     {
       "before": ["N"],
-      "after": ["N", "z", "z"]
+      "after": ["N", "z", "z"],
     },
     {
       "before": ["0"],
-      "after": ["^"]
+      "after": ["^"],
     },
     {
       "before": ["<leader>", "c"],
-      "commands": ["editor.action.formatDocument"]
+      "commands": ["editor.action.formatDocument"],
     },
     {
       "before": ["<leader>", "r"],
-      "commands": ["editor.action.rename"]
+      "commands": ["editor.action.rename"],
     },
     {
       "before": ["<leader>", "R"],
-      "commands": ["editor.action.refactor"]
+      "commands": ["editor.action.refactor"],
     },
     {
       "before": ["g", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "commands": ["workbench.action.quickOpen"],
     },
     {
       "before": ["<leader>", "f"],
-      "commands": ["filesExplorer.findInFolder"]
+      "commands": ["filesExplorer.findInFolder"],
     },
     {
       "before": ["<Enter>"],
-      "commands": [":nohl"]
+      "commands": [":nohl"],
     },
     {
       "before": ["<leader>", "1"],
-      "commands": ["revealInExplorer"]
+      "commands": ["revealInExplorer"],
     },
     {
       "before": ["<leader>", "2"],
-      "commands": ["workbench.view.explorer"]
+      "commands": ["workbench.view.explorer"],
     },
     {
       "before": ["<leader>", "e"],
-      "commands": ["editor.action.marker.next"]
+      "commands": ["editor.action.marker.next"],
     },
     {
       "before": ["<leader>", "E"],
-      "commands": ["editor.action.marker.prev"]
+      "commands": ["editor.action.marker.prev"],
     },
     {
       "before": ["<leader>", "/"],
-      "commands": ["editor.action.commentLine"]
+      "commands": ["editor.action.commentLine"],
     },
     {
       "before": ["<leader>", "v"],
-      "commands": ["workbench.action.splitEditor"]
+      "commands": ["workbench.action.splitEditor"],
     },
     {
       "before": ["<leader>", "h"],
-      "commands": ["workbench.action.splitEditorOrthogonal"]
+      "commands": ["workbench.action.splitEditorOrthogonal"],
     },
     {
       "before": ["<leader>", "q"],
-      "commands": ["workbench.action.closeOtherEditors"]
+      "commands": ["workbench.action.closeOtherEditors"],
     },
     {
       "before": ["<C-h>"],
-      "commands": ["workbench.action.navigateLeft"]
+      "commands": ["workbench.action.navigateLeft"],
     },
     {
       "before": ["<C-j>"],
-      "commands": ["workbench.action.navigateDown"]
+      "commands": ["workbench.action.navigateDown"],
     },
     {
       "before": ["<C-k>"],
-      "commands": ["workbench.action.navigateUp"]
+      "commands": ["workbench.action.navigateUp"],
     },
     {
       "before": ["<C-l>"],
-      "commands": ["workbench.action.navigateRight"]
-    }
+      "commands": ["workbench.action.navigateRight"],
+    },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["J"],
-      "after": ["1", "0", "j", "z", "z"]
+      "after": ["1", "0", "j", "z", "z"],
     },
     {
       "before": ["K"],
-      "after": ["1", "0", "k", "z", "z"]
+      "after": ["1", "0", "k", "z", "z"],
     },
     {
       "before": ["<leader>", "/"],
-      "commands": ["editor.action.blockComment"]
-    }
+      "commands": ["editor.action.blockComment"],
+    },
   ],
   "extensions.experimental.affinity": {
-    "vscodevim.vim": 1
+    "vscodevim.vim": 1,
   },
   "explorer.confirmDelete": true,
   "playwright.reuseBrowser": true,
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
-  "breadcrumbs.enabled": false,
   "editor.stickyScroll.enabled": false,
   "editor.fontLigatures": true,
   "editor.bracketPairColorization.enabled": true,
@@ -141,14 +140,14 @@
   "rust-analyzer.rustfmt.enableRangeFormatting": true,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    "editor.codeLens": false
+    "editor.codeLens": false,
   },
   "[xml]": {
-    "editor.defaultFormatter": "DotJoshJohnson.xml"
+    "editor.defaultFormatter": "DotJoshJohnson.xml",
   },
   "svelte.enable-ts-plugin": true,
   "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
+    "editor.defaultFormatter": "svelte.svelte-vscode",
   },
   "workbench.editor.empty.hint": "hidden",
   "telemetry.feedback.enabled": false,
@@ -157,5 +156,5 @@
   "chat.notifyWindowOnConfirmation": "off",
   "continue.telemetryEnabled": false,
   "remote.SSH.useExecServer": false,
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
 }
