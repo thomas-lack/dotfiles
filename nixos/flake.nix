@@ -2,12 +2,8 @@
   description = "nixderp NixOS configuration";
 
   inputs = {
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    #nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    #nixpkgs.url = "github:NixOS/nixpkgs/5aec72aae56b7f34dd1bc9f91d49826cc02ea208";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      #url = "github:nix-community/home-manager/release-25.11";
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -35,21 +31,11 @@
           home-manager.backupFileExtension = "backup";
           home-manager.extraSpecialArgs = {
             inherit inputs;
-            #  unstablePkgs = import inputs.nixpkgs-unstable {
-            #    system = "x86_64-linux";
-            #    config.allowUnfree = true;
-            #  };
           };
           home-manager.users.thomas = import ./home/thomas;
           home-manager.users.work = import ./home/work;
         }
       ];
-      #specialArgs = {
-      #  unstablePkgs = import inputs.nixpkgs-unstable {
-      #    system = "x86_64-linux";
-      #    config.allowUnfree = true;
-      #  };
-      #};
     };
   };
 }
