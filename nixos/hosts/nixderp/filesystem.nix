@@ -19,11 +19,13 @@
   fileSystems."/mnt/daten" = {
     device = "/dev/disk/by-uuid/86D08A37D08A2D8D";
     fsType = "ntfs";
+    noCheck = true;
   };
 
   fileSystems."/mnt/daten2" = {
     device = "/dev/disk/by-uuid/0024255224254BCA";
     fsType = "ntfs";
+    noCheck = true;
   };
 
   # mount network storage
