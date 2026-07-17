@@ -50,9 +50,13 @@
     #  [General]
     #  background=${kdePackages.plasma-workspace-wallpapers}/share/wallpapers/MilkyWay/contents/images/5120x2880.png
     #'')
+    # add fonts
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-color-emoji
+    inter
   ];
-
-  fonts.fontconfig.enable = false;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

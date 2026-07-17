@@ -5,7 +5,6 @@
     ./javascript.nix
     ./llama.nix
     ./neovim.nix
-    ./ollama.nix
     ./vscode.nix
   ];
 }
