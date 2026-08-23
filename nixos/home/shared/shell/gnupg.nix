@@ -60,7 +60,7 @@
     pinentry = {
       #package = pkgs.pinentry-tty;
       #package = pkgs.pinentry-curses;
-      package = pkgs.pinentry-gtk2;
+      package = pkgs.pinentry-gnome3;
     };
   };
 }
