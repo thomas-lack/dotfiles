@@ -1,6 +1,6 @@
 {
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Latte",
   "editor.fontFamily": "'CaskaydiaMono Nerd Font', 'Cascadia Code', 'DroidSansMono Nerd Font', 'monospace', monospace",
   "editor.minimap.enabled": false,
   "vim.useSystemClipboard": true,
@@ -157,4 +157,5 @@
   "continue.telemetryEnabled": false,
   "remote.SSH.useExecServer": false,
   "workbench.editor.enablePreview": false,
+  "git.openRepositoryInParentFolders": "never",
 }
