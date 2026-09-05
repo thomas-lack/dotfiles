@@ -12,5 +12,6 @@
     # misc
     keymapp
     carlito
+    keepassxc
   ];
 }

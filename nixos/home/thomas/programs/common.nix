@@ -19,5 +19,6 @@
     keymapp
     mcomix
     bchunk
+    keepassxc
   ];
 }
