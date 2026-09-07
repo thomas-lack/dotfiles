@@ -9,7 +9,6 @@
     mpd
     # audio
     spotify
-    abcde
     # images
     imv
     # video
