@@ -4,10 +4,12 @@
     pavucontrol
     playerctl
     pulsemixer
+    #player
     mpc
     mpd
     # audio
     spotify
+    abcde
     # images
     imv
     # video
