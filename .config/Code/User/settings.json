@@ -1,7 +1,7 @@
 {
   "telemetry.telemetryLevel": "off",
   "workbench.colorTheme": "Catppuccin Latte",
-  "editor.fontFamily": "'CaskaydiaMono Nerd Font', 'Cascadia Code', 'DroidSansMono Nerd Font', 'monospace', monospace",
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', 'Cascadia Code', 'DroidSansMono Nerd Font', 'monospace', monospace",
   "editor.minimap.enabled": false,
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
