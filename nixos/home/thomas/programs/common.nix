@@ -6,6 +6,7 @@
     # office
     libreoffice-qt6-fresh
     drawio
+    obsidian
 
     # communication
     discord
