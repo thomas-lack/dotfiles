@@ -2,7 +2,9 @@
   description = "nixderp NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #before gcc update which broke openvpn
+    nixpkgs.url = "github:NixOS/nixpkgs/37489e1";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
