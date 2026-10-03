@@ -4,7 +4,7 @@
     nmap
 
     # office
-    libreoffice-qt6-fresh
+    libreoffice-qt
     drawio
     obsidian
 
