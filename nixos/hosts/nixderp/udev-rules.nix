@@ -5,14 +5,14 @@
     KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0664", GROUP="plugdev"
 
     # Legacy rules for live training over webusb (Not needed for firmware v21+)
-    	# Rule for all ZSA keyboards
-    	SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
-    	# Rule for the Moonlander
-    	SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
-    	# Rule for the Ergodox EZ
-    	SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
-    	# Rule for the Planck EZ
-    	SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
+    # Rule for all ZSA keyboards
+    SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
+    # Rule for the Moonlander
+    SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
+    # Rule for the Ergodox EZ
+    SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
+    # Rule for the Planck EZ
+    SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
 
     # Wally Flashing rules for the Ergodox EZ
     ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
@@ -27,5 +27,10 @@
 
     # Rule for NSW
     SUBSYSTEM=="usb", ATTRS{idVendor}=="057e", ATTRS{idProduct}=="3000", MODE="0666", GROUP="plugdev"
+
+    # Rule for FlashGBX
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="7523", MODE="0666", GROUP="plugdev"
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", MODE="0666", GROUP="plugdev"
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="B010", MODE="0666", GROUP="plugdev"
   '';
 }
