@@ -21,5 +21,6 @@
     mcomix
     bchunk
     keepassxc
+    flashgbx
   ];
 }
