@@ -7,5 +7,6 @@
       blasSupport = true;
     })
     llmfit
+    opencode
   ];
 }
