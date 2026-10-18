@@ -8,5 +8,6 @@
     })
     llmfit
     opencode
+    ollama-cuda
   ];
 }
