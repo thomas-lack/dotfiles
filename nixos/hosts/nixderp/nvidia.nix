@@ -9,7 +9,7 @@
       enable = true;
     };
     nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.production;
+      package = config.boot.kernelPackages.nvidiaPackages.new_feature;
       #package = config.boot.kernelPackages.nvidiaPackages.beta;
       # load specific driver until kernel 6.15 is fully supported by beta / production packages
       # hashes can be found here:

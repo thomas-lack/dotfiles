@@ -18,6 +18,7 @@
     ./docker.nix
     ./filesystem.nix
     ./flatpak.nix
+    ./fsh-compat.nix
     ./kernel.nix
     ./localization.nix
     ./network.nix
