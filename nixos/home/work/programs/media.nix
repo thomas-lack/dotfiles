@@ -32,13 +32,17 @@
     mpd = {
       enable = true;
       musicDirectory = "/mnt/nasderp/Musik";
+      network = {
+        listenAddress = "127.0.0.1";
+        port = 6601;
+        startWhenNeeded = true;
+      };
       extraConfig = ''
         audio_output {
-        	type "pulse"
-        	name "My PulseAudio"
+        	type "pipewire"
+        	name "PipeWire"
         }
       '';
-      network.startWhenNeeded = true;
     };
   };
 }
