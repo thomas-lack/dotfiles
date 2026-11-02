@@ -11,6 +11,7 @@
     # Include the results of the hardware scan.
     (modulesPath + "/installer/scan/not-detected.nix")
     # manual system description
+    ./appimage.nix
     ./audio.nix
     ./bluetooth.nix
     ./boot-loader.nix
