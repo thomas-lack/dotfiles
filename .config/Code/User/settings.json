@@ -158,4 +158,5 @@
   "remote.SSH.useExecServer": false,
   "workbench.editor.enablePreview": false,
   "git.openRepositoryInParentFolders": "never",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
 }
