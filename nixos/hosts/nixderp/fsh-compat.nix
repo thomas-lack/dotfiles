@@ -18,6 +18,7 @@
       freetype
       fuse3
       icu
+      libgpg-error
       libnotify
       libsodium
       libssh
